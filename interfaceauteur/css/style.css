@@ -1,0 +1,521 @@
+[class*="span"] {
+padding: 10px;
+/*background: white;*/
+}
+.row-fluid [class*="span"]{
+	min-height: 0px;
+}
+body{
+	/*background:  #F7F7F7;*/
+	margin: 0px;
+}
+
+.arborescence{
+		background: #E7E7E7;
+		height: 310px;
+		border-right: solid #C7C7C7 1px; 
+}
+
+.titreEspace{
+	background: linear-gradient(#FFFFFF,#E7E7E7);
+	border:solid #C7C7C7 1px; 
+	-webkit-border-radius: 10px 10px 0px 0px;
+     -moz-border-radius: 10px 10px 0px 0px;
+     border-radius: 10px 10px 0px 0px;
+     padding: 5px;
+
+
+
+}
+
+.titreAct{
+	background: linear-gradient(#FFFFFF,#D7D7D7);
+	border: solid #C7C7C7 1px; 
+	padding: 0px;
+	
+}
+
+.act{
+	background: white;
+	/*height: 255px;*/
+	
+	border: solid #898989 1px; 
+}
+.corps{
+	width: 75%;
+	height: 100%;
+	margin-left: 175px;
+	margin-top: 100px;
+	
+
+
+	
+}
+.conteneur{
+	padding: 0px;
+	margin: 0px;
+
+}
+
+.contenu{
+	border : solid 1px #C7C7C7;
+	border-top: none;
+}
+
+.interieur{
+	height: 320px;
+}
+
+.chemin{
+	background: none;
+	font-size: 11px;
+	padding:0px;
+	color: grey;
+}
+
+img{
+	height: 30px;
+	padding: 5px;
+
+
+
+}
+
+.actActive{
+	background: #F1FFFF;
+	
+}
+
+
+
+.menuAct{
+	margin-top: 10px;
+}
+
+
+#voletLG {
+    position: fixed;
+    left: -70px;
+    top: 70px;
+	background: #F7F7F7;
+	/*#F7F7F7*/
+	border-radius: 0px 10px 10px 0px;
+	border: solid #C7C7C7 1px; 
+	min-width: 50px;
+	max-width: 100%;
+	
+	height: 100%;
+	box-shadow: 0px 0px 10px #888888;
+	padding: 10px;
+
+}
+
+#voletLG .ouvrirLG, #voletLG .fermerLG {
+    position: absolute;
+    right: -25px;
+    top: 150px;
+    background: #F7F7F7;
+    /* quelques styles CSS3 */
+/*    -o-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+    transform: rotate(270deg);*/
+    border: solid 1px #C7C7C7;
+    border-left: none;
+	padding: 5px;
+
+}
+#voletLG #deployerG, #voletLG #reduireG {
+    position: absolute;
+    right: -25px;
+    top: 180px;
+    background: #F7F7F7;
+    /* quelques styles CSS3 */
+/*    -o-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+    transform: rotate(270deg);*/
+    border: solid 1px #C7C7C7;
+    border-left: none;
+	padding: 5px;
+
+}
+
+#voletLG #reduireG {
+    display: none;
+}
+
+
+#voletEdit {
+    position: fixed;
+    left: -614px;
+    top: 51px;
+	background: #F7F7F7;
+	border-radius: 0px 10px 10px 0px;
+	border: solid #C7C7C7 1px; 
+	width: 600px;
+	height: 100%;
+	box-shadow: 0px 0px 10px #888888;
+	padding: 7px;
+
+}
+#voletEdit .ouvrirEdit, #voletEdit .fermerEdit{
+    position: absolute;
+    right: -25px;
+    top: 180px;
+    background: #F7F7F7;
+    border: solid 1px #C7C7C7;
+    border-left: none;
+	padding: 5px;
+	z-index: 100;
+
+}
+
+#voletEdit .fermerEdit {
+    display: none;
+
+
+}
+
+#voletLG .fermerLG {
+    display: none;
+}
+
+#voletLD{
+	position: fixed;
+	min-width: 90px;
+	height: 100%;
+	top: 70px;
+	right: -100px;
+	background: #F7F7F7;
+	border-radius: 10px 0px 0px 10px;
+	border: solid #C7C7C7 1px; 
+	box-shadow: 0px 0px 10px #888888;
+	
+	
+
+
+}
+
+#voletLD .ouvrirLD, #voletLD .fermerLD {
+    position: absolute;
+    left: -25px;
+    top: 100px;
+    background: #F7F7F7;
+    /* quelques styles CSS3 */
+/*    -o-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+    transform: rotate(270deg);*/
+    border: solid 1px #C7C7C7;
+    border-right: none;
+	padding: 5px;
+}
+
+#voletLD .fermerLD {
+    display: none;
+}
+
+#voletLD #deployerD, #voletLD #reduireD {
+    position: absolute;
+    left: -25px;
+    top: 130px;
+    background: #F7F7F7;
+    border: solid 1px #C7C7C7;
+    border-right: none;
+	padding: 5px;
+}
+
+#voletLD #reduireD {
+    display: none;
+}
+
+#voletH{
+	position: fixed;
+	width: 75%;
+	top: 35px;
+	left: 150px;
+	box-shadow: 0px 0px 10px #888888;
+	/*height: 200px;*/
+	margin-bottom: -160px;
+	background: #F7F7F7;
+	border-radius: 0px 0px 10px 10px;
+	border: solid #C7C7C7 1px; 
+	padding: 5px;
+
+
+
+}
+
+#voletH .ouvrirH, #voletH .fermerH {
+    position: relative;
+    left: 148px;
+    top: 67px;
+    width: 15px;
+    display: block;
+    background: #F7F7F7;
+    /* quelques styles CSS3 */
+/*    -o-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+    transform: rotate(270deg);*/
+    border: solid 1px #C7C7C7;
+    border-top: none;
+	padding: 5px;
+	text-align: center;
+
+}
+
+#voletH .fermerH {
+    display: none;
+}
+
+#voletH #deployerH, #voletH #reduireH {
+    position: relative;
+    left: 174px;
+    top: 36px;
+    width: 15px;
+    display: block;
+    background: #F7F7F7;
+    border: solid 1px #C7C7C7;
+    border-top: none;
+	padding: 5px;
+	text-align: center;
+
+}
+
+#voletH #reduireH {
+    display: none;
+}
+
+#voletH2{
+	position: fixed;
+	width: 75%;
+	top: 35px;
+	left:150px;
+	box-shadow: 0px 0px 10px #888888;
+	/*height: 200px;*/
+	margin-bottom: -160px;
+	background: #F7F7F7;
+	border-radius: 0px 0px 10px 10px;
+	border: solid #C7C7C7 1px; 
+	padding: 5px;
+
+}
+#voletH2 .ouvrirH2, #voletH2 .fermerH2 {
+    position: relative;
+    left: 200px;
+    top: 36px;
+    width: 15px;
+    display: block;
+    background: #F7F7F7;
+    /* quelques styles CSS3 */
+/*    -o-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+    transform: rotate(270deg);*/
+    border: solid 1px #C7C7C7;
+    border-top: none;
+	padding: 5px;
+	text-align: center;
+	
+
+}
+
+#voletH2 .fermerH2 {
+    display: none;
+    y
+}
+.boutMenu{
+	margin: none;
+	height: 25px;
+
+}
+
+
+
+.avatar{
+	width: 15px;
+	height: 15px;
+	border:solid 1px grey;
+	border-radius: 2px 2px 2px 2px;
+}
+
+hr{
+	margin: 0px;
+	border: solid 1px #D7D7D7;
+}
+
+.nom{
+	width: 400px;
+	margin-left: 65px;
+}
+
+.listVerticale{
+	margin-left: -25px;
+}
+
+textarea{
+	width: 400px;
+	height: 200px;
+	resize:none;
+}
+
+ul{
+	list-style: none;
+}
+
+.pagination{
+	margin:none;
+	padding: none;
+	position: relative;
+	top: -35px;
+	right: 0px;
+}
+
+
+
+.scroll-pane
+{
+	width: 100%;
+	height: 250px;
+	overflow: auto;
+}
+.jspDrag{
+
+background:#CCC;
+cursor:pointer;
+overflow:hidden;
+-moz-border-radius:6px;
+-webkit-border-radius:6px;
+border-radius: 6px;
+width: 5px;
+}
+
+.jspTrack{
+	background: none;
+}
+
+.jspVerticalBar{
+	background: none;
+	width: 5px;
+	padding-right: 2px;
+}
+
+.visibleLi{
+	color: black;
+	cursor: move;
+}
+
+.invisibleLi{
+	color : silver;
+	cursor: move;
+}
+
+.rendreInvisible{
+	display: none;
+	cursor: auto;
+}
+
+.rendreVisible{
+	cursor: auto;
+}
+
+.icon-folder-close{
+	cursor:auto;
+}
+
+.icon-folder-open{
+	cursor:auto;
+}
+
+.titreDroit{
+	font-size: 10px;
+	background: #E7E7E7;
+	text-overflow:ellipsis;
+
+
+}
+
+.outil{
+	display:none;
+}
+
+.outilVisible{
+	display:block;
+}
+.sortable2{
+	cursor: move;
+}
+
+.nav li{
+	font-size: 11px;
+}
+
+#clicWeek3{
+	
+}
+
+#clicEtape2{
+	display: none;
+}
+
+#clicParcoursPass{
+	display: none;
+}
+
+.auteur{
+	top: 50px;
+	right: 10px;
+	position: fixed;
+	background:none;
+	
+}
+
+.titreCacheG{
+	font-size: 0.7em;
+	display: none;
+}
+
+.titreCacheD{
+	font-size: 0.7em;
+	display: none;
+}
+
+.titreCacheH{
+	color: #B7B7B7;
+	display: none;
+}
+
+.droite{
+	float: right;
+}
+
+#voletH .nano { 
+	height: 250px; 
+}
+
+#voletH .nano .content { 
+	padding: 1px; 
+}
+
+/*#voletH .nano .pane   { 
+	background: #F0F0F0; 
+}
+
+#voletH .nano .slider { 
+	background: #C0C0C0; 
+}*/
+
+#voletLG .nano {
+	height: 200px;
+}
+
+#voletLG .content {
+	max-width: 1000px;
+}
