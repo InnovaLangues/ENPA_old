@@ -35,11 +35,15 @@ class AbstractEntity
      */
     private $description;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="Type")
+     */
+    private $type;
 
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -62,7 +66,7 @@ class AbstractEntity
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
@@ -85,7 +89,7 @@ class AbstractEntity
     /**
      * Get description
      *
-     * @return string 
+     * @return string
      */
     public function getDescription()
     {
