@@ -3,10 +3,12 @@
 namespace Innova\AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * AbstractWorkspace
  *
+ * @Gedmo\Tree(type="nested")
  * @ORM\Table()
  * @ORM\Entity
  */
@@ -60,7 +62,7 @@ class AbstractWorkspace
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -83,7 +85,7 @@ class AbstractWorkspace
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
@@ -106,7 +108,7 @@ class AbstractWorkspace
     /**
      * Get path
      *
-     * @return string 
+     * @return string
      */
     public function getPath()
     {
@@ -129,7 +131,7 @@ class AbstractWorkspace
     /**
      * Get description
      *
-     * @return string 
+     * @return string
      */
     public function getDescription()
     {
@@ -152,7 +154,7 @@ class AbstractWorkspace
     /**
      * Get status
      *
-     * @return array 
+     * @return array
      */
     public function getStatus()
     {
@@ -175,7 +177,7 @@ class AbstractWorkspace
     /**
      * Get type
      *
-     * @return array 
+     * @return array
      */
     public function getType()
     {
