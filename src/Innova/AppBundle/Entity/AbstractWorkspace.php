@@ -26,9 +26,51 @@ class AbstractWorkspace
     /**
      * @var string
      *
-     * @ORM\Column(name="name", type="string", length=255)
+     * @ORM\Column(name="title", type="string", length=255)
      */
-    private $name;
+    private $title;
+
+    /**
+     * @Gedmo\TreeLeft
+     * @ORM\Column(name="left", type="integer")
+     */
+    private $left;
+
+    /**
+     * @Gedmo\TreeLevel
+     * @ORM\Column(name="level", type="integer")
+     */
+    private $level;
+
+    /**
+     * @Gedmo\TreeRight
+     * @ORM\Column(name="right", type="integer")
+     */
+    private $right;
+
+    /**
+     * @Gedmo\TreeRoot
+     * @ORM\Column(name="position", type="integer", nullable=true)
+     */
+    private $position;
+
+    /**
+     * @Gedmo\TreeParent
+     * @ORM\ManyToOne(targetEntity="AbstractWorkspace", inversedBy="children")
+     * @ORM\JoinColumn(name="parent_id", referencedColumnName="id", onDelete="CASCADE")
+     */
+    private $parent;
+
+    /**
+     * @ORM\OneToMany(targetEntity="AbstractWorkspace", mappedBy="parent")
+     * @ORM\OrderBy({"left" = "ASC"})
+     */
+    private $children;
+
+    /**
+     * @ORM\Column(name="type", type="string", length=255)
+     */
+    private $type;
 
     /**
      * @var string
@@ -50,13 +92,6 @@ class AbstractWorkspace
      * @ORM\Column(name="status", type="array")
      */
     private $status;
-
-    /**
-     * @var array
-     *
-     * @ORM\Column(name="type", type="array")
-     */
-    private $type;
 
 
     /**
@@ -159,28 +194,5 @@ class AbstractWorkspace
     public function getStatus()
     {
         return $this->status;
-    }
-
-    /**
-     * Set type
-     *
-     * @param array $type
-     * @return AbstractWorkspace
-     */
-    public function setType($type)
-    {
-        $this->type = $type;
-
-        return $this;
-    }
-
-    /**
-     * Get type
-     *
-     * @return array
-     */
-    public function getType()
-    {
-        return $this->type;
     }
 }
