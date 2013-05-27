@@ -3,66 +3,8 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "be3efcea383a5867b053e6d17c034e0d",
+    "hash": "c353196c1f9bcb43256a3d81b02f41e9",
     "packages": [
-        {
-            "name": "braincrafted/bootstrap-bundle",
-            "version": "dev-master",
-            "target-dir": "Bc/Bundle/BootstrapBundle",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/braincrafted/bootstrap-bundle.git",
-                "reference": "v1.4.2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/braincrafted/bootstrap-bundle/zipball/v1.4.2",
-                "reference": "v1.4.2",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.3"
-            },
-            "require-dev": {
-                "instaclick/php-code-sniffer": "dev-master",
-                "instaclick/symfony2-coding-standard": "dev-master",
-                "knplabs/knp-markdown-bundle": "dev-master",
-                "knplabs/knp-menu": "dev-master",
-                "knplabs/knp-menu-bundle": "dev-master",
-                "knplabs/knp-paginator-bundle": "dev-master",
-                "nikic/php-parser": "dev-master",
-                "phpmd/phpmd": "1.4.*"
-            },
-            "suggest": {
-                "knplabs/knp-menu": "Required to use KnpMenuBundle.",
-                "knplabs/knp-menu-bundle": "BraincraftedBootstrapBundle styles the menus provided by KnpMenuBundle.",
-                "knplabs/knp-paginator-bundle": "BraincraftedBootstrapBundle styles the pagination provided by KnpPaginatorBundle.",
-                "twitter/bootstrap": "Twitter Bootstrap provides the assets (images, CSS and JS)"
-            },
-            "type": "symfony-bundle",
-            "autoload": {
-                "psr-0": {
-                    "Bc\\Bundle\\BootstrapBundle": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Florian Eckerstorfer",
-                    "email": "florian@eckerstorfer.co",
-                    "homepage": "http://florianeckerstorfer.com",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Twitter Bootstrap for Symfony2",
-            "keywords": [
-                "bootstrap"
-            ],
-            "time": "2013-04-12 23:57:05"
-        },
         {
             "name": "doctrine/annotations",
             "version": "v1.1.1",
@@ -2095,8 +2037,7 @@
     "minimum-stability": "alpha",
     "stability-flags": {
         "doctrine/doctrine-fixtures-bundle": 20,
-        "stof/doctrine-extensions-bundle": 20,
-        "braincrafted/bootstrap-bundle": 20
+        "stof/doctrine-extensions-bundle": 20
     },
     "platform": {
         "php": ">=5.3.3"

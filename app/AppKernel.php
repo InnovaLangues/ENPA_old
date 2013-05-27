@@ -22,7 +22,7 @@ class AppKernel extends Kernel
             new Innova\AppBundle\InnovaAppBundle(),
             new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(),
             new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
-            new Bc\Bundle\BootstrapBundle\BcBootstrapBundle()
+            #new Bc\Bundle\BootstrapBundle\BcBootstrapBundle()
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

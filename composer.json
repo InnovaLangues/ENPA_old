@@ -20,7 +20,6 @@
         "jms/di-extra-bundle": "1.3.*",
         "doctrine/doctrine-fixtures-bundle": "dev-master",
         "stof/doctrine-extensions-bundle": "dev-master",
-        "braincrafted/bootstrap-bundle": "dev-master",
         "twitter/bootstrap": "2.3.*",
         "jquery/jquery": "1.9.*"
     },
