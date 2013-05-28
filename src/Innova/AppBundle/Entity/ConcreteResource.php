@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * ConcreteResource
  *
- * @ORM\Table()
+ * @ORM\Table(name="inl_concrete_resource")
  * @ORM\Entity
  */
 class ConcreteResource
@@ -46,7 +46,7 @@ class ConcreteResource
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -69,7 +69,7 @@ class ConcreteResource
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
@@ -92,7 +92,7 @@ class ConcreteResource
     /**
      * Get path
      *
-     * @return string 
+     * @return string
      */
     public function getPath()
     {
@@ -115,7 +115,7 @@ class ConcreteResource
     /**
      * Get description
      *
-     * @return string 
+     * @return string
      */
     public function getDescription()
     {

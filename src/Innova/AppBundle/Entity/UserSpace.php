@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * UserSpace
  *
- * @ORM\Table()
+ * @ORM\Table(name="inl_user_space")
  * @ORM\Entity
  */
 class UserSpace
@@ -25,7 +25,7 @@ class UserSpace
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {

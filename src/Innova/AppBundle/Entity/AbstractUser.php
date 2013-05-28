@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * AbstractUser
  *
- * @ORM\Table()
+ * @ORM\Table(name="inl_abstract_user")
  * @ORM\Entity
  */
 class AbstractUser
@@ -25,7 +25,7 @@ class AbstractUser
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {

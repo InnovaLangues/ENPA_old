@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Type
  *
- * @ORM\Table()
+ * @ORM\Table(name="inl_type")
  * @ORM\Entity
  */
 class Type
@@ -32,7 +32,7 @@ class Type
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -55,7 +55,7 @@ class Type
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {

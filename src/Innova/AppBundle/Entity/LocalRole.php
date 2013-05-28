@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * LocalRole
  *
- * @ORM\Table()
+ * @ORM\Table(name="inl_local_role")
  * @ORM\Entity
  */
 class LocalRole
@@ -39,7 +39,7 @@ class LocalRole
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -62,7 +62,7 @@ class LocalRole
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
@@ -85,7 +85,7 @@ class LocalRole
     /**
      * Get description
      *
-     * @return string 
+     * @return string
      */
     public function getDescription()
     {

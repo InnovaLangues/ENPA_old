@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * InfoInscription
  *
- * @ORM\Table()
+ * @ORM\Table(name="inl_info_inscription")
  * @ORM\Entity
  */
 class InfoInscription
@@ -25,7 +25,7 @@ class InfoInscription
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {

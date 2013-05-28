@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * GenericRole
  *
- * @ORM\Table()
+ * @ORM\Table(name="inl_generic_role")
  * @ORM\Entity
  */
 class GenericRole
@@ -32,7 +32,7 @@ class GenericRole
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -55,7 +55,7 @@ class GenericRole
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {

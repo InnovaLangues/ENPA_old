@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * AbstractEntity
  *
- * @ORM\Table()
+ * @ORM\Table(name="inl_abstract_entity")
  * @ORM\Entity
  */
 class AbstractEntity

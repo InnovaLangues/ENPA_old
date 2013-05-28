@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * GenericPermission
  *
- * @ORM\Table()
+ * @ORM\Table(name="inl_generic_permission")
  * @ORM\Entity
  */
 class GenericPermission
@@ -25,7 +25,7 @@ class GenericPermission
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {

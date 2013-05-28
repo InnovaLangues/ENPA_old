@@ -9,7 +9,7 @@ use Gedmo\Mapping\Annotation as Gedmo;
  * AbstractWorkspace
  *
  * @Gedmo\Tree(type="nested")
- * @ORM\Table()
+ * @ORM\Table(name="inl_abstract_workspace")
  * @ORM\Entity
  */
 class AbstractWorkspace
@@ -92,6 +92,13 @@ class AbstractWorkspace
      * @ORM\Column(name="status", type="array")
      */
     private $status;
+
+    /**
+     * @var array
+     *
+     * @ORM\Column(name="individuel", type="boolean")
+     */
+    private $individuel;
 
 
     /**
@@ -194,5 +201,28 @@ class AbstractWorkspace
     public function getStatus()
     {
         return $this->status;
+    }
+
+    /**
+     * Set individuel
+     *
+     * @param boolean $individuel
+     * @return AbstractWorkspace
+     */
+    public function setIndividuel($individuel)
+    {
+        $this->individuel = $individuel;
+
+        return $this;
+    }
+
+    /**
+     * Get individuel
+     *
+     * @return string
+     */
+    public function getIndividuel()
+    {
+        return $this->individuel;
     }
 }

@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * LocalPermission
  *
- * @ORM\Table()
+ * @ORM\Table(name="inl_local_permission")
  * @ORM\Entity
  */
 class LocalPermission
@@ -25,7 +25,7 @@ class LocalPermission
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {

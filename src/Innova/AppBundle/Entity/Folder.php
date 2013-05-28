@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Folder
  *
- * @ORM\Table()
+ * @ORM\Table(name="inl_folder")
  * @ORM\Entity
  */
 class Folder
@@ -39,7 +39,7 @@ class Folder
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -62,7 +62,7 @@ class Folder
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
@@ -85,7 +85,7 @@ class Folder
     /**
      * Get path
      *
-     * @return string 
+     * @return string
      */
     public function getPath()
     {

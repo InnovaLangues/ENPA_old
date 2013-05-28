@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * RoleEntity
  *
- * @ORM\Table()
+ * @ORM\Table(name="inl_role_entity")
  * @ORM\Entity
  */
 class RoleEntity
@@ -25,7 +25,7 @@ class RoleEntity
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
