@@ -57,7 +57,7 @@ class AbstractWorkspace
     /**
      * @Gedmo\TreeParent
      * @ORM\ManyToOne(targetEntity="AbstractWorkspace", inversedBy="children")
-     * @ORM\JoinColumn(name="parent_id", referencedColumnName="id", onDelete="CASCADE")
+     * @ORM\JoinColumn(name="parent_id", referencedColumnName="id", onDelete="CASCADE", nullable=true)
      */
     private $parent;
 
