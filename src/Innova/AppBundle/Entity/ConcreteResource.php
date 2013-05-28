@@ -34,6 +34,13 @@ class ConcreteResource
      * @ORM\Column(name="path", type="string", length=255)
      */
     private $path;
+	
+	/**
+     * @var string
+     *
+     * @ORM\Column(name="pathIcon", type="string", length=255)
+     */
+    private $pathIcon;
 
     /**
      * @var string
@@ -41,6 +48,20 @@ class ConcreteResource
      * @ORM\Column(name="description", type="text")
      */
     private $description;
+	
+		
+	/**
+     * @ORM\ManyToMany(targetEntity="folder")
+    */
+	private $folder;
+	
+		
+	/**
+     * @ORM\ManyToMany(targetEntity="userSpace")
+    */
+	private $userspace;
+	
+	
 
 
     /**
@@ -121,4 +142,102 @@ class ConcreteResource
     {
         return $this->description;
     }
+
+    /**
+     * Set pathIcon
+     *
+     * @param string $pathIcon
+     * @return ConcreteResource
+     */
+    public function setPathIcon($pathIcon)
+    {
+        $this->pathIcon = $pathIcon;
+
+        return $this;
+    }
+
+    /**
+     * Get pathIcon
+     *
+     * @return string 
+     */
+    public function getPathIcon()
+    {
+        return $this->pathIcon;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->folder = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add folder
+     *
+     * @param \Innova\AppBundle\Entity\folder $folder
+     * @return ConcreteResource
+     */
+    public function addFolder(\Innova\AppBundle\Entity\folder $folder)
+    {
+        $this->folder[] = $folder;
+
+        return $this;
+    }
+
+    /**
+     * Remove folder
+     *
+     * @param \Innova\AppBundle\Entity\folder $folder
+     */
+    public function removeFolder(\Innova\AppBundle\Entity\folder $folder)
+    {
+        $this->folder->removeElement($folder);
+    }
+
+    /**
+     * Get folder
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getFolder()
+    {
+        return $this->folder;
+    }
+
+    /**
+     * Add userspace
+     *
+     * @param \Innova\AppBundle\Entity\userSpace $userspace
+     * @return ConcreteResource
+     */
+    public function addUserspace(\Innova\AppBundle\Entity\userSpace $userspace)
+    {
+        $this->userspace[] = $userspace;
+
+        return $this;
+    }
+
+    /**
+     * Remove userspace
+     *
+     * @param \Innova\AppBundle\Entity\userSpace $userspace
+     */
+    public function removeUserspace(\Innova\AppBundle\Entity\userSpace $userspace)
+    {
+        $this->userspace->removeElement($userspace);
+    }
+
+    /**
+     * Get userspace
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getUserspace()
+    {
+        return $this->userspace;
+    }
+
+
 }

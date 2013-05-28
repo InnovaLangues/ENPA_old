@@ -34,6 +34,12 @@ class LocalRole
      * @ORM\Column(name="description", type="text")
      */
     private $description;
+	
+	/**
+     * @ORM\ManyToMany(targetEntity="infoInscription")
+    */
+	private $inscription;
+  
 
 
     /**
@@ -90,5 +96,45 @@ class LocalRole
     public function getDescription()
     {
         return $this->description;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->inscription = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add inscription
+     *
+     * @param \Innova\AppBundle\Entity\infoInscription $inscription
+     * @return LocalRole
+     */
+    public function addInscription(\Innova\AppBundle\Entity\infoInscription $inscription)
+    {
+        $this->inscription[] = $inscription;
+
+        return $this;
+    }
+
+    /**
+     * Remove inscription
+     *
+     * @param \Innova\AppBundle\Entity\infoInscription $inscription
+     */
+    public function removeInscription(\Innova\AppBundle\Entity\infoInscription $inscription)
+    {
+        $this->inscription->removeElement($inscription);
+    }
+
+    /**
+     * Get inscription
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getInscription()
+    {
+        return $this->inscription;
     }
 }

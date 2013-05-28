@@ -34,7 +34,14 @@ class AbstractEntity
      * @ORM\Column(name="description", type="text")
      */
     private $description;
-
+	
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="digital", type="text")
+     */
+    private $digital;
+	
     /**
      * @ORM\ManyToOne(targetEntity="Type")
      */
@@ -94,5 +101,51 @@ class AbstractEntity
     public function getDescription()
     {
         return $this->description;
+    }
+
+    /**
+     * Set digital
+     *
+     * @param string $digital
+     * @return AbstractEntity
+     */
+    public function setDigital($digital)
+    {
+        $this->digital = $digital;
+
+        return $this;
+    }
+
+    /**
+     * Get digital
+     *
+     * @return string 
+     */
+    public function getDigital()
+    {
+        return $this->digital;
+    }
+
+    /**
+     * Set type
+     *
+     * @param \Innova\AppBundle\Entity\Type $type
+     * @return AbstractEntity
+     */
+    public function setType(\Innova\AppBundle\Entity\Type $type = null)
+    {
+        $this->type = $type;
+
+        return $this;
+    }
+
+    /**
+     * Get type
+     *
+     * @return \Innova\AppBundle\Entity\Type 
+     */
+    public function getType()
+    {
+        return $this->type;
     }
 }

@@ -41,6 +41,18 @@ class User
      * @ORM\Column(name="birthDate", type="date")
      */
     private $birthDate;
+	
+	/**
+	 * @ORM\ManyToOne(targetEntity="genericRole")
+	 * 
+	*/
+	private $role;
+	
+	/**
+	 * @ORM\OneToOne(targetEntity="userSpace")
+	 * 
+	*/
+	private $userspace;
 
 
     /**
@@ -120,5 +132,51 @@ class User
     public function getBirthDate()
     {
         return $this->birthDate;
+    }
+
+    /**
+     * Set role
+     *
+     * @param \Innova\AppBundle\Entity\genericRole $role
+     * @return User
+     */
+    public function setRole(\Innova\AppBundle\Entity\genericRole $role = null)
+    {
+        $this->role = $role;
+
+        return $this;
+    }
+
+    /**
+     * Get role
+     *
+     * @return \Innova\AppBundle\Entity\genericRole 
+     */
+    public function getRole()
+    {
+        return $this->role;
+    }
+
+    /**
+     * Set userspace
+     *
+     * @param \Innova\AppBundle\Entity\userSpace $userspace
+     * @return User
+     */
+    public function setUserspace(\Innova\AppBundle\Entity\userSpace $userspace = null)
+    {
+        $this->userspace = $userspace;
+
+        return $this;
+    }
+
+    /**
+     * Get userspace
+     *
+     * @return \Innova\AppBundle\Entity\userSpace 
+     */
+    public function getUserspace()
+    {
+        return $this->userspace;
     }
 }

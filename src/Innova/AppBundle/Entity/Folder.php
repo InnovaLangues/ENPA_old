@@ -34,6 +34,11 @@ class Folder
      * @ORM\Column(name="path", type="string", length=255)
      */
     private $path;
+	
+	 /**
+     * @ORM\ManyToOne(targetEntity="userSpace")
+     */
+    private $userspace;
 
 
     /**
@@ -90,5 +95,28 @@ class Folder
     public function getPath()
     {
         return $this->path;
+    }
+
+    /**
+     * Set userspace
+     *
+     * @param \Innova\AppBundle\Entity\userSpace $userspace
+     * @return Folder
+     */
+    public function setUserspace(\Innova\AppBundle\Entity\userSpace $userspace = null)
+    {
+        $this->userspace = $userspace;
+
+        return $this;
+    }
+
+    /**
+     * Get userspace
+     *
+     * @return \Innova\AppBundle\Entity\userSpace 
+     */
+    public function getUserspace()
+    {
+        return $this->userspace;
     }
 }

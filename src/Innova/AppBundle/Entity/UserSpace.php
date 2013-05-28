@@ -20,7 +20,7 @@ class UserSpace
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
-
+	
 
     /**
      * Get id
