@@ -34,13 +34,12 @@ class LocalRole
      * @ORM\Column(name="description", type="text")
      */
     private $description;
-	
+
 	/**
      * @ORM\ManyToMany(targetEntity="infoInscription")
-    */
+     * @ORM\JoinTable(name="inl_localrole_inscription")
+     */
 	private $inscription;
-  
-
 
     /**
      * Get id
@@ -131,7 +130,7 @@ class LocalRole
     /**
      * Get inscription
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getInscription()
     {

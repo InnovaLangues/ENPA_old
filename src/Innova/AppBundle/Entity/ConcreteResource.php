@@ -34,7 +34,7 @@ class ConcreteResource
      * @ORM\Column(name="path", type="string", length=255)
      */
     private $path;
-	
+
 	/**
      * @var string
      *
@@ -48,20 +48,18 @@ class ConcreteResource
      * @ORM\Column(name="description", type="text")
      */
     private $description;
-	
-		
+
 	/**
      * @ORM\ManyToMany(targetEntity="folder")
-    */
+     * @ORM\JoinTable(name="inl_concreteresource_folder")
+     */
 	private $folder;
-	
-		
+
 	/**
      * @ORM\ManyToMany(targetEntity="userSpace")
-    */
+     * @ORM\JoinTable(name="inl_concreteresource_userspace")
+     */
 	private $userspace;
-	
-	
 
 
     /**
@@ -159,7 +157,7 @@ class ConcreteResource
     /**
      * Get pathIcon
      *
-     * @return string 
+     * @return string
      */
     public function getPathIcon()
     {
@@ -199,7 +197,7 @@ class ConcreteResource
     /**
      * Get folder
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getFolder()
     {
@@ -232,7 +230,7 @@ class ConcreteResource
     /**
      * Get userspace
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getUserspace()
     {

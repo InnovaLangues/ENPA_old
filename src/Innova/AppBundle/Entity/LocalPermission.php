@@ -27,18 +27,20 @@ class LocalPermission
      * @ORM\Column(name="description", type="text")
      */
     private $description;
-	
+
 	/**
      * @ORM\ManyToMany(targetEntity="localRole")
-    */
+     * @ORM\JoinTable(name="inl_localpermission_localrole")
+     */
 	private $role;
-	
+
 	/**
      * @ORM\ManyToMany(targetEntity="abstractEntity")
-    */
+     * @ORM\JoinTable(name="inl_localpermission_abstractentity")
+     */
 	private $abstractEntity;
-	
-	
+
+
     /**
      * Get id
      *
@@ -73,7 +75,7 @@ class LocalPermission
     /**
      * Get description
      *
-     * @return string 
+     * @return string
      */
     public function getDescription()
     {
@@ -106,7 +108,7 @@ class LocalPermission
     /**
      * Get role
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getRole()
     {
@@ -139,7 +141,7 @@ class LocalPermission
     /**
      * Get abstractEntity
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getAbstractEntity()
     {

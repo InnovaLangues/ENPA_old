@@ -24,20 +24,22 @@ class InfoInscription
 
 	/**
 	 * @ORM\ManyToOne(targetEntity="session")
-	 * 
+	 *
 	*/
 	private $session;
-	
+
 	/**
      * @ORM\ManyToMany(targetEntity="abstractUser")
+     * @ORM\JoinTable(name="inl_infoinscription_abstractuser")
     */
 	private $abstractUser;
-  
+
   	/**
      * @ORM\ManyToMany(targetEntity="abstractWorkspace")
-    */
+     * @ORM\JoinTable(name="inl_infoinscription_abstractworkspace")
+     */
 	private $workspace;
-	
+
     /**
      * Get id
      *
@@ -72,7 +74,7 @@ class InfoInscription
     /**
      * Get session
      *
-     * @return \Innova\AppBundle\Entity\session 
+     * @return \Innova\AppBundle\Entity\session
      */
     public function getSession()
     {
@@ -105,7 +107,7 @@ class InfoInscription
     /**
      * Get abstractUser
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getAbstractUser()
     {
@@ -138,7 +140,7 @@ class InfoInscription
     /**
      * Get workspace
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getWorkspace()
     {

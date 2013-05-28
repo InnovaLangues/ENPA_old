@@ -20,31 +20,34 @@ class RoleEntity
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
-	
-	
+
+
     /**
      * @var string
      *
      * @ORM\Column(name="description", type="text")
      */
     private $description;
-	
+
 	/**
      * @ORM\ManyToMany(targetEntity="abstractWorkspace")
-    */
-	private $workspace;	
+     * @ORM\JoinTable(name="inl_roleentity_abstractworkspace")
+     */
+	private $workspace;
 
 	/**
      * @ORM\ManyToMany(targetEntity="abstractEntity")
+     * @ORM\JoinTable(name="inl_roleentity_abstractentity")
     */
-	private $abstractEntity;		
-	
+	private $abstractEntity;
+
 
 	/**
      * @ORM\ManyToMany(targetEntity="concreteResource")
-    */
-	private $concreteResource;	
-	
+     * @ORM\JoinTable(name="inl_roleentity_concreteresource")
+     */
+	private $concreteResource;
+
     /**
      * Get id
      *
@@ -79,7 +82,7 @@ class RoleEntity
     /**
      * Get description
      *
-     * @return string 
+     * @return string
      */
     public function getDescription()
     {
@@ -112,7 +115,7 @@ class RoleEntity
     /**
      * Get workspace
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getWorkspace()
     {
@@ -145,7 +148,7 @@ class RoleEntity
     /**
      * Get abstractResource
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getAbstractResource()
     {
@@ -178,7 +181,7 @@ class RoleEntity
     /**
      * Get abstractEntity
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getAbstractEntity()
     {
@@ -211,7 +214,7 @@ class RoleEntity
     /**
      * Get concreteResource
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getConcreteResource()
     {

@@ -20,25 +20,26 @@ class GenericPermission
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
-	
-	
+
+
 	/**
      * @var description
      *
      * @ORM\Column(name="description", type="text")
      */
     private $description;
-	
+
 	/**
      * @ORM\ManyToMany(targetEntity="genericRole")
+     * @ORM\JoinTable(name="inl_genericpermission_genericrole")
     */
-	private $role;
-	
+	private $genericRole;
+
 	/**
      * @ORM\ManyToMany(targetEntity="concreteResource")
-    */
+     * @ORM\JoinTable(name="inl_genericpermission_concreteresource")
+     */
 	private $concreteResource;
-	
 
 
     /**
@@ -75,7 +76,7 @@ class GenericPermission
     /**
      * Get description
      *
-     * @return string 
+     * @return string
      */
     public function getDescription()
     {
@@ -83,36 +84,36 @@ class GenericPermission
     }
 
     /**
-     * Add role
+     * Add genericRole
      *
-     * @param \Innova\AppBundle\Entity\genericRole $role
+     * @param \Innova\AppBundle\Entity\genericRole $genericRole
      * @return GenericPermission
      */
-    public function addRole(\Innova\AppBundle\Entity\genericRole $role)
+    public function addGenericRole(\Innova\AppBundle\Entity\genericRole $genericRole)
     {
-        $this->role[] = $role;
+        $this->genericRole[] = $genericRole;
 
         return $this;
     }
 
     /**
-     * Remove role
+     * Remove genericRole
      *
-     * @param \Innova\AppBundle\Entity\genericRole $role
+     * @param \Innova\AppBundle\Entity\genericRole $genericRole
      */
-    public function removeRole(\Innova\AppBundle\Entity\genericRole $role)
+    public function removeRole(\Innova\AppBundle\Entity\genericRole $genericRole)
     {
-        $this->role->removeElement($role);
+        $this->genericRole->removeElement($genericRole);
     }
 
     /**
-     * Get role
+     * Get genericRole
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
-    public function getRole()
+    public function getGenericRole()
     {
-        return $this->role;
+        return $this->genericRole;
     }
 
     /**
@@ -141,7 +142,7 @@ class GenericPermission
     /**
      * Get concreteResource
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getConcreteResource()
     {
