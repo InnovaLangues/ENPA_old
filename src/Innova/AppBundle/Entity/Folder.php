@@ -38,9 +38,9 @@ class Folder
 	 /**
      * @ORM\ManyToOne(targetEntity="userSpace")
      */
-    private $userspace;
+    private $userSpace;
 
-
+	
     /**
      * Get id
      *
@@ -98,25 +98,25 @@ class Folder
     }
 
     /**
-     * Set userspace
+     * Set userSpace
      *
-     * @param \Innova\AppBundle\Entity\userSpace $userspace
+     * @param \Innova\AppBundle\Entity\userSpace $userSpace
      * @return Folder
      */
-    public function setUserspace(\Innova\AppBundle\Entity\userSpace $userspace = null)
+    public function setUserSpace(\Innova\AppBundle\Entity\userSpace $userSpace = null)
     {
-        $this->userspace = $userspace;
+        $this->userSpace = $userSpace;
 
         return $this;
     }
 
     /**
-     * Get userspace
+     * Get userSpace
      *
      * @return \Innova\AppBundle\Entity\userSpace 
      */
-    public function getUserspace()
+    public function getUserSpace()
     {
-        return $this->userspace;
+        return $this->userSpace;
     }
 }
