@@ -5,12 +5,12 @@ namespace Innova\AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Group
+ * PathStatusType
  *
- * @ORM\Table(name="inl_group")
+ * @ORM\Table(name="inl_path_status_type")
  * @ORM\Entity
  */
-class Group
+class PathStatusType
 {
     /**
      * @var integer
@@ -43,7 +43,7 @@ class Group
      * Set name
      *
      * @param string $name
-     * @return Type
+     * @return PathStatusType
      */
     public function setName($name)
     {

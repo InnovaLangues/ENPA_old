@@ -22,37 +22,16 @@ class AbstractEntity
     private $id;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="name", type="string", length=255)
+     * @ORM\ManyToOne(targetEntity="AbstractEntityType")
      */
-    private $name;
+    private $abstractEntityType;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="description", type="text")
+     * @ORM\ManyToMany(targetEntity="ConcreteResource")
+     * @ORM\JoinTable(name="inl_abstract_entity_to_concrete_resource")
      */
-    private $description;
-	
-    /**
-     * @var boolean
-     *
-     * @ORM\Column(name="digital", type="text")
-     */
-    private $digital;
-	
-    /**
-     * @ORM\ManyToOne(targetEntity="Type")
-     */
-    private $type;
-	
-	/**
-     * @var string
-     *
-     * @ORM\Column(name="pathIcon", type="string", length=255)
-     */
-    private $pathIcon;
+    private $concreteResource;
+
 
     /**
      * Get id
@@ -63,96 +42,67 @@ class AbstractEntity
     {
         return $this->id;
     }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->concreteResource = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
-     * Set name
+     * Set abstractEntityType
      *
-     * @param string $name
+     * @param \Innova\AppBundle\Entity\AbstractEntityType $abstractEntityType
      * @return AbstractEntity
      */
-    public function setName($name)
+    public function setAbstractEntityType(\Innova\AppBundle\Entity\AbstractEntityType $abstractEntityType = null)
     {
-        $this->name = $name;
+        $this->abstractEntityType = $abstractEntityType;
 
         return $this;
     }
 
     /**
-     * Get name
+     * Get abstractEntityType
      *
-     * @return string
+     * @return \Innova\AppBundle\Entity\AbstractEntityType
      */
-    public function getName()
+    public function getAbstractEntityType()
     {
-        return $this->name;
+        return $this->abstractEntityType;
     }
 
     /**
-     * Set description
+     * Add concreteResource
      *
-     * @param string $description
+     * @param \Innova\AppBundle\Entity\ConcreteResource $concreteResource
      * @return AbstractEntity
      */
-    public function setDescription($description)
+    public function addConcreteResource(\Innova\AppBundle\Entity\ConcreteResource $concreteResource)
     {
-        $this->description = $description;
+        $this->concreteResource[] = $concreteResource;
 
         return $this;
     }
 
     /**
-     * Get description
+     * Remove concreteResource
      *
-     * @return string
+     * @param \Innova\AppBundle\Entity\ConcreteResource $concreteResource
      */
-    public function getDescription()
+    public function removeConcreteResource(\Innova\AppBundle\Entity\ConcreteResource $concreteResource)
     {
-        return $this->description;
+        $this->concreteResource->removeElement($concreteResource);
     }
 
     /**
-     * Set digital
+     * Get concreteResource
      *
-     * @param string $digital
-     * @return AbstractEntity
+     * @return \Doctrine\Common\Collections\Collection
      */
-    public function setDigital($digital)
+    public function getConcreteResource()
     {
-        $this->digital = $digital;
-
-        return $this;
-    }
-
-    /**
-     * Get digital
-     *
-     * @return string 
-     */
-    public function getDigital()
-    {
-        return $this->digital;
-    }
-
-    /**
-     * Set type
-     *
-     * @param \Innova\AppBundle\Entity\Type $type
-     * @return AbstractEntity
-     */
-    public function setType(\Innova\AppBundle\Entity\Type $type = null)
-    {
-        $this->type = $type;
-
-        return $this;
-    }
-
-    /**
-     * Get type
-     *
-     * @return \Innova\AppBundle\Entity\Type 
-     */
-    public function getType()
-    {
-        return $this->type;
+        return $this->concreteResource;
     }
 }

@@ -5,12 +5,12 @@ namespace Innova\AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * GenericRole
+ * Type
  *
- * @ORM\Table(name="inl_generic_role")
+ * @ORM\Table(name="inl_node_type")
  * @ORM\Entity
  */
-class GenericRole
+class NodeType
 {
     /**
      * @var integer
@@ -43,7 +43,7 @@ class GenericRole
      * Set name
      *
      * @param string $name
-     * @return GenericRole
+     * @return Type
      */
     public function setName($name)
     {

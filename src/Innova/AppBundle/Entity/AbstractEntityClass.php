@@ -5,12 +5,12 @@ namespace Innova\AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Type
+ * AbstractEntityClass
  *
- * @ORM\Table(name="inl_type")
+ * @ORM\Table(name="inl_abstract_entity_class")
  * @ORM\Entity
  */
-class Type
+class AbstractEntityClass
 {
     /**
      * @var integer
@@ -43,7 +43,7 @@ class Type
      * Set name
      *
      * @param string $name
-     * @return Type
+     * @return AbstractEntityClass
      */
     public function setName($name)
     {

@@ -5,12 +5,12 @@ namespace Innova\AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * LocalRole
+ * AbstractEntityType
  *
- * @ORM\Table(name="inl_local_role")
+ * @ORM\Table(name="inl_abstract_entity_type")
  * @ORM\Entity
  */
-class LocalRole
+class AbstractEntityType
 {
     /**
      * @var integer
@@ -31,15 +31,22 @@ class LocalRole
     /**
      * @var string
      *
-     * @ORM\Column(name="description", type="text")
+     * @ORM\Column(name="description", type="text", nullable=true)
      */
     private $description;
 
-	/**
-     * @ORM\ManyToMany(targetEntity="infoInscription")
-     * @ORM\JoinTable(name="inl_localrole_inscription")
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="is_digital", type="boolean")
      */
-	private $inscription;
+    private $isDigital;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="AbstractEntityClass")
+     */
+    private $abstractEntityClass;
+
 
     /**
      * Get id
@@ -55,7 +62,7 @@ class LocalRole
      * Set name
      *
      * @param string $name
-     * @return LocalRole
+     * @return AbstractEntityType
      */
     public function setName($name)
     {
@@ -78,7 +85,7 @@ class LocalRole
      * Set description
      *
      * @param string $description
-     * @return LocalRole
+     * @return AbstractEntityType
      */
     public function setDescription($description)
     {
@@ -96,44 +103,50 @@ class LocalRole
     {
         return $this->description;
     }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->inscription = new \Doctrine\Common\Collections\ArrayCollection();
-    }
 
     /**
-     * Add inscription
+     * Set isDigital
      *
-     * @param \Innova\AppBundle\Entity\infoInscription $inscription
-     * @return LocalRole
+     * @param boolean $isDigital
+     * @return AbstractEntityType
      */
-    public function addInscription(\Innova\AppBundle\Entity\infoInscription $inscription)
+    public function setIsDigital($isDigital)
     {
-        $this->inscription[] = $inscription;
+        $this->isDigital = $isDigital;
 
         return $this;
     }
 
     /**
-     * Remove inscription
+     * Get isDigital
      *
-     * @param \Innova\AppBundle\Entity\infoInscription $inscription
+     * @return boolean
      */
-    public function removeInscription(\Innova\AppBundle\Entity\infoInscription $inscription)
+    public function getIsDigital()
     {
-        $this->inscription->removeElement($inscription);
+        return $this->isDigital;
     }
 
     /**
-     * Get inscription
+     * Set abstractEntityClass
      *
-     * @return \Doctrine\Common\Collections\Collection
+     * @param \Innova\AppBundle\Entity\AbstractEntityClass $abstractEntityClass
+     * @return AbstractEntityType
      */
-    public function getInscription()
+    public function setAbstractEntityClass(\Innova\AppBundle\Entity\AbstractEntityClass $abstractEntityClass = null)
     {
-        return $this->inscription;
+        $this->abstractEntityClass = $abstractEntityClass;
+
+        return $this;
+    }
+
+    /**
+     * Get abstractEntityClass
+     *
+     * @return \Innova\AppBundle\Entity\AbstractEntityClass
+     */
+    public function getAbstractEntityClass()
+    {
+        return $this->abstractEntityClass;
     }
 }
