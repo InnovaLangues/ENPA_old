@@ -35,12 +35,6 @@ class ConcreteResource
      */
     private $path;
 
-	/**
-     * @var string
-     *
-     * @ORM\Column(name="pathIcon", type="string", length=255)
-     */
-    private $pathIcon;
 
     /**
      * @var string

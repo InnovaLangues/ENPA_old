@@ -46,6 +46,13 @@ class AbstractEntity
      * @ORM\ManyToOne(targetEntity="Type")
      */
     private $type;
+	
+	/**
+     * @var string
+     *
+     * @ORM\Column(name="pathIcon", type="string", length=255)
+     */
+    private $pathIcon;
 
     /**
      * Get id
