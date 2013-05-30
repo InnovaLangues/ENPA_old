@@ -9,71 +9,88 @@ use Innova\AppBundle\Entity\Workspace;
 
 class LoadWorkspaceData extends AbstractFixture implements OrderedFixtureInterface
 {
+    public function getOrder()
+    {
+        return 3; // the order in which fixtures will be loaded
+    }
     /**
      * {@inheritDoc}
      */
     public function load(ObjectManager $manager)
     {
 
-        $workspace = new Workspace();
-        $workspace->setName('Consulter un site web et discuter en groupe');
-        $workspace->setIsPattern(true);
+        $workspace1 = new Workspace();
+        $workspace1->setName('Consulter un site web et discuter en groupe');
+        $workspace1->setIsPattern(true);
+        $workspace1->addAbstractEntity($manager->merge($this->getReference('abstractEntity1')));
 
-        $manager->persist($workspace);
+        $manager->persist($workspace1);
 
-        $workspace = new Workspace();
-        $workspace->setName('Créer une synthèse');
-        $workspace->setIsPattern(true);
+        $workspace2 = new Workspace();
+        $workspace2->setName('Créer une synthèse');
+        $workspace2->setIsPattern(true);
 
-        $manager->persist($workspace);
+        $manager->persist($workspace2);
 
-        $workspace = new Workspace();
-        $workspace->setName('Tester une compétence');
-        $workspace->setIsPattern(true);
+        $workspace3 = new Workspace();
+        $workspace3->setName('Tester une compétence');
+        $workspace3->setIsPattern(true);
 
-        $manager->persist($workspace);
+        $manager->persist($workspace3);
 
-        $workspace = new Workspace();
-        $workspace->setName('Participer à un forum modéré');
-        $workspace->setIsPattern(true);
+        $workspace4 = new Workspace();
+        $workspace4->setName('Participer à un forum modéré');
+        $workspace4->setIsPattern(true);
 
-        $manager->persist($workspace);
+        $manager->persist($workspace4);
 
-        $workspace = new Workspace();
-        $workspace->setName('Consulter un document vidéo');
-        $workspace->setIsPattern(true);
+        $workspace5 = new Workspace();
+        $workspace5->setName('Consulter un document vidéo');
+        $workspace5->setIsPattern(true);
 
-        $manager->persist($workspace);
+        $manager->persist($workspace5);
 
-        $workspace = new Workspace();
-        $workspace->setName('Consulter un site web et discuter en groupe');
-        $workspace->setIsPattern(false);
+        $workspace6 = new Workspace();
+        $workspace6->setName('Consulter un site web et discuter en groupe');
+        $workspace6->setIsPattern(false);
 
-        $manager->persist($workspace);
+        $manager->persist($workspace6);
 
-        $workspace = new Workspace();
-        $workspace->setName('Tester le niveau B2');
-        $workspace->setIsPattern(false);
+        $workspace7 = new Workspace();
+        $workspace7->setName('Créer une synhèse du texte');
+        $workspace7->setIsPattern(false);
 
-        $manager->persist($workspace);
+        $manager->persist($workspace7);
 
-        $workspace = new Workspace();
-        $workspace->setName('Participer à un forum sur la culture italienne');
-        $workspace->setIsPattern(false);
+        $workspace8 = new Workspace();
+        $workspace8->setName('Tester le niveau B2');
+        $workspace8->setIsPattern(false);
 
-        $manager->persist($workspace);
+        $manager->persist($workspace8);
 
-        $workspace = new Workspace();
-        $workspace->setName('Consulter une émission de la RAI');
-        $workspace->setIsPattern(false);
+        $workspace9 = new Workspace();
+        $workspace9->setName('Participer à un forum sur la culture italienne');
+        $workspace9->setIsPattern(false);
 
-        $manager->persist($workspace);
+        $manager->persist($workspace9);
+
+        $workspace10 = new Workspace();
+        $workspace10->setName('Consulter une émission de la RAI');
+        $workspace10->setIsPattern(false);
+
+        $manager->persist($workspace10);
 
         $manager->flush();
-    }
 
-    public function getOrder()
-    {
-        return 6; // the order in which fixtures will be loaded
+        $this->addReference('workspace1', $workspace1);
+        $this->addReference('workspace2', $workspace2);
+        $this->addReference('workspace3', $workspace3);
+        $this->addReference('workspace4', $workspace4);
+        $this->addReference('workspace5', $workspace5);
+        $this->addReference('workspace6', $workspace6);
+        $this->addReference('workspace7', $workspace7);
+        $this->addReference('workspace8', $workspace8);
+        $this->addReference('workspace9', $workspace9);
+        $this->addReference('workspace10', $workspace10);
     }
 }

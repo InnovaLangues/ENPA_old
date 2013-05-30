@@ -32,6 +32,11 @@ class AbstractEntity
      */
     private $concreteResource;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="Workspace", mappedBy="abstractEntites")
+     */
+    private $workspaces;
+
 
     /**
      * Get id
@@ -104,5 +109,38 @@ class AbstractEntity
     public function getConcreteResource()
     {
         return $this->concreteResource;
+    }
+
+    /**
+     * Add workspaces
+     *
+     * @param \Innova\AppBundle\Entity\Workspace $workspaces
+     * @return AbstractEntity
+     */
+    public function addWorkspace(\Innova\AppBundle\Entity\Workspace $workspaces)
+    {
+        $this->workspaces[] = $workspaces;
+
+        return $this;
+    }
+
+    /**
+     * Remove workspaces
+     *
+     * @param \Innova\AppBundle\Entity\Workspace $workspaces
+     */
+    public function removeWorkspace(\Innova\AppBundle\Entity\Workspace $workspaces)
+    {
+        $this->workspaces->removeElement($workspaces);
+    }
+
+    /**
+     * Get workspaces
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getWorkspaces()
+    {
+        return $this->workspaces;
     }
 }

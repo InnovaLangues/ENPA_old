@@ -154,6 +154,6 @@ class LoadPathNodeData extends AbstractFixture implements OrderedFixtureInterfac
 
     public function getOrder()
     {
-        return 7; // the order in which fixtures will be loaded
+        return 10; // the order in which fixtures will be loaded
     }
 }

@@ -43,10 +43,10 @@ class Workspace
     private $description;
 
      /**
-     * @ORM\ManyToMany(targetEntity="AbstractEntity")
+     * @ORM\ManyToMany(targetEntity="AbstractEntity", inversedBy="workspaces")
      * @ORM\JoinTable(name="inl_workspace_to_abstract_entity")
      */
-    private $abstractEntity;
+    private $abstractEntites;
 
 
     /**

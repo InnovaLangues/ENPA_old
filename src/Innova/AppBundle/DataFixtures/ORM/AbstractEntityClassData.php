@@ -9,6 +9,12 @@ use Innova\AppBundle\Entity\AbstractEntityClass;
 
 class LoadAbstractEntityClassData extends AbstractFixture implements OrderedFixtureInterface
 {
+
+    public function getOrder()
+    {
+        return 1; // the order in which fixtures will be loaded
+    }
+
     /**
      * {@inheritDoc}
      */
@@ -74,8 +80,4 @@ class LoadAbstractEntityClassData extends AbstractFixture implements OrderedFixt
         $manager->flush();
     }
 
-    public function getOrder()
-    {
-        return 1; // the order in which fixtures will be loaded
-    }
 }

@@ -34,6 +34,6 @@ class LoadPathStatusTypeData extends AbstractFixture implements OrderedFixtureIn
 
     public function getOrder()
     {
-        return 4; // the order in which fixtures will be loaded
+        return 10; // the order in which fixtures will be loaded
     }
 }
