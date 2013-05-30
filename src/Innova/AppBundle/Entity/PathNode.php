@@ -25,13 +25,13 @@ class PathNode
 
     /**
      * @Gedmo\TreeLeft
-     * @ORM\Column(name="left", type="integer")
+     * @ORM\Column(name="lft", type="integer")
      */
     private $left;
 
     /**
      * @Gedmo\TreeRight
-     * @ORM\Column(name="right", type="integer")
+     * @ORM\Column(name="rgt", type="integer")
      */
     private $right;
 
@@ -64,6 +64,20 @@ class PathNode
      *
      */
     private $nodeType;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="node_ref_id", type="integer")
+     */
+    private $nodeRefId;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="tree_id", type="integer")
+     */
+    private $treeId;
 
 
     /**
@@ -99,7 +113,7 @@ class PathNode
     /**
      * Get left
      *
-     * @return integer 
+     * @return integer
      */
     public function getLeft()
     {
@@ -122,7 +136,7 @@ class PathNode
     /**
      * Get right
      *
-     * @return integer 
+     * @return integer
      */
     public function getRight()
     {
@@ -145,7 +159,7 @@ class PathNode
     /**
      * Get level
      *
-     * @return integer 
+     * @return integer
      */
     public function getLevel()
     {
@@ -168,7 +182,7 @@ class PathNode
     /**
      * Get position
      *
-     * @return integer 
+     * @return integer
      */
     public function getPosition()
     {
@@ -191,7 +205,7 @@ class PathNode
     /**
      * Get parent
      *
-     * @return \Innova\AppBundle\Entity\PathNode 
+     * @return \Innova\AppBundle\Entity\PathNode
      */
     public function getParent()
     {
@@ -224,7 +238,7 @@ class PathNode
     /**
      * Get children
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getChildren()
     {
@@ -247,10 +261,56 @@ class PathNode
     /**
      * Get nodeType
      *
-     * @return \Innova\AppBundle\Entity\nodeType 
+     * @return \Innova\AppBundle\Entity\nodeType
      */
     public function getNodeType()
     {
         return $this->nodeType;
+    }
+
+    /**
+     * Set nodeRefId
+     *
+     * @param integer $nodeRefId
+     * @return PathNode
+     */
+    public function setNodeRefId($nodeRefId)
+    {
+        $this->nodeRefId = $nodeRefId;
+
+        return $this;
+    }
+
+    /**
+     * Get nodeRefId
+     *
+     * @return integer
+     */
+    public function getNodeRefId()
+    {
+        return $this->nodeRefId;
+    }
+
+    /**
+     * Set treeId
+     *
+     * @param integer $treeId
+     * @return PathNode
+     */
+    public function setTreeId($treeId)
+    {
+        $this->treeId = $treeId;
+
+        return $this;
+    }
+
+    /**
+     * Get treeId
+     *
+     * @return integer
+     */
+    public function getTreeId()
+    {
+        return $this->treeId;
     }
 }

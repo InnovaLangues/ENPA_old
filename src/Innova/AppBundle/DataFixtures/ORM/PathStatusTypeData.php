@@ -20,10 +20,14 @@ class LoadPathStatusTypeData extends AbstractFixture implements OrderedFixtureIn
 
         $manager->persist($pathStatusType);
 
+        $this->addReference('pathStatusType1', $pathStatusType);
+
         $pathStatusType = new PathStatusType();
         $pathStatusType->setName('private');
 
         $manager->persist($pathStatusType);
+
+        $this->addReference('pathStatusType2', $pathStatusType);
 
         $manager->flush();
     }

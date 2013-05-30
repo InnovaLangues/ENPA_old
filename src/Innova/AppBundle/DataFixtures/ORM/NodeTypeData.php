@@ -20,10 +20,14 @@ class LoadNodeTypeData extends AbstractFixture implements OrderedFixtureInterfac
 
         $manager->persist($nodeType);
 
+        $this->addReference('nodeType1', $nodeType);
+
         $nodeType = new NodeType();
         $nodeType->setName('workspace');
 
         $manager->persist($nodeType);
+
+        $this->addReference('nodeType2', $nodeType);
 
         $manager->flush();
     }

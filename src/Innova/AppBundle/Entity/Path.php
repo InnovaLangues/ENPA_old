@@ -38,7 +38,7 @@ class Path
     /**
      * @var string
      *
-     * @ORM\Column(name="description", type="text")
+     * @ORM\Column(name="description", type="text", nullable=true)
      */
     private $description;
 
@@ -148,7 +148,7 @@ class Path
     /**
      * Get pathStatusType
      *
-     * @return \Innova\AppBundle\Entity\PathStatusType 
+     * @return \Innova\AppBundle\Entity\PathStatusType
      */
     public function getPathStatusType()
     {
@@ -171,7 +171,7 @@ class Path
     /**
      * Get pathNode
      *
-     * @return \Innova\AppBundle\Entity\PathNode 
+     * @return \Innova\AppBundle\Entity\PathNode
      */
     public function getPathNode()
     {
