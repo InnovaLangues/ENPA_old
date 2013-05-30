@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Session
  *
- * @ORM\Table(name="inl_sesison")
+ * @ORM\Table(name="inl_session")
  * @ORM\Entity
  */
 class Session
