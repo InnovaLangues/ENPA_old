@@ -273,7 +273,7 @@ class LoadAbstractEntityData extends AbstractFixture implements OrderedFixtureIn
 
         $manager->persist($abstractEntity50);
 
-        $manager->flush();
+        
 
         $this->addReference('abstractEntity1', $abstractEntity1);
         $this->addReference('abstractEntity2', $abstractEntity2);
@@ -325,6 +325,7 @@ class LoadAbstractEntityData extends AbstractFixture implements OrderedFixtureIn
         $this->addReference('abstractEntity48', $abstractEntity48);
         $this->addReference('abstractEntity49', $abstractEntity49);
         $this->addReference('abstractEntity50', $abstractEntity50);
+		$manager->flush();
     }
 
 }

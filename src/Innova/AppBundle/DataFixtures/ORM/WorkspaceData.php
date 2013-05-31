@@ -22,7 +22,6 @@ class LoadWorkspaceData extends AbstractFixture implements OrderedFixtureInterfa
         $workspace1 = new Workspace();
         $workspace1->setName('Consulter un site web et discuter en groupe');
         $workspace1->setIsPattern(true);
-        $workspace1->addAbstractEntity($manager->merge($this->getReference('abstractEntity1')));
 
         $manager->persist($workspace1);
 
@@ -80,8 +79,6 @@ class LoadWorkspaceData extends AbstractFixture implements OrderedFixtureInterfa
 
         $manager->persist($workspace10);
 
-        $manager->flush();
-
         $this->addReference('workspace1', $workspace1);
         $this->addReference('workspace2', $workspace2);
         $this->addReference('workspace3', $workspace3);
@@ -92,5 +89,7 @@ class LoadWorkspaceData extends AbstractFixture implements OrderedFixtureInterfa
         $this->addReference('workspace8', $workspace8);
         $this->addReference('workspace9', $workspace9);
         $this->addReference('workspace10', $workspace10);
+		
+		$manager->flush();
     }
 }
