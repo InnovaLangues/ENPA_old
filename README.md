@@ -13,7 +13,7 @@ Install :
 git clone git@github.com:InnovaLangues/ENA.git
 ```
 
-- Create app/config paramaters.yml based on the example parameters.yml.dist
+- Create app/config/paramaters.yml based on the example parameters.yml.dist
 
 - Do a composer install :
 
