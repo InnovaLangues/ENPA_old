@@ -22,6 +22,7 @@ class TestController extends Controller
         $entityManager = $this->getDoctrine()->getEntityManager();
         $repository = $entityManager->getRepository("InnovaLearningPathBundle:Step");
 
+        //TODO WTF?
         $step = $repository->find('71');
 
         $htmlTree = $repository->childrenHierarchy(
