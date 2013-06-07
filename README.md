@@ -1,4 +1,4 @@
-Environnement numérique d'apprentissage INNOVA Langues
+Environnement numérique personnel d'apprentissage INNOVA Langues
 ======================================================
 
 Requirements : Global composer install or local composer.phar
