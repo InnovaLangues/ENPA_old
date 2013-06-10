@@ -1,3 +1,8 @@
+innova_activity:
+    resource: "@InnovaActivityBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 innova_app:
     resource: "@InnovaAppBundle/Controller/"
     type:     annotation
