@@ -3,11 +3,12 @@
     <head>
         <meta charset="UTF-8" />
         <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
         <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
         <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
-        <link href="{{ asset('bundles/innovaapp/css/style.css') }}" rel="stylesheet">
+        {% block stylesheets %}
+            <link href="{{ asset('bundles/innovaapp/css/style.css') }}" rel="stylesheet">
+        {% endblock %}
     </head>
     <body>
         <div class="row">
