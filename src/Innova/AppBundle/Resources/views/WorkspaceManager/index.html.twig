@@ -1,56 +1,54 @@
 {% extends '::base.html.twig' %}
 
 {% block body %}
-    <div class="container">
-        {% include "InnovaAppBundle::WorkspaceManager/left-sidebar.html.twig" %}
-        {% include "InnovaAppBundle::WorkspaceManager/right-sidebar.html.twig" %}
-        ------------------
-        <select name="view-choice">
-            <option selected value="Vue concepteur">Vue concepteur</option>
-            <option value="Vue enseignant">Vue enseignant</option>
-            <option value="Vue tuteur">Vue tuteur</option>
-            <option value="Vue Apprenant">Vue Apprenant</option>
-        </select>
-        <div class="row">
-            <div class="span4">
-                <h3>Parcours</h3>
-                <form action="index_submit" method="post" accept-charset="utf-8">
-                    <input type="text" name="" value="" placeholder="Espagnol B2">
-                </form>
-                <div class="well">
-                  <ul>
-        <li id="phtml_1">
-            <a href="#">Root node 1</a>
-            <ul>
-                <li id="phtml_2">
-                    <a href="#">Child node 1</a>
-                </li>
-                <li id="phtml_3">
-                    <a href="#">Child node 2</a>
-                </li>
-            </ul>
-        </li>
-        <li id="phtml_4">
-            <a href="#">Root node 2</a>
-        </li>
-    </ul>
 
-                </div>
-                </div>
+<div class="container">
+    
+    {% include "InnovaAppBundle::WorkspaceManager/left-sidebar.html.twig" %}
+    {% include "InnovaAppBundle::WorkspaceManager/right-sidebar.html.twig" %}
+    ------------------
+    <select name="view-choice">
+        <option selected value="Vue concepteur">Vue concepteur</option>
+        <option value="Vue enseignant">Vue enseignant</option>
+        <option value="Vue tuteur">Vue tuteur</option>
+        <option value="Vue Apprenant">Vue Apprenant</option>
+    </select>
+    <div class="row">
+        <div class="span4">
+            <h3>Parcours</h3>
+            <form action="index_submit" method="post" accept-charset="utf-8">
+                <input type="text" name="" value="" placeholder="Espagnol B2">
+            </form>
+            <div class="well">
+                <ul>
+                    <li id="phtml_1">
+                        <a href="#">Root node 1</a>
+                        <ul>
+                            <li id="phtml_2">
+                                <a href="#">Child node 1</a>
+                            </li>
+                            <li id="phtml_3">
+                                <a href="#">Child node 2</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li id="phtml_4">
+                        <a href="#">Root node 2</a>
+                    </li>
+                </ul>
             </div>
-            <div class="span4">
-                <h3>Ressources types</h3>
-                <div class="well">
-
-                </div>
+        </div>
+        <div class="span4">
+            <h3>Ressources types</h3>
+            <div class="well">
             </div>
-            <div class="span4">
-                <h3>Ressources réelles</h3>
-                <div class="well">
-
-                </div>
+        </div>
+        <div class="span4">
+            <h3>Ressources réelles</h3>
+            <div class="well">
             </div>
         </div>
     </div>
-{% endblock %}
+</div>
 
+{% endblock %}
