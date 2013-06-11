@@ -1,9 +1,6 @@
 $(function(){
 
-	var hauteur = $("#voletH").css("height");
-	$("#voletH").css("top","-="+hauteur);
-	var hauteur2 = $("#voletH2").css("height");
-	$("#voletH2").css("top","-="+hauteur2);
+	
 
 	/*Fonctions servant à faire apparaitre correctement les tooltips*/
 	$('.droite').popover({placement:'right', container:'body',trigger:'hover'});
