@@ -24,7 +24,8 @@
         "symfony-cmf/tree-browser-bundle": "dev-master",
         "twitter/bootstrap": "2.3.*",
         "jquery/jquery": "1.9.*",
-        "innova-langues/learning-path-bundle": "dev-master"
+        "innova-langues/learning-path-bundle": "dev-master",
+        "friendsofsymfony/jsrouting-bundle": "~1.1"
     },
     "scripts": {
         "post-install-cmd": [
