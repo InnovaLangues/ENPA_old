@@ -19,8 +19,8 @@ class TestController extends Controller
      */
     public function indexAction()
     {
-        $entityManager = $this->getDoctrine()->getEntityManager();
-        $repository = $entityManager->getRepository("InnovaLearningPathBundle:Step");
+        $manager = $this->getDoctrine()->getManager();
+        $repository = $manager->getRepository("InnovaLearningPathBundle:Step");
 
         //TODO WTF ?
         $step = $repository->find('1');
