@@ -24,12 +24,12 @@ class TreeCommand extends ContainerAwareCommand
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-
         $output->writeln("Loading tree fixtures...");
         $command = $this->getApplication()->find('doctrine:fixtures:load');
         $arguments = array(
             'command' => 'doctrine:fixtures:load',
             '--fixtures'  => __DIR__.'/../DataFixtures/Dev/',
+            '--append' => true,
         );
 
         $input = new ArrayInput($arguments);
