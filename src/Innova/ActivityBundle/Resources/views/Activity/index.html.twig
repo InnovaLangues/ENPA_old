@@ -1,0 +1,49 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}Interface utilisateur - Prototype tuteur{% endblock %}
+
+{% block stylesheets %}
+	<link href="{{ asset('bundles/innovaactivity/css/jquery.contextmenu.css') }}" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="{{ asset('bundles/innovaactivity/css/perfect-scrollbar.css') }}"  rel="stylesheet" type="text/css" />
+    <link href="{{ asset('bundles/innovaactivity/css/style.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+			
+			<div class="row">
+
+					<!-- Fenêtres modales -->
+					
+					{% include 'InnovaActivityBundle:Activity:partials/modals.inc.html.twig' %}
+
+					<!-- Corps -->
+
+
+					
+			</div>
+				<!-- Barre latérale gauche -->
+				{% include 'InnovaActivityBundle:Activity:partials/voletgauche.html.twig'  %}
+				<!-- Barre latérale Droite -->
+				{% include 'InnovaActivityBundle:Activity:partials/voletdroite.html.twig'  %}
+				
+		</div>
+{% endblock %}
+
+{% block javascripts %}
+
+		<script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
+		<script src="{{ path('fos_js_routing_js', {"callback": "fos.Router.setData"}) }}"></script>
+		<script type="text/javascript">
+		var base_path = Routing.getBaseUrl().replace(/\w+\.php$/gi,'');
+		</script>
+		<script src="{{ asset('bundles/innovaactivity/js/jquery.contextmenu.js') }}"></script>
+		<script src="{{ asset('bundles/innovaactivity/js/accordeon.js') }}"></script>
+		<script src="{{ asset('bundles/innovaactivity/js/jquery.mousewheel.js') }}"></script>
+		<script src="{{ asset('bundles/innovaactivity/js/perfect-scrollbar.js') }}"></script>
+		
+		<script src="{{ asset('bundles/innovaactivity/js/fonctions.js') }}"></script>
+		<script src="{{ asset('bundles/innovaactivity/js/tools.js') }}"></script>
+		<script src="{{ asset('bundles/innovaactivity/js/init.js') }}"></script>
+
+{% endblock %}
