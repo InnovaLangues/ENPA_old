@@ -23,16 +23,20 @@ class TestController extends Controller
         $repository = $entityManager->getRepository("InnovaLearningPathBundle:Step");
 
         //TODO WTF ?
-        $step = $repository->find('71');
+        $step = $repository->find('1');
+
+        $options = array(
+            'decorate' => true,
+            'rootOpen' => '<ul class="sortable ui-sortable">',
+            'rootClose' => '</ul>',
+            'childOpen' => '<li>',
+            'childClose' => '</li>'
+        );
 
         $htmlTree = $repository->childrenHierarchy(
             $step,
             false,
-            array(
-                'decorate' => true,
-                'representationField' => 'name',
-                'html' => true
-            ),
+            $options,
             true
         );
 
