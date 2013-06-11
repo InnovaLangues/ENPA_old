@@ -161,3 +161,22 @@ height: 400px;
 .tree_abstract{
 list-style-type:none;
 }
+
+.tree{
+list-style-type:none;
+}
+
+.concrete{
+	list-style-type:none;
+}
+
+#header_test_bob{
+margin-top: 15px;
+margin-left: 50px;
+margin-bottom: 0px;
+padding-bottom: 0px;
+}
+
+.otherss{
+	margin-top: 24px;
+}
