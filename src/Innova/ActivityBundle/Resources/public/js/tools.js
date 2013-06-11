@@ -18,7 +18,7 @@ function ouvrir(elem){
 	else if (elem==".ouvrirH"){
 		var hauteur = $("#voletH").css("height");
 		$("#voletH").animate({
-			top: "+="+hauteur
+			top: 27
 		});
 		$(".ouvrirH").css("display","none");
 		$(".fermerH").css("display","block");
@@ -60,7 +60,7 @@ function fermer(elem){
 	else if (elem==".fermerH") {
 		var hauteur = $("#voletH").css("height");
 		$("#voletH").animate({
-			top: "-="+hauteur
+			top: -293
 		});
 		$(".ouvrirH").css("display","block");
 		$(".fermerH").css("display","none");

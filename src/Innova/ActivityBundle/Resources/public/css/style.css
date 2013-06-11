@@ -162,9 +162,9 @@ img {
 #voletH {
 	position: fixed;
 	width: 75%;
-	top: 35px;
+	top: -293px;
 	left: 150px;
-
+	height: 323px;
 	-webkit-box-shadow: 0px 0px 10px #888888;
 	box-shadow: 0px 0px 10px #888888;
 	margin-bottom: -160px;
