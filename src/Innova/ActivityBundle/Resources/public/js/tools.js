@@ -25,7 +25,7 @@ function ouvrir(elem){
 	}
 	else if (elem==".ouvrirH2"){
 		$("#voletH2").animate({
-			top: 45
+			top: 40
 		});
 		$(".ouvrirH2").css("display","none");
 		$(".fermerH2").css("display","block");
@@ -67,7 +67,7 @@ function fermer(elem){
 	}
 	else if (elem==".fermerH2") {
 		$("#voletH2").animate({
-			top: -196
+			top: -202
 		});
 		$(".ouvrirH2").css("display","block");
 		$(".fermerH2").css("display","none");
