@@ -157,3 +157,7 @@ height: 100%;
 #intention{
 height: 400px;
 }
+
+.tree_abstract{
+list-style-type:none;
+}

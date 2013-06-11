@@ -20,27 +20,57 @@
                 <input type="text" name="" value="" placeholder="Espagnol B2">
             </form>
             <div class="well">
-                <ul>
-                    <li id="phtml_1">
-                        <a href="#">Root node 1</a>
-                        <ul>
-                            <li id="phtml_2">
-                                <a href="#">Child node 1</a>
-                            </li>
-                            <li id="phtml_3">
-                                <a href="#">Child node 2</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li id="phtml_4">
-                        <a href="#">Root node 2</a>
-                    </li>
-                </ul>
+                {{ htmlTree|raw }}
             </div>
         </div>
         <div class="span4">
             <h3>Ressources types</h3>
             <div class="well">
+                <ul class="tree_abstract">
+                    <li>
+                        <h5>Qui</h5>
+                        <ul class="tree_abstract">
+                            <li><i class="icon-user"></i>Professeur</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h5>Pour qui</h5>
+                        <ul class="tree_abstract">
+                            <li><i class="icon-user"></i>Classe</li>
+                            <li><i class="icon-user"></i>Eleve</li>
+                            <li><i class="icon-user"></i>Binome</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h5>Lieux</h5>
+                        <ul class="tree_abstract">
+                            <li><i class="icon-home"></i>Labo</li>
+                            <li><i class="icon-home"></i>Classe</li>
+                            <li><i class="icon-home"></i>Dehors</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h5>Outils</h5>
+                        <ul class="tree_abstract">
+                            <li><i class="icon-wrench"></i>Video projecteur</li>
+                            <li><i class="icon-wrench"></i>Couteau</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h5>Ressources fournies</h5>
+                        <ul class="tree_abstract">
+                            <li><i class="icon-envelope"></i>Journal</li>
+                            <li><i class="icon-envelope"></i>Plan</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h5>Ressources produites</h5>
+                        <ul class="tree_abstract">
+                            <li><i class="icon-film"></i>Synthèse</li>
+                            <li><i class="icon-film"></i>Rapport</li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
         </div>
         <div class="span4">
