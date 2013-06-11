@@ -31,6 +31,12 @@
 {% endblock %}
 
 {% block javascripts %}
+
+		<script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
+		<script src="{{ path('fos_js_routing_js', {"callback": "fos.Router.setData"}) }}"></script>
+		<script type="text/javascript">
+		var base_path = Routing.getBaseUrl().replace(/\w+\.php$/gi,'');
+		</script>
 		<script src="{{ asset('bundles/innovaactivity/js/jquery.contextmenu.js') }}"></script>
 		<script src="{{ asset('bundles/innovaactivity/js/accordeon.js') }}"></script>
 		<script src="{{ asset('bundles/innovaactivity/js/jquery.mousewheel.js') }}"></script>
@@ -39,4 +45,5 @@
 		<script src="{{ asset('bundles/innovaactivity/js/fonctions.js') }}"></script>
 		<script src="{{ asset('bundles/innovaactivity/js/tools.js') }}"></script>
 		<script src="{{ asset('bundles/innovaactivity/js/init.js') }}"></script>
+
 {% endblock %}

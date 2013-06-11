@@ -25,8 +25,8 @@ $(document).ready(function() {
 	 		$(this).removeClass("icon-folder-open");
 	 	}
 	 	else if ($(this).parent().is("div")) {
-	 		
-	 		$(this).children("img").attr("src","../img/folder-close.png");
+
+	 		$(this).children("img").attr("src",base_path+"bundles/innovaactivity/img/folder-close.png");
 	 	}
    
 		//IF THE NEXT SLIDE WASN'T OPEN THEN OPEN IT
@@ -39,7 +39,7 @@ $(document).ready(function() {
 		 		$(this).removeClass("icon-folder-close");
 	 		}
 	 		else if ($(this).parent().is("div")) {
-	 			$(this).children("img").attr("src","{{ asset('bundles/innovaactivity/img/folder-open.png') }}");
+	 			$(this).children("img").attr("src",base_path+"bundles/innovaactivity/img/folder-open.png");
 	 		}
 			  
 			//OPEN THE SLIDE
