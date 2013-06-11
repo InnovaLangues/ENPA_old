@@ -15,17 +15,23 @@
     </select>
     <div class="row">
         <div class="span4">
-            <h3>Parcours</h3>
-            <form action="index_submit" method="post" accept-charset="utf-8">
-                <input type="text" name="" value="" placeholder="Espagnol B2">
-            </form>
+            <div class="row">
+                <div class="span1" id="title_test_bob">
+                    <h3>Parcours</h3>
+                </div>
+                <div id="header_test_bob" class="span1">
+                    <form action="index_submit" method="post" accept-charset="utf-8" id="form_test_bob">
+                        <input type="text" name="" value="" placeholder="Espagnol B2">
+                    </form>
+                </div>
+            </div>
             <div class="well">
                 {{ htmlTree|raw }}
             </div>
         </div>
         <div class="span4">
             <h3>Ressources types</h3>
-            <div class="well">
+            <div class="well otherss">
                 <ul class="tree_abstract">
                     <li>
                         <h5>Qui</h5>
@@ -75,7 +81,26 @@
         </div>
         <div class="span4">
             <h3>Ressources réelles</h3>
-            <div class="well">
+            <div class="well otherss">
+                <ul class="concrete">
+                    <li>
+                        <i class="icon-folder-open"></i>Dossier Pierre
+                        <ul class="concrete">
+                            <li>fichier1</li>
+                            <li>fichier2</li>
+                            <li>fichier3</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <i class="icon-folder-open"></i>Dossier Jean-Louis
+                        <ul class="concrete">
+                            <li>fichier1</li>
+                            <li>fichier2</li>
+                            <li>fichier3</li>
+                            <li>fichier4</li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
