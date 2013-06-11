@@ -26,6 +26,7 @@ $(document).ready(function() {
 	 	}
 	 	else if ($(this).parent().is("div")) {
 	 		$(this).children("img").attr("src","{{ asset('bundles/innovaactivity/img/folder-close.png') }}");
+	 		
 	 	}
    
 		//IF THE NEXT SLIDE WASN'T OPEN THEN OPEN IT
