@@ -23,7 +23,9 @@ class AppKernel extends Kernel
             new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(),
             new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
             #new Bc\Bundle\BootstrapBundle\BcBootstrapBundle()
-            new Innova\LearningPathBundle\InnovaLearningPathBundle()
+            new Innova\LearningPathBundle\InnovaLearningPathBundle(),
+            new Innova\ActivityBundle\InnovaActivityBundle(),
+            new FOS\JsRoutingBundle\FOSJsRoutingBundle()
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

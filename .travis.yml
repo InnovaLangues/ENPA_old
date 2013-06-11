@@ -6,4 +6,4 @@ php:
 script: phpunit -c app/
 before_script:
   - cp app/config/parameters.yml.dist app/config/parameters.yml
-  - composer install
+  - composer --prefer-source --dev install
