@@ -3,7 +3,7 @@
 function sort(){
 	$('.sortable').sortable({
 		connectWith: $('.sortable'),
-		helper: "clone"
+		helper: "clone",
 	}).disableSelection();
 }
 
@@ -69,11 +69,26 @@ $(document).ready(function () {
 	
 	sort();
 
-	$('#trash').droppable({
+/*	$('#trash').droppable({
 		hoverClass: "ui-state-active",
         drop: function(event, ui) {
+
             $(ui.draggable).remove();
         }
-    });
+    });*/
+
+	$(".deleteItem").click(function(){
+		$(this).parent().css("display","none");
+	});
+
+	$(".editableItem").mouseover(function(e){
+
+		$(this).children(".deleteItem").css("visibility","visible");
+		
+	});
+
+	$(".editableItem").mouseleave(function(){
+		$(this).children(".deleteItem").css("visibility","hidden");
+	});
 			
 });

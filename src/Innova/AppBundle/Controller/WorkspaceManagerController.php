@@ -31,7 +31,7 @@ class WorkspaceManagerController extends Controller
             'decorate' => true,
             'rootOpen' => '<ul id="cible" class="tree sortable droppable ui-droppable ui-sortable">',
             'rootClose' => '</ul>',
-            'childOpen' => '<li><i class="icon-briefcase"></i>',
+            'childOpen' => '<li class="editableItem"><i class="icon-trash deleteItem"></i> <i class="icon-briefcase"></i> ',
             'childClose' => '</li>'
         );
 
