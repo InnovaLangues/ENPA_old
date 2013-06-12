@@ -80,74 +80,74 @@ function fermer(elem){
 function changerTitre(doc){
 	/*Week1*/
 	if( doc==".week1Doc1"){
-		$("#clicWeek1 .titreAChange").html("<img src=\"img/document.png\" class=\"offset1\"/>The Flatmates: At the Airport");
+		$("#clicWeek1 .titreAChange").html("<img src=\""+base_path+"bundles/innovaactivity/img/document.png\" class=\"offset1\"/>The Flatmates: At the Airport");
 	}
 	else if (doc==".week1Doc2"){
-		$("#clicWeek1 .titreAChange").html("<img src=\"img/document.png\" class=\"offset1\"/>What are your best qualities?");
+		$("#clicWeek1 .titreAChange").html("<img src=\""+base_path+"bundles/innovaactivity/img/document.png\" class=\"offset1\"/>What are your best qualities?");
 	}
 	else if (doc==".week1Doc3"){
-		$("#clicWeek1 .titreAChange").html("<img src=\"img/document.png\" class=\"offset1\"/>The Flatmates: Not so much Luck");
+		$("#clicWeek1 .titreAChange").html("<img src=\""+base_path+"bundles/innovaactivity/img/document.png\" class=\"offset1\"/>The Flatmates: Not so much Luck");
 	}
 	else if (doc==".week1Doc4"){
-		$("#clicWeek1 .titreAChange").html("<img src=\"img/document.png\" class=\"offset1\"/>Have or have got");
+		$("#clicWeek1 .titreAChange").html("<img src=\""+base_path+"bundles/innovaactivity/img/document.png\" class=\"offset1\"/>Have or have got");
 	}
 	else if (doc==".week1Doc5"){
-		$("#clicWeek1 .titreAChange").html("<img src=\"img/document.png\" class=\"offset1\"/>The Flatmates: At the Airport");
+		$("#clicWeek1 .titreAChange").html("<img src=\""+base_path+"bundles/innovaactivity/img/document.png\" class=\"offset1\"/>The Flatmates: At the Airport");
 	}
 	/*Week2*/
 	else if (doc==".week2Doc1"){
-		$("#clicWeek2 .titreAChange").html("<img src=\"img/document.png\" class=\"offset1\"/>Listen to six people describe where they like to live");
+		$("#clicWeek2 .titreAChange").html("<img src=\""+base_path+"bundles/innovaactivity/img/document.png\" class=\"offset1\"/>Listen to six people describe where they like to live");
 	}
 	else if (doc==".week2Doc2"){
-		$("#clicWeek2 .titreAChange").html("<img src=\"img/document.png\" class=\"offset1\"/>Countryside");
+		$("#clicWeek2 .titreAChange").html("<img src=\""+base_path+"bundles/innovaactivity/img/document.png\" class=\"offset1\"/>Countryside");
 	}
 	else if (doc==".week2Doc3"){
-		$("#clicWeek2 .titreAChange").html("<img src=\"img/document.png\" class=\"offset1\"/>Town jigsaw puzzle");
+		$("#clicWeek2 .titreAChange").html("<img src=\""+base_path+"bundles/innovaactivity/img/document.png\" class=\"offset1\"/>Town jigsaw puzzle");
 	}
 	else if (doc==".week2Doc4"){
-		$("#clicWeek2 .titreAChange").html("<img src=\"img/document.png\" class=\"offset1\"/>Listen to six people describing the best places to live");
+		$("#clicWeek2 .titreAChange").html("<img src=\""+base_path+"bundles/innovaactivity/img/document.png\" class=\"offset1\"/>Listen to six people describing the best places to live");
 	}
 	else if (doc==".week2Doc5"){
-		$("#clicWeek2 .titreAChange").html("<img src=\"img/document.png\" class=\"offset1\"/>Past Simple");
+		$("#clicWeek2 .titreAChange").html("<img src=\""+base_path+"bundles/innovaactivity/img/document.png\" class=\"offset1\"/>Past Simple");
 	}
 	/*Week3*/
 	else if (doc==".week3Doc1"){
-		$("#clicWeek3 .titreAChange").html("<img src=\"img/document.png\" class=\"offset1\"/>Office vocabulary (Match the image with the word)");
+		$("#clicWeek3 .titreAChange").html("<img src=\""+base_path+"bundles/innovaactivity/img/document.png\" class=\"offset1\"/>Office vocabulary (Match the image with the word)");
 	}
 	else if (doc==".week3Doc2"){
-		$("#clicWeek3 .titreAChange").html("<img src=\"img/document.png\" class=\"offset1\"/>Shapes vocabulary (Match the image with the word)");
+		$("#clicWeek3 .titreAChange").html("<img src=\""+base_path+"bundles/innovaactivity/img/document.png\" class=\"offset1\"/>Shapes vocabulary (Match the image with the word)");
 	}
 	else if (doc==".week3Doc3"){
-		$("#clicWeek3 .titreAChange").html("<img src=\"img/document.png\" class=\"offset1\"/>Match the image with the word");
+		$("#clicWeek3 .titreAChange").html("<img src=\""+base_path+"bundles/innovaactivity/img/document.png\" class=\"offset1\"/>Match the image with the word");
 	}
 	/*Week4*/
 	else if (doc==".week4Doc1"){
-		$("#clicWeek4 .titreAChange").html("<img src=\"img/document.png\" class=\"offset1\"/>Describing people");
+		$("#clicWeek4 .titreAChange").html("<img src=\""+base_path+"bundles/innovaactivity/img/document.png\" class=\"offset1\"/>Describing people");
 	}
 	else if (doc==".week4Doc2"){
-		$("#clicWeek4 .titreAChange").html("<img src=\"img/document.png\" class=\"offset1\"/>Past Simple");
+		$("#clicWeek4 .titreAChange").html("<img src=\""+base_path+"bundles/innovaactivity/img/document.png\" class=\"offset1\"/>Past Simple");
 	}
 	else if (doc==".week4Doc3"){
-		$("#clicWeek4 .titreAChange").html("<img src=\"img/document.png\" class=\"offset1\"/>Shapes");
+		$("#clicWeek4 .titreAChange").html("<img src=\""+base_path+"bundles/innovaactivity/img/document.png\" class=\"offset1\"/>Shapes");
 	}
 	else if (doc==".week4Doc4"){
-		$("#clicWeek4 .titreAChange").html("<img src=\"img/document.png\" class=\"offset1\"/>In the Classroom quiz");
+		$("#clicWeek4 .titreAChange").html("<img src=\""+base_path+"bundles/innovaactivity/img/document.png\" class=\"offset1\"/>In the Classroom quiz");
 	}
 	else if (doc==".week4Doc5"){
-		$("#clicWeek4 .titreAChange").html("<img src=\"img/document.png\" class=\"offset1\"/>Adjectives");
+		$("#clicWeek4 .titreAChange").html("<img src=\""+base_path+"bundles/innovaactivity/img/document.png\" class=\"offset1\"/>Adjectives");
 	}
 	else if (doc==".week4Doc6"){
-		$("#clicWeek4 .titreAChange").html("<img src=\"img/document.png\" class=\"offset1\"/>Adjectives");
+		$("#clicWeek4 .titreAChange").html("<img src=\""+base_path+"bundles/innovaactivity/img/document.png\" class=\"offset1\"/>Adjectives");
 	}
 	/*Week5*/
 	else if (doc==".week5Doc1"){
-		$("#clicWeek5 .titreAChange").html("<img src=\"img/document.png\" class=\"offset1\"/>How to Write an Article?");
+		$("#clicWeek5 .titreAChange").html("<img src=\""+base_path+"bundles/innovaactivity/img/document.png\" class=\"offset1\"/>How to Write an Article?");
 	}
 	else if (doc==".week5Doc2"){
-		$("#clicWeek5 .titreAChange").html("<img src=\"img/document.png\" class=\"offset1\"/>The Simpsons");
+		$("#clicWeek5 .titreAChange").html("<img src=\""+base_path+"bundles/innovaactivity/img/document.png\" class=\"offset1\"/>The Simpsons");
 	}
 	else if (doc==".week5Doc3"){
-		$("#clicWeek5 .titreAChange").html("<img src=\"img/document.png\" class=\"offset1\"/>Writing");
+		$("#clicWeek5 .titreAChange").html("<img src=\""+base_path+"bundles/innovaactivity/img/document.png\" class=\"offset1\"/>Writing");
 	}
 	/*Niveaux*/
 	else if (doc==".nivWeek1"){

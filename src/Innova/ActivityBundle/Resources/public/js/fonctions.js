@@ -395,6 +395,9 @@ $(function(){
 			ouvrirPage("#clicWeek3Doc2p2");
 		});
 
-})
+
+    });
+
+
 
 
