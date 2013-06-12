@@ -1,0 +1,53 @@
+{% extends 'InnovaActivityBundle:Activity:partials/activitybase.html.twig' %}
+
+{% block clicActSpace %}
+    <div id="clicWeek5">
+{% endblock %}
+
+{% block titleActSpace %}
+	Week 5- Writing
+{% endblock %}
+
+{% block listAct %}
+    <li class="menuAct"><a href="#week5Doc1" data-toggle="tab" class="week5Doc1"><img src="{{ asset('bundles/innovaactivity/img/document.png') }}" /></a></li>
+	<li class="menuAct"><a href="#week5Doc2" data-toggle="tab" class="week5Doc2"><img src="{{ asset('bundles/innovaactivity/img/document.png') }}" /></a></li>
+	<li class="menuAct"><a href="#week5Doc3" data-toggle="tab" class="week5Doc3"><img src="{{ asset('bundles/innovaactivity/img/document.png') }}" /></a></li>
+{% endblock %}
+		
+{% block tabAct %}
+				<div class="tab-pane active tabDescr">
+					<h3>Week 5- Writing</h3>
+					<img src="{{ asset('bundles/innovaactivity/img/util/parcourspass/etape2/week5/entete.jpg') }}" class="imgCorps"/>
+					<p>This unit is the time for us to stop for a moment and review the exercises we've done up until now and test ourselves on what we've learned</p>
+
+				</div>
+				<div class="tab-pane" id="week5Doc1">
+					<h3>How to Write an Article?</h3>
+						<p>
+							Read these tips on how to write an article
+							<br>
+							<a href="#">Séries d’exercices</a>
+
+						</p>
+				</div>
+				<div class="tab-pane" id="week5Doc2">
+					<h3>The Simpsons</h3>
+						<p>
+							Learn everything about the Simpson family
+							<br>
+							<a href="#">Séries d’exercices</a>
+
+						</p>
+				</div>
+				<div class="tab-pane" id="week5Doc3">
+					<h3>Writing</h3>
+						<p>
+							You are currently working for Entertainment Weekly and you have been asked to write an article about a brand new TV series: the Simpsons (haha)! In about 250 words, you should make the readers want to watch this TV show
+							<br>
+							<a href="#">Outil de saisie de texte</a>
+							<a href="#">Collecticiel</a>
+
+						</p>
+				</div>
+{% endblock %}
+		
