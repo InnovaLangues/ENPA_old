@@ -68,5 +68,12 @@ $(document).ready(function () {
 	});
 	
 	sort();
+
+	$('#trash').droppable({
+		hoverClass: "ui-state-active",
+        drop: function(event, ui) {
+            $(ui.draggable).remove();
+        }
+    });
 			
 });
