@@ -26,13 +26,17 @@ class WorkspaceManagerController extends Controller
         //TODO WTF ?
         $step = $repository->find('1');
 
-
         $options = array(
             'decorate' => true,
             'rootOpen' => '<ul id="cible" class="tree sortable droppable ui-droppable ui-sortable">',
             'rootClose' => '</ul>',
-            'childOpen' => '<li><i class="icon-briefcase"></i>',
-            'childClose' => '</li>'
+            //'childOpen' => '<li id="bob"><i class="icon-briefcase"></i>',
+            'childClose' => '</li>',
+            'childOpen' => function($child) {
+                if(count($child)){
+                    return '<li id="' . $child["id"] . '"><i class="icon-briefcase"></i>';
+                }
+             }
         );
 
         $htmlTree = $repository->childrenHierarchy(
@@ -45,3 +49,26 @@ class WorkspaceManagerController extends Controller
         return array('htmlTree' => $htmlTree);
     }
 }
+
+/*{
+    "step": {
+        "id": "example step",
+        "title": "example step"
+        "GlossDiv": {
+            "title": "S",
+            "GlossList": {
+                "GlossEntry": {
+                    "ID": "SGML",
+                    "SortAs": "SGML",
+                    "GlossTerm": "Standard Generalized Markup Language",
+                    "Acronym": "SGML",
+                    "Abbrev": "ISO 8879:1986",
+                    "GlossDef": {
+                        "para": "A meta-markup language, used to create markup languages such as DocBook.",
+                        "GlossSeeAlso": ["GML", "XML"]
+                    },
+                    "GlossSee": "markup"
+                }
+            }
+        }
+    }*/
