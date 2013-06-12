@@ -7,6 +7,20 @@ function sort(){
 	}).disableSelection();
 }
 
+function parseTree(ul){
+    var tags = [];
+    ul.children("li").each(function(){
+        var subtree = $(this).children("ul");
+        console.log(subtree);
+        if(subtree.size() > 0){
+            tags.push([$(this).attr("id"), parseTree(subtree)]);
+        }
+        else{
+            tags.push($(this).attr("id"));
+        }
+    });
+    return tags;
+}
 
 function save_tree(){
 	tree_html = $("#cible").html();
@@ -25,9 +39,19 @@ function save_tree(){
 ////////////////////////////////////////////////////
 //////////// GESTION CLICK ETC. ////////////////////
 $(document).ready(function () {	
-	
 	$("#save").click(function() {
-		save_tree();
+		/*save_tree();*/
+		//var tree = parseTree($("#cible"));
+		//var tree = parseTree($("#cible")).toJSON();
+		var items = $('#cible').find('li').map(function() {
+		  var item = { };
+
+		  item.id = this.id;
+		  item.title = $(this).text();
+
+		  return item;
+		});
+		console.log(items);
 	});
 	
 	$(".delete_node").click(function() {
@@ -50,8 +74,6 @@ $(document).ready(function () {
 				alert("noeud supprimé");
 			},
 		})
-		
-		
 	});
 	
 	$(".droppable").droppable({
