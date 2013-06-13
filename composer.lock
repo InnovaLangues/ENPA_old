@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "318301dd96dbc29b0fda7cd3228973a5",
+    "hash": "6ee727affdaba4a82582c853034966dc",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -839,45 +839,6 @@
                 "uploadable"
             ],
             "time": "2013-05-21 12:09:55"
-        },
-        {
-            "name": "innova-langues/learning-path-bundle",
-            "version": "dev-master",
-            "target-dir": "Innova/LearningPathBundle",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/InnovaLangues/LearningPathBundle.git",
-                "reference": "f417fa8b5b9cf9864b145e0eb6ee05933233e8b9"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/InnovaLangues/LearningPathBundle/zipball/f417fa8b5b9cf9864b145e0eb6ee05933233e8b9",
-                "reference": "f417fa8b5b9cf9864b145e0eb6ee05933233e8b9",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Innova\\LearningPathBundle": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "authors": [
-                {
-                    "name": "Arnaud Bey",
-                    "email": "arnaud.bey@u-grenoble3.fr"
-                }
-            ],
-            "description": "Learning path bundle",
-            "homepage": "http://lansad.u-grenoble3.fr/",
-            "keywords": [
-                "Claroline",
-                "Learning path bundle"
-            ],
-            "time": "2013-06-06 15:04:13"
         },
         {
             "name": "jdorn/sql-formatter",
@@ -2189,8 +2150,7 @@
         "doctrine/doctrine-fixtures-bundle": 20,
         "stof/doctrine-extensions-bundle": 20,
         "friendsofsymfony/jsrouting-bundle": 20,
-        "symfony-cmf/tree-browser-bundle": 20,
-        "innova-langues/learning-path-bundle": 20
+        "symfony-cmf/tree-browser-bundle": 20
     },
     "platform": {
         "php": ">=5.3.3"
