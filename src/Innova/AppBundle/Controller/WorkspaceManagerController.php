@@ -26,15 +26,15 @@ class WorkspaceManagerController extends Controller
         //TODO WTF ?
         $step = $repository->find('1');
 
+
         $options = array(
             'decorate' => true,
             'rootOpen' => '<ul id="cible" class="tree sortable droppable ui-droppable ui-sortable">',
             'rootClose' => '</ul>',
-            //'childOpen' => '<li id="bob"><i class="icon-briefcase"></i>',
             'childClose' => '</li>',
             'childOpen' => function($child) {
                 if(count($child)){
-                    return '<li id="' . $child["id"] . '"><i class="icon-briefcase"></i>';
+                    return '<li id="' . $child["id"] . '"><i class="icon-trash deleteItem"></i> <i class="icon-briefcase"></i>';
                 }
              }
         );

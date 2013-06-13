@@ -3,7 +3,7 @@
 function sort(){
 	$('.sortable').sortable({
 		connectWith: $('.sortable'),
-		helper: "clone"
+		helper: "clone",
 	}).disableSelection();
 }
 
@@ -90,5 +90,27 @@ $(document).ready(function () {
 	});
 	
 	sort();
+
+/*	$('#trash').droppable({
+		hoverClass: "ui-state-active",
+        drop: function(event, ui) {
+
+            $(ui.draggable).remove();
+        }
+    });*/
+
+	$(".deleteItem").click(function(){
+		$(this).parent().remove();
+	});
+
+	$(".editableItem").mouseover(function(e){
+		$(this).children(".deleteItem").css("visibility","visible");
+		$(this).parents().children(".deleteItem").css("visibility","hidden");
+		e.stopPropagation();
+	});
+
+	$(".editableItem").mouseout(function(){
+		$(this).children(".deleteItem").css("visibility","hidden");
+	});
 			
 });
