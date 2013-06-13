@@ -34,7 +34,7 @@ class WorkspaceManagerController extends Controller
             'childClose' => '</li>',
             'childOpen' => function($child) {
                 if(count($child)){
-                    return '<li id="' . $child["id"] . '"><i class="icon-trash deleteItem"></i> <i class="icon-briefcase"></i>';
+                    return '<li class="editable-item" id="' . $child["id"] . '"><i class="icon-trash delete-item"></i> <i class="icon-briefcase"></i>';
                 }
              }
         );
