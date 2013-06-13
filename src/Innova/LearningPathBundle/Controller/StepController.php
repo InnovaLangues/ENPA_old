@@ -14,6 +14,65 @@ class StepController extends Controller
      */
     public function indexAction()
     {
+    	$htmlTree = $this->drawTree();
+        return array('htmlTree' => $htmlTree);
+    }
+
+
+
+ 	/**
+    * @Route("/ajax_savetree", name="ajax_savetree")
+    * @Method({"POST"})
+    */
+    public function ajaxSaveTreeAction(Request $request)
+    {
+        $manager = $this->getDoctrine()->getManager();
+        $repository = $manager->getRepository("InnovaLearningPathBundle:Step");
+
+        if ($request->getMethod() == 'POST') {
+            $json = $request->get('json');
+            $steps = json_decode($json);
+            TreeConstruct($steps, $manager, null)
+            $manager->flush();
+        }
+
+        return array('htmlTree' => $htmlTree);
+    }
+
+
+    /**
+     * [TreeConstruct description]
+     * @param array  $steps
+     * @param [type] $manager
+     * @param Step   $stepParent
+     */
+    private function TreeConstruct(array $steps, $manager, Step $stepParent = null){
+        foreach ($steps->children() as $step){
+            
+            if ($step["id"] != ""){
+                $newStep = $manager->getRepository("InnovaLearningPathBundle:Step")->find($step["id"]);
+            }
+            else{
+                $newStep = new Step();
+            }
+
+            $newStep->setName($step['name']);
+            $newStep->setParent($stepParent);
+
+            $manager->persist($newStep);
+
+            $stepParent = $newStep->getParent();
+            
+            TreeConstruct($steps, $manager, $stepParent);
+        }
+
+    }
+
+
+
+
+    public function drawTree()
+    {
         $manager = $this->getDoctrine()->getManager();
         $repository = $manager->getRepository("InnovaLearningPathBundle:Step");
 
@@ -40,6 +99,6 @@ class StepController extends Controller
             true
         );
 
-        return array('htmlTree' => $htmlTree);
+        return $htmlTree;
     }
 }
