@@ -99,11 +99,11 @@ $(document).ready(function () {
         }
     });*/
 
-	$(".delete-item").click(function(){
+	$(".well .delete-item").click(function(){
 		$(this).parent().remove();
 	});
 
-	$(".editable-item").mouseover(function(e){
+	$(".well .editable-item").mouseover(function(e){
 		$(this).children(".delete-item").css("visibility","visible");
 		$(this).parents().children(".delete-item").css("visibility","hidden");
 		e.stopPropagation();
