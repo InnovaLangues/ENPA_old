@@ -1,21 +1,15 @@
 <?php
 
-namespace Innova\AppBundle\Controller;
+namespace Innova\LearningPathBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
-use Innova\LearningPathBundle\Entity\Step;
 
-
-/**
- * WorkspaceManagerController.
- *
- */
-class WorkspaceManagerController extends Controller
+class StepController extends Controller
 {
     /**
-     * @Route("/")
+     * @Route("/step")
      * @Template()
      */
     public function indexAction()
@@ -49,26 +43,3 @@ class WorkspaceManagerController extends Controller
         return array('htmlTree' => $htmlTree);
     }
 }
-
-/*{
-    "step": {
-        "id": "example step",
-        "title": "example step"
-        "GlossDiv": {
-            "title": "S",
-            "GlossList": {
-                "GlossEntry": {
-                    "ID": "SGML",
-                    "SortAs": "SGML",
-                    "GlossTerm": "Standard Generalized Markup Language",
-                    "Acronym": "SGML",
-                    "Abbrev": "ISO 8879:1986",
-                    "GlossDef": {
-                        "para": "A meta-markup language, used to create markup languages such as DocBook.",
-                        "GlossSeeAlso": ["GML", "XML"]
-                    },
-                    "GlossSee": "markup"
-                }
-            }
-        }
-    }*/
