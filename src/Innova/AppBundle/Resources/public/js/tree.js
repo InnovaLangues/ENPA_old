@@ -82,9 +82,7 @@ $(document).ready(function () {
 	});
 
 	$(".editableItem").mouseover(function(e){
-
 		$(this).children(".deleteItem").css("visibility","visible");
-		
 	});
 
 	$(".editableItem").mouseleave(function(){
