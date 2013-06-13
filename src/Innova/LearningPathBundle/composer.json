@@ -1,0 +1,21 @@
+{
+    "name": "innova-langues/learning-path-bundle",
+    "description": "Learning path bundle",
+    "keywords": ["Claroline","Learning path bundle"],
+    "homepage": "http://lansad.u-grenoble3.fr/",
+    "type": "library",
+    "license": "",
+    "authors": [
+        {
+            "name": "Arnaud Bey",
+            "email": "arnaud.bey@u-grenoble3.fr"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0"
+    },
+    "autoload": {
+        "psr-0": { "Innova\\LearningPathBundle": "" }
+    },
+    "target-dir": "Innova/LearningPathBundle"
+}
