@@ -78,14 +78,16 @@ $(document).ready(function () {
     });*/
 
 	$(".deleteItem").click(function(){
-		$(this).parent().css("display","none");
+		$(this).parent().remove();
 	});
 
 	$(".editableItem").mouseover(function(e){
 		$(this).children(".deleteItem").css("visibility","visible");
+		$(this).parents().children(".deleteItem").css("visibility","hidden");
+		e.stopPropagation();
 	});
 
-	$(".editableItem").mouseleave(function(){
+	$(".editableItem").mouseout(function(){
 		$(this).children(".deleteItem").css("visibility","hidden");
 	});
 			
