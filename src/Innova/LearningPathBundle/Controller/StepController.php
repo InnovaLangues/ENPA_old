@@ -2,9 +2,11 @@
 
 namespace Innova\LearningPathBundle\Controller;
 
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 
 class StepController extends Controller
 {
@@ -31,12 +33,14 @@ class StepController extends Controller
 
         if ($request->getMethod() == 'POST') {
             $json = $request->get('json');
-            $steps = json_decode($json);
-            TreeConstruct($steps, $manager, null)
+            //$steps = json_decode($json);
+            echo($json);
+            $this->treeConstruct($steps, $manager, null);
             $manager->flush();
         }
 
-        return array('htmlTree' => $htmlTree);
+        //return array('htmlTree' => $htmlTree);
+        //echo $htmlTree;
     }
 
 
@@ -46,8 +50,11 @@ class StepController extends Controller
      * @param [type] $manager
      * @param Step   $stepParent
      */
-    private function TreeConstruct(array $steps, $manager, Step $stepParent = null){
-        foreach ($steps->children() as $step){
+    private function treeConstruct($steps, $manager, Step $stepParent = null){
+        $root = $steps->root;
+        var_dump($steps);
+        die();
+        foreach ($steps->getChildren() as $step){
             
             if ($step["id"] != ""){
                 $newStep = $manager->getRepository("InnovaLearningPathBundle:Step")->find($step["id"]);
@@ -63,7 +70,7 @@ class StepController extends Controller
 
             $stepParent = $newStep->getParent();
             
-            TreeConstruct($steps, $manager, $stepParent);
+            treeConstruct($step, $manager, $stepParent);
         }
 
     }
