@@ -3,7 +3,7 @@
 function sort(){
 	$('.sortable').sortable({
 		connectWith: $('.sortable'),
-		helper: "clone",
+		helper: "clone"
 	}).disableSelection();
 }
 
@@ -32,8 +32,8 @@ function save_tree(){
 		},
 		success: function() {
 			alert("arbre sauvegardé");
-		},
-	})
+		}
+	});
 }
 
 ////////////////////////////////////////////////////
@@ -43,7 +43,7 @@ $(document).ready(function () {
 		/*save_tree();*/
 		//var tree = parseTree($("#cible"));
 		//var tree = parseTree($("#cible")).toJSON();
-		var items = $('#cible').find('li').map(function() {
+		var json = $('#cible').find('li').map(function() {
 		  var item = { };
 
 		  item.id = this.id;
@@ -51,7 +51,20 @@ $(document).ready(function () {
 
 		  return item;
 		});
-		console.log(items);
+		 console.log($.toJSON(json));
+		jQuery.ajax({
+		  type: 'POST', // Le type de ma requete
+		  url: 'ajax_savetree', // L'url vers laquelle la requete sera envoyee
+		  data: {
+		    json: json
+		  }, 
+		  success: function(data, textStatus, jqXHR) {
+		    console.log(data);
+		  },
+		  error: function(jqXHR, textStatus, errorThrown) {
+		  	console.log("tot");
+		  }
+		});
 	});
 	
 	$(".delete_node").click(function() {
@@ -72,8 +85,8 @@ $(document).ready(function () {
 			success: function() {
 				save_tree();
 				alert("noeud supprimé");
-			},
-		})
+			}
+		});
 	});
 	
 	$(".droppable").droppable({
