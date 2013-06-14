@@ -1,0 +1,1 @@
+fos.Router.setData({"base_url":"","routes":{"ajax_savetree":{"tokens":[["text","\/ajax_savetree"]],"defaults":[],"requirements":{"_method":"POST"},"hosttokens":[]}},"prefix":"","host":"localhost","scheme":"http"});
