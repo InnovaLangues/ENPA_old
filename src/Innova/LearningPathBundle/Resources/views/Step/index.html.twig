@@ -4,8 +4,8 @@
 
 <div class="container">
     
-    {% include "InnovaAppBundle::WorkspaceManager/left-sidebar.html.twig" %}
-    {% include "InnovaAppBundle::WorkspaceManager/right-sidebar.html.twig" %}
+    {% include "InnovaLearningPathBundle::Step/left-sidebar.html.twig" %}
+    {% include "InnovaLearningPathBundle::Step/right-sidebar.html.twig" %}
     ------------------
     <select name="view-choice">
         <option selected value="Vue concepteur">Vue concepteur</option>
@@ -22,7 +22,7 @@
                 </div>
                 <div id="header_test_bob" class="span1">
                     <form action="index_submit" method="post" accept-charset="utf-8" id="form_test_bob">
-                        <input type="text" name="" value="" placeholder="Espagnol B2">
+                        <input type="text" name="" value="" placeholder="Espagnol B2" class="typeahead">
                     </form>
                 </div>
             </div>
