@@ -8,7 +8,7 @@ use Doctrine\Common\Persistence\ObjectManager;
 use Doctrine\ORM\Mapping as ORM;
 use Innova\LearningPathBundle\Entity\Step;
 
-class LoadTreeData extends AbstractFixture
+class LoadStepData extends AbstractFixture
 {
     public function load(ObjectManager $manager)
     {
