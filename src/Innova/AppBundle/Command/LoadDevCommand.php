@@ -24,6 +24,24 @@ class LoadDevCommand extends ContainerAwareCommand
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
+        $command = $this->getApplication()->find('doctrine:schema:drop');
+        $arguments = array(
+            'command' => 'doctrine:schema:drop',
+            '--force'  => true,
+        );
+
+        $input = new ArrayInput($arguments);
+        $returnCode = $command->run($input, $output);
+
+        $command = $this->getApplication()->find('doctrine:schema:update');
+        $arguments = array(
+            'command' => 'doctrine:schema:update',
+            '--force'  => true,
+        );
+
+        $input = new ArrayInput($arguments);
+        $returnCode = $command->run($input, $output);
+
         $output->writeln("Loading dev fixtures...");
         $command = $this->getApplication()->find('doctrine:fixtures:load');
         $arguments = array(
