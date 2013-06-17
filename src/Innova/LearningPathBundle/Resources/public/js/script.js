@@ -1,5 +1,7 @@
 $(document).ready(function() {
 
+
+
     $( "#tabs" ).tabs();
     $("#click-left").click(function() {
         if($("#menu-gauche").attr("ouvert") == "pasok"){
@@ -74,12 +76,18 @@ $(document).ready(function() {
         $(document).toggleFullScreen();
     });
 
-    var paths = new Array();
-    paths[0] = "Espagnol B1";
-    paths[1] = "Espagnol B2";
-    paths[2] = "Anglais A1";
-    paths[3] = "Italien A2";
     $('.typeahead').typeahead({
-        source : paths
+
+    source: function (query, process) {
+        return $.getJSON(
+            Routing.generate('path_ajax_find_by_name', { name: query }),
+            function (data) {
+                var newData = [];
+                   $.each(data, function(){
+                       newData.push(this.name);
+                    });
+                return process(newData);
+            });
+        }
     });
 });

@@ -79,6 +79,7 @@ function fermer(elem){
 
 function changerTitre(doc){
 	/*Week1*/
+	
 	if( doc==".week1Doc1"){
 		$("#clicWeek1 .titreAChange").html("<img src=\""+base_path+"bundles/innovaactivity/img/document.png\" class=\"offset1\"/>The Flatmates: At the Airport");
 	}
