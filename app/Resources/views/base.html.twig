@@ -49,9 +49,15 @@
         <script src="http://code.jquery.com/jquery-1.10.0.min.js"></script>
         <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
         <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
-        <script src="{{ asset('bundles/innovaapp/js/jquery.fullscreen.js') }}"></script>
-        <script src="{{ asset('bundles/innovaapp/js/tree.js') }}"></script>
-        <script src="{{ asset('bundles/innovaapp/js/script.js') }}"></script>
+        <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
+        <script src="{{ asset('js/fos_js_routes.js') }}"></script>
+        <script src="{{ path('fos_js_routing_js', {"callback": "fos.Router.setData"}) }}"></script>
+        <script type="text/javascript">
+            var base_path = Routing.getBaseUrl().replace(/\w+\.php$/gi,'');
+        </script>
+        <script src="{{ asset('bundles/innovalearningpath/js/jquery.fullscreen.js') }}"></script>
+        <script src="{{ asset('bundles/innovalearningpath/js/tree.js') }}"></script>
+        <script src="{{ asset('bundles/innovalearningpath/js/script.js') }}"></script>
 
         {% block javascripts %}{% endblock %}
         

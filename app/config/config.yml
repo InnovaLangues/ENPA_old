@@ -69,3 +69,7 @@ stof_doctrine_extensions:
         default:
             tree: true   # listeners are not enabled by default
             timestampable: true
+
+fos_js_routing:
+    routes_to_expose: [ajax_savetree, path_ajax_find_by_name]
+
