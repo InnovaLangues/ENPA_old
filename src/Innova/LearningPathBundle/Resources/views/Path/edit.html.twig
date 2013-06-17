@@ -1,28 +1,35 @@
 {% extends '::base.html.twig' %}
 
 {% block body -%}
-    <h1>Path edit</h1>
 
-    <form action="{{ path('path_update', { 'id': entity.id }) }}" method="post" {{ form_enctype(edit_form) }}>
-        <input type="hidden" name="_method" value="PUT" />
-        {{ form_widget(edit_form) }}
-        <p>
-            <button type="submit">Edit</button>
-        </p>
-    </form>
+<div class="row">
+    <div class="span11 offset1">
+        <h1>{{ 'Path.entity_edit'|trans }}</h1>
+    </div>
+</div>
+    
+<div class="row">
+    <div class="span8 offset4">
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('path') }}">
-            Back to the list
-        </a>
-    </li>
-    <li>
+        <form action="{{ path('path_update', { 'id': entity.id }) }}" method="post" {{ form_enctype(edit_form) }}>
+            <input type="hidden" name="_method" value="PUT" />
+            {{ form_widget(edit_form) }}
+            <button type="submit" class="btn btn-primary">{{ 'Generic.edit'|trans }}</button>
+        </form>
+
         <form action="{{ path('path_delete', { 'id': entity.id }) }}" method="post">
             <input type="hidden" name="_method" value="DELETE" />
             {{ form_widget(delete_form) }}
-            <button type="submit">Delete</button>
+            <button type="submit" class="btn btn-danger">{{ 'Generic.delete'|trans }}</button>
         </form>
-    </li>
-</ul>
+
+        <a href="{{ path('path') }}" role="button" class="btn">
+            {{ 'Path.entity_back_to_the_list'|trans }}
+        </a>
+    </div>
+</div>
+    
+
+       
+
 {% endblock %}

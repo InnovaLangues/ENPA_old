@@ -1,0 +1,47 @@
+#Path
+Path:
+    entity_singular: Parcours
+    entity_plural: Parcours
+    entity_index: Lister les parcours
+    entity_create: Ajout d'un parcours
+    entity_edit: Éditer un parcours
+    entity_delete: Supprimer un parcours
+    entity_back_to_the_list: Retour à la liste
+
+    field:
+      name: Nom
+      description: Description
+      is_pattern: Est un pattern
+
+    flash:
+        success:
+            create: Le parcours a été crée.
+            update: Le parcours a été mis à jour.
+            delete: Le parcours a été supprimé.
+
+        error:
+            not_found: Le parcours n'a pas été trouvé
+
+#Generic
+Generic:
+    cancel: Annuler
+    confirm: Valider
+    create: Ajouter
+    dashboard: Accueil
+    date_format: d/m/Y
+    datetime_format: d/m/Y H:i:s
+    delete: Supprimer
+    delete_confirm: Vous êtes sur de vouloir suprimer ceci ?
+    edit: Éditer
+    list: Lister
+    logout: Se déconnecter
+    my_profile: Mon profil
+    show: Voir
+    save: Enregistrer
+    save_and_add: Enregistrer et créer à nouveau
+    save_and_edit: Enregistrer et éditer
+    change_password: Modifier mon mot de passe
+    next: Suivant
+    previous: Précédent
+    bool_true: Oui
+    bool_false: Non
