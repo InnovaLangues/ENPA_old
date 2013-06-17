@@ -3,10 +3,10 @@
 {% block body %}
 
 <div class="container">
-    
+
     {% include "InnovaLearningPathBundle::Step/left-sidebar.html.twig" %}
     {% include "InnovaLearningPathBundle::Step/right-sidebar.html.twig" %}
-    ------------------
+
     <select name="view-choice">
         <option selected value="Vue concepteur">Vue concepteur</option>
         <option value="Vue enseignant">Vue enseignant</option>
@@ -18,7 +18,6 @@
             <div class="row">
                 <div class="span1" id="title_test_bob">
                     <h3>Parcours</h3>
-                    <button id="save">Save</button>
                 </div>
                 <div id="header_test_bob" class="span1">
                     <form action="index_submit" method="post" accept-charset="utf-8" id="form_test_bob">
@@ -27,57 +26,59 @@
                 </div>
             </div>
             <div class="well">
-                
                 {{ htmlTree|raw }}
             </div>
+            <button id="save" class="btn pull-right">Save</button>
         </div>
         <div class="span4">
             <h3>Ressources types</h3>
+            <h4>Qui</h4>
+            <a href="#" title="" class="btn"><i class="icon-plus"></i>Ajouter</li></a>
             <div class="well otherss">
                 <ul class="tree_abstract">
-                    <li>
-                        <h5>Qui</h5>
-                        <ul class="tree_abstract">
-                            <li><i class="icon-user"></i>Professeur</li>
-                        </ul>
-                    </li>
-                    <li>
-                        <h5>Pour qui</h5>
-                        <ul class="tree_abstract">
-                            <li><i class="icon-user"></i>Classe</li>
-                            <li><i class="icon-user"></i>Eleve</li>
-                            <li><i class="icon-user"></i>Binome</li>
-                        </ul>
-                    </li>
-                    <li>
-                        <h5>Lieux</h5>
-                        <ul class="tree_abstract">
-                            <li><i class="icon-home"></i>Labo</li>
-                            <li><i class="icon-home"></i>Classe</li>
-                            <li><i class="icon-home"></i>Dehors</li>
-                        </ul>
-                    </li>
-                    <li>
-                        <h5>Outils</h5>
-                        <ul class="tree_abstract">
-                            <li><i class="icon-wrench"></i>Video projecteur</li>
-                            <li><i class="icon-wrench"></i>Couteau</li>
-                        </ul>
-                    </li>
-                    <li>
-                        <h5>Ressources fournies</h5>
-                        <ul class="tree_abstract">
-                            <li><i class="icon-envelope"></i>Journal</li>
-                            <li><i class="icon-envelope"></i>Plan</li>
-                        </ul>
-                    </li>
-                    <li>
-                        <h5>Ressources produites</h5>
-                        <ul class="tree_abstract">
-                            <li><i class="icon-film"></i>Synthèse</li>
-                            <li><i class="icon-film"></i>Rapport</li>
-                        </ul>
-                    </li>
+                    <li><i class="icon-user"></i>Professeur</li>
+                </ul>
+            </div>
+            <h4>Pour qui</h4>
+            <a href="#" title="" class="btn"><i class="icon-plus"></i>Ajouter</li></a>
+            <div class="well otherss">
+                <ul class="tree_abstract">
+                    <li><i class="icon-user"></i>Classe</li>
+                    <li><i class="icon-user"></i>Eleve</li>
+                    <li><i class="icon-user"></i>Binome</li>
+                </ul>
+            </div>
+            <h4>Lieux</h4>
+            <a href="#" title="" class="btn"><i class="icon-plus"></i>Ajouter</li></a>
+            <div class="well otherss">
+                <ul class="tree_abstract">
+                    <li><i class="icon-home"></i>Labo</li>
+                    <li><i class="icon-home"></i>Classe</li>
+                    <li><i class="icon-home"></i>Dehors</li>
+                </ul>
+            </div>
+            <h4>Outils</h4>
+            <a href="#" title="" class="btn"><i class="icon-plus"></i>Ajouter</li></a>
+            <div class="well otherss">
+                <ul class="tree_abstract">
+                    <li><i class="icon-wrench"></i>Video projecteur</li>
+                    <li><i class="icon-wrench"></i>Couteau</li>
+                </ul>
+            </div>
+            <h4>Ressources fournies</h4>
+            <a href="#" title="" class="btn"><i class="icon-plus"></i>Ajouter</li></a>
+            <div class="well otherss">
+                <ul class="tree_abstract">
+                    <li><i class="icon-envelope"></i>Journal</li>
+                    <li><i class="icon-envelope"></i>Plan</li>
+                </ul>
+            </div>
+            <h4>Ressources produites</h4>
+            <a href="#" title="" class="btn"><i class="icon-plus"></i>Ajouter</li></a>
+            <div class="well otherss">
+                <ul class="tree_abstract">
+                    <li><i class="icon-film"></i>Synthèse</li>
+                    <li><i class="icon-film"></i>Rapport</li>
                 </ul>
             </div>
         </div>
