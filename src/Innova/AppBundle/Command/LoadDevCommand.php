@@ -12,19 +12,19 @@ use Symfony\Component\Console\Output\OutputInterface;
 use Doctrine\Common\DataFixtures\ReferenceRepository;
 
 
-class TreeCommand extends ContainerAwareCommand
+class LoadDevCommand extends ContainerAwareCommand
 {
     protected function configure()
     {
         $this
-            ->setName('innova:fixtures:tree')
-            ->setDescription('populate inl_step with some trees')
+            ->setName('innova:dev-fixtures:load')
+            ->setDescription('populate database with devloppement fixtures')
         ;
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $output->writeln("Loading tree fixtures...");
+        $output->writeln("Loading dev fixtures...");
         $command = $this->getApplication()->find('doctrine:fixtures:load');
         $arguments = array(
             'command' => 'doctrine:fixtures:load',
@@ -34,8 +34,5 @@ class TreeCommand extends ContainerAwareCommand
 
         $input = new ArrayInput($arguments);
         $returnCode = $command->run($input, $output);
-
-        // $fixture = new LoadTreeFixture();
-        // $fixture->load();
     }
 }
