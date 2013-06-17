@@ -31,16 +31,16 @@ class Path
     /**
      * @var string
      *
-     * @ORM\Column(name="description", type="text")
+     * @ORM\Column(name="description", type="text", nullable=true)
      */
     private $description;
 
     /**
      * @var boolean
      *
-     * @ORM\Column(name="is_pattern", type="boolean")
+     * @ORM\Column(name="isPattern", type="boolean", nullable=true)
      */
-    private $is_pattern;
+    private $isPattern;
 
 
     /**
@@ -100,48 +100,48 @@ class Path
     }
 
     /**
-     * Set is_pattern
+     * Set isPattern
      *
-     * @param boolean $is_pattern
+     * @param boolean $isPattern
      * @return Path
      */
-    public function setBoolean($is_pattern)
+    public function setBoolean($isPattern)
     {
-        $this->is_pattern = $is_pattern;
+        $this->isPattern = $isPattern;
 
         return $this;
     }
 
     /**
-     * Get is_pattern
+     * Get isPattern
      *
      * @return boolean
      */
     public function getBoolean()
     {
-        return $this->is_pattern;
+        return $this->isPattern;
     }
 
     /**
-     * Set is_pattern
+     * Set isPattern
      *
      * @param boolean $isPattern
      * @return Path
      */
     public function setIsPattern($isPattern)
     {
-        $this->is_pattern = $isPattern;
+        $this->isPattern = $isPattern;
     
         return $this;
     }
 
     /**
-     * Get is_pattern
+     * Get isPattern
      *
      * @return boolean 
      */
     public function getIsPattern()
     {
-        return $this->is_pattern;
+        return $this->isPattern;
     }
 }
