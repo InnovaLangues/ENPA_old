@@ -38,7 +38,7 @@ class Path
     /**
      * @var boolean
      *
-     * @ORM\Column(name="isPattern", type="boolean", nullable=true)
+     * @ORM\Column(name="is_pattern", type="boolean", nullable=true)
      */
     private $isPattern;
 
@@ -131,14 +131,14 @@ class Path
     public function setIsPattern($isPattern)
     {
         $this->isPattern = $isPattern;
-    
+
         return $this;
     }
 
     /**
      * Get isPattern
      *
-     * @return boolean 
+     * @return boolean
      */
     public function getIsPattern()
     {
