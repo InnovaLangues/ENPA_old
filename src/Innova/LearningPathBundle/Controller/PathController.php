@@ -7,6 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Symfony\Component\HttpFoundation\Response;
 use Innova\LearningPathBundle\Entity\Path;
 use Innova\LearningPathBundle\Form\PathType;
 
@@ -206,5 +207,25 @@ class PathController extends Controller
             ->add('id', 'hidden')
             ->getForm()
         ;
+    }
+
+    /**
+     * Finds and displays a Path entity.
+     *
+     * @Route("/ajax/find-by-name/{name}", name="path_ajax_find_by_name", options={"expose"=true})
+     * @Method("GET")
+     */
+    public function ajaxFindByNameAction($name)
+    {
+        $manager = $this->getDoctrine()->getManager();
+
+        $entities = $manager->getRepository("InnovaLearningPathBundle:Path")->createQueryBuilder('o')
+            ->select('o.name')
+            ->where('o.name like :name')
+            ->setParameter('name', '%' . $name . '%')
+            ->getQuery()
+            ->getArrayResult();
+
+        return  new Response(json_encode($entities), 200, array('Content-Type', 'text/json'));
     }
 }
