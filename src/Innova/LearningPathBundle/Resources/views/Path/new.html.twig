@@ -1,20 +1,28 @@
 {% extends '::base.html.twig' %}
 
 {% block body -%}
-    <h1>Path creation</h1>
 
-    <form action="{{ path('path_create') }}" method="post" {{ form_enctype(form) }}>
+<div class="row">
+    <div class="offset1 span11">
+        <h1>{{ 'Path.entity_create'|trans }}</h1>
+    </div>
+</div>
+    
+<div class="row">
+    <div class="offset4 span8">
+        <form action="{{ path('path_create') }}" method="post" {{ form_enctype(form) }}>
         {{ form_widget(form) }}
         <p>
-            <button type="submit">Create</button>
+            <button type="submit" class="btn btn-primary">{{ 'Generic.create'|trans }}</button>
         </p>
     </form>
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('path') }}">
-            Back to the list
+
+        <a href="{{ path('path') }}" class="btn" role="button">
+            {{ 'Path.entity_back_to_the_list'|trans }}
         </a>
-    </li>
-</ul>
+    </div>
+</div>
+    
+
 {% endblock %}

@@ -9,6 +9,7 @@ text-align: center;
 
 body{
 margin: 5px;
+margin-top: 40px;
 }
 
 #claroline_volet_gauche{
@@ -184,3 +185,4 @@ padding-bottom: 0px;
 .delete-item{
 	visibility: hidden;
 }
+

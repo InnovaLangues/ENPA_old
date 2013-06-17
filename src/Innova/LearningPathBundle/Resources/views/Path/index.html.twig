@@ -1,45 +1,43 @@
 {% extends '::base.html.twig' %}
 
 {% block body -%}
-    <h1>Path list</h1>
+<div class="row">
+    <div class="span11 offset1">
+        <h1>{{ 'Path.entity_plural'|trans }}</h1>
+    </div>
+</div>
 
-    <table class="records_list">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Is_pattern</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for entity in entities %}
-            <tr>
-                <td><a href="{{ path('path_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
-                <td>{{ entity.name }}</td>
-                <td>{{ entity.description }}</td>
-                <td>{{ entity.ispattern }}</td>
-                <td>
-                <ul>
-                    <li>
-                        <a href="{{ path('path_show', { 'id': entity.id }) }}">show</a>
-                    </li>
-                    <li>
-                        <a href="{{ path('path_edit', { 'id': entity.id }) }}">edit</a>
-                    </li>
-                </ul>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+<div class="row">
+    <div class="offset4 span8">    
+        <table class="records_list table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>{{ 'Path.field.name'|trans }}</th>
+                    <th>{{ 'Path.field.description'|trans }}</th>
+                    <th>{{ 'Path.field.is_pattern'|trans }}</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for entity in entities %}
+                <tr>
+                    <td><a href="{{ path('path_edit', { 'id': entity.id }) }}">{{ entity.name }}</a></td>
+                    <td>{{ entity.description }}</td>
+                    <td>{{ entity.ispattern }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
 
-        <ul>
-        <li>
-            <a href="{{ path('path_new') }}">
-                Create a new entry
+<div class="row">
+    <div class="offset11  span1">
+        
+            <a href="{{ path('path_new') }}" role="button" class="btn">
+                {{ 'Generic.create'|trans }}
             </a>
-        </li>
-    </ul>
+
+    </div>
+</div>
+
     {% endblock %}
