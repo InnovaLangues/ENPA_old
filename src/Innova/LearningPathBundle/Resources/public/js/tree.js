@@ -28,7 +28,7 @@ function save_tree(){
 		type: 'POST',
 		url: 'save_tree.php',
 		data: {"tree": tree_html} ,
-		error: function() { 
+		error: function() {
 		},
 		success: function() {
 			alert("arbre sauvegardé");
@@ -38,35 +38,7 @@ function save_tree(){
 
 ////////////////////////////////////////////////////
 //////////// GESTION CLICK ETC. ////////////////////
-$(document).ready(function () {	
-	$("#save").click(function() {
-		/*save_tree();*/
-		//var tree = parseTree($("#cible"));
-		//var tree = parseTree($("#cible")).toJSON();
-		var json = $('#cible').find('li').map(function() {
-		  var item = { };
-
-		  item.id = this.id;
-		  item.title = $(this).text();
-
-		  return item;
-		});
-		 console.log($.toJSON(json));
-		jQuery.ajax({
-		  type: 'POST', // Le type de ma requete
-		  url: 'ajax_savetree', // L'url vers laquelle la requete sera envoyee
-		  data: {
-		    json: json
-		  }, 
-		  success: function(data, textStatus, jqXHR) {
-		    console.log(data);
-		  },
-		  error: function(jqXHR, textStatus, errorThrown) {
-		  	console.log("tot");
-		  }
-		});
-	});
-	
+$(document).ready(function () {
 	$(".delete_node").click(function() {
 		var nodes_to_delete =  new Array();
 		var node_id = $(this).parent().attr("node_id");
@@ -80,7 +52,7 @@ $(document).ready(function () {
 			type: 'POST',
 			url: 'remove_node.php',
 			data: {"node_ids": nodes_to_delete} ,
-			error: function() { 
+			error: function() {
 			},
 			success: function() {
 				save_tree();
@@ -88,20 +60,20 @@ $(document).ready(function () {
 			}
 		});
 	});
-	
+
 	$(".droppable").droppable({
 		drop: function( event, ui ) {
 			if(ui.draggable.hasClass("source")){
 				console.log(ui.draggable);
 				clone = '<ul class="source"><li node_id="" class="file"><ul class="sortable"><li node_id="" class="file"></li><li node_id="" class="file"></li></ul></li></ul>';
-				ui.draggable.siblings().removeClass('source');		
+				ui.draggable.siblings().removeClass('source');
 				ui.draggable.addClass("sortable");
 				$("#source_content").html(clone);
 				sort();
 			}
 		}
 	});
-	
+
 	sort();
 
 /*	$('#trash').droppable({
@@ -125,5 +97,5 @@ $(document).ready(function () {
 	$(".editable-item").mouseout(function(){
 		$(this).children(".delete-item").css("visibility","hidden");
 	});
-			
+
 });

@@ -7,6 +7,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+use Symfony\Component\HttpFoundation\Response;
+use Innova\LearningPathBundle\Entity\Step;
 
 class StepController extends Controller
 {
@@ -55,7 +57,7 @@ class StepController extends Controller
         var_dump($steps);
         die();
         foreach ($steps->getChildren() as $step){
-            
+
             if ($step["id"] != ""){
                 $newStep = $manager->getRepository("InnovaLearningPathBundle:Step")->find($step["id"]);
             }
@@ -69,7 +71,7 @@ class StepController extends Controller
             $manager->persist($newStep);
 
             $stepParent = $newStep->getParent();
-            
+
             treeConstruct($step, $manager, $stepParent);
         }
 
@@ -107,5 +109,40 @@ class StepController extends Controller
         );
 
         return $htmlTree;
+    }
+
+
+    /**
+     * Creates a new Path entity.
+     *
+     * @Route("/ajax/save", name="path_ajax_save")
+     * @Method("POST")
+     */
+    public function ajaxSaveAction(Request $request)
+    {
+        $json = json_decode($request->get('tab'));
+        $this->parseJsonUl($json->step);
+
+        //TODO enregister dans la base
+        //$manager->flush();
+
+        return new Response('OK', 200);
+    }
+
+    private function parseJsonUl($step){
+
+        $step = new Step();
+
+        //TODO : recuperer le nom/text
+        $step->setName();
+
+        //TODO : Persister l'entité
+        //$manager->persist($step)
+
+        if (isset($step->children)){
+            foreach ($step->children as $child) {
+                $this->parseJsonUl($child->step);
+            }
+        }
     }
 }
