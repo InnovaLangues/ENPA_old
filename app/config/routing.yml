@@ -8,6 +8,10 @@ innova_app:
     type:     annotation
     prefix:   /
 
+innova_learningpath:
+    resource: "@InnovaLearningPathBundle/Controller/"
+    type:     annotation
+    prefix:   /
 
 fos_js_routing:
     resource: "@FOSJsRoutingBundle/Resources/config/routing/routing.xml"

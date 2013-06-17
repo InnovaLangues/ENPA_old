@@ -89,6 +89,5 @@ $(document).ready(function() {
                 return process(newData);
             });
         }
-
     });
 });
