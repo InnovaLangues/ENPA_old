@@ -33,8 +33,8 @@ class StepController extends Controller
 
         if ($request->getMethod() == 'POST') {
             $json = $request->get('json');
-            //$steps = json_decode($json);
-            echo($json);
+            $steps = json_decode($json);
+            echo($steps);
             $this->treeConstruct($steps, $manager, null);
             $manager->flush();
         }

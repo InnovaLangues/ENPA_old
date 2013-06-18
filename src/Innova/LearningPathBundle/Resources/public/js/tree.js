@@ -45,13 +45,14 @@ $(document).ready(function () {
 		//var tree = parseTree($("#cible")).toJSON();
 		var json = $('#cible').find('li').map(function() {
 		  var item = { };
-
 		  item.id = this.id;
 		  item.title = $(this).text();
-
 		  return item;
 		});
-		 console.log($.toJSON(json));
+
+		console.log(json);
+		json = JSON.stringify(json);
+		console.log(json);
 		jQuery.ajax({
 		  type: 'POST', // Le type de ma requete
 		  url: 'ajax_savetree', // L'url vers laquelle la requete sera envoyee
