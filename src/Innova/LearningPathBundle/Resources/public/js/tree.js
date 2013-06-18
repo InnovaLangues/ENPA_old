@@ -68,6 +68,7 @@ $(document).ready(function () {
 				clone = '<ul class="source"><li node_id="" class="file"><ul class="sortable"><li node_id="" class="file"></li><li node_id="" class="file"></li></ul></li></ul>';
 				ui.draggable.siblings().removeClass('source');
 				ui.draggable.addClass("sortable");
+				ui.draggable.find("li").attr("id","");
 				$("#source_content").html(clone);
 				sort();
 			}

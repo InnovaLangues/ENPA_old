@@ -9,6 +9,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Component\HttpFoundation\Response;
 use Innova\LearningPathBundle\Entity\Step;
+use Symfony\Component\Serializer\Encoder\JsonDecode;
 
 class StepController extends Controller
 {
@@ -120,8 +121,16 @@ class StepController extends Controller
      */
     public function ajaxSaveAction(Request $request)
     {
-        $json = json_decode($request->get('tab'));
-        $this->parseJsonUl($json->step);
+        /*$json = json_decode($request->get('tab'));*/
+ 
+        if ($request->getMethod() == 'POST'){
+            $json = $request->get('tab');
+            print_r(stripslashes(htmlspecialchars($json)));
+            $steps = json_decode(stripslashes($json));
+        }
+        print_r($steps);
+
+        //$this->parseJsonUl($json->step, NULL);
 
         //TODO enregister dans la base
         //$manager->flush();
@@ -129,19 +138,22 @@ class StepController extends Controller
         return new Response('OK', 200);
     }
 
-    private function parseJsonUl($step){
+    private function parseJsonUl($step, $parent){
+        /*
 
-        $step = new Step();
+        s'il exite alors tu   $step = $repository->find('1');
+        sinon $step = new Step();
 
-        //TODO : recuperer le nom/text
-        $step->setName();
 
-        //TODO : Persister l'entité
-        //$manager->persist($step)
+             $step->setName();
+            $step->setParent();
+            $manager->persist($step);
+
+        */
 
         if (isset($step->children)){
             foreach ($step->children as $child) {
-                $this->parseJsonUl($child->step);
+                $this->parseJsonUl($child->step, $step);
             }
         }
     }

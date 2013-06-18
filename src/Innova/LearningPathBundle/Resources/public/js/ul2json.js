@@ -14,12 +14,16 @@ function html2json(tree){
     out();
 }
 
+
+$("#foo").clone().children().remove().end().text();
+
+
 function recursive(li){
     json += '"step":{';
     // on récupère l'id et le name
     var id = li.attr("id");
     json += '"id": "'+id+'",';
-    var name = addslashes(li.children().text());
+    var name = addslashes(li.clone().children().remove().end().text());
     json += '"name": "'+name+'"';
     // on test si le li contient un sous-arbre.
     // -> cas sous-arbre existant
@@ -48,11 +52,11 @@ function addslashes(str){
 
 
 function out(){
-/*    console.log("STRING JSON");
+/*    console.log("STRING JSON");*/
     console.log(json);
-    console.log("OBJET JSON");
-    console.log(JSON.parse(json));
-    */
+/*    console.log("OBJET JSON");
+    console.log(JSON.parse(json));*/
+    
     $.ajax({
       url: Routing.generate('path_ajax_save'),
       type: 'POST',
