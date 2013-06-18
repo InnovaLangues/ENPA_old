@@ -7,6 +7,9 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+use Symfony\Component\HttpFoundation\Response;
+use Innova\LearningPathBundle\Entity\Step;
+use Symfony\Component\Serializer\Encoder\JsonDecode;
 
 class StepController extends Controller
 {
@@ -55,7 +58,7 @@ class StepController extends Controller
         var_dump($steps);
         die();
         foreach ($steps->getChildren() as $step){
-            
+
             if ($step["id"] != ""){
                 $newStep = $manager->getRepository("InnovaLearningPathBundle:Step")->find($step["id"]);
             }
@@ -69,7 +72,7 @@ class StepController extends Controller
             $manager->persist($newStep);
 
             $stepParent = $newStep->getParent();
-            
+
             treeConstruct($step, $manager, $stepParent);
         }
 
@@ -107,5 +110,51 @@ class StepController extends Controller
         );
 
         return $htmlTree;
+    }
+
+
+    /**
+     * Creates a new Path entity.
+     *
+     * @Route("/ajax/save", name="path_ajax_save")
+     * @Method("POST")
+     */
+    public function ajaxSaveAction(Request $request)
+    {
+        /*$json = json_decode($request->get('tab'));*/
+ 
+        if ($request->getMethod() == 'POST'){
+            $json = $request->get('tab');
+            print_r(stripslashes(htmlspecialchars($json)));
+            $steps = json_decode(stripslashes($json));
+        }
+        print_r($steps);
+
+        //$this->parseJsonUl($json->step, NULL);
+
+        //TODO enregister dans la base
+        //$manager->flush();
+
+        return new Response('OK', 200);
+    }
+
+    private function parseJsonUl($step, $parent){
+        /*
+
+        s'il exite alors tu   $step = $repository->find('1');
+        sinon $step = new Step();
+
+
+             $step->setName();
+            $step->setParent();
+            $manager->persist($step);
+
+        */
+
+        if (isset($step->children)){
+            foreach ($step->children as $child) {
+                $this->parseJsonUl($child->step, $step);
+            }
+        }
     }
 }
