@@ -120,40 +120,39 @@ class StepController extends Controller
      * @Method("POST")
      */
     public function ajaxSaveAction(Request $request)
-    {
-        /*$json = json_decode($request->get('tab'));*/
+    {   
+        $manager = $this->getDoctrine()->getManager();
+        $repository = $manager->getRepository("InnovaLearningPathBundle:Step");
  
         if ($request->getMethod() == 'POST'){
             $json = $request->get('tab');
-            print_r(stripslashes(htmlspecialchars($json)));
-            $steps = json_decode(stripslashes($json));
-        }
-        print_r($steps);
+            $json = json_decode(stripslashes($json)); 
 
-        //$this->parseJsonUl($json->step, NULL);
+            $this->parseJsonUl($json->step, NULL, $manager, $repository);
+
+        }
 
         //TODO enregister dans la base
-        //$manager->flush();
-
+        $manager->flush();
         return new Response('OK', 200);
     }
 
-    private function parseJsonUl($step, $parent){
-        /*
+    private function parseJsonUl($step, $parent, $manager, $repository){
+        if ($step->id > 0){
+            $new_step = $repository->find($step->id);
+        }
+        else{
+            $new_step = new Step();
+        }
+        echo $step->id."<br/>";
 
-        s'il exite alors tu   $step = $repository->find('1');
-        sinon $step = new Step();
-
-
-             $step->setName();
-            $step->setParent();
-            $manager->persist($step);
-
-        */
+        $new_step->setName($step->name);
+        $new_step->setParent($parent);
+        $manager->persist($new_step);
 
         if (isset($step->children)){
-            foreach ($step->children as $child) {
-                $this->parseJsonUl($child->step, $step);
+            foreach ($step->children as $child){
+                $this->parseJsonUl($child->step, $new_step, $manager, $repository);
             }
         }
     }

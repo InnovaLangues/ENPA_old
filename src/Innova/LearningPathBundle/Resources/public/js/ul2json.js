@@ -2,28 +2,26 @@ var json = "";
 
 $(document).ready(function() {
     $('#save').click(function(event) {
-        html2json("#cible");
+        json = "";
+        html2json("#left_tree #cible");
     });
 });
 
 function html2json(tree){
     json += '{';
-    recursive($(tree).children("li"));
+    recursive($(tree).children("li:first"));
     json += '}';
-    console.log(json);
     out();
 }
-
-
-$("#foo").clone().children().remove().end().text();
-
 
 function recursive(li){
     json += '"step":{';
     // on récupère l'id et le name
     var id = li.attr("id");
     json += '"id": "'+id+'",';
-    var name = addslashes(li.clone().children().remove().end().text());
+    console.log(li);
+    var name = li.clone().children().remove().end().text();
+    console.log(name);
     json += '"name": "'+name+'"';
     // on test si le li contient un sous-arbre.
     // -> cas sous-arbre existant
@@ -52,11 +50,7 @@ function addslashes(str){
 
 
 function out(){
-/*    console.log("STRING JSON");*/
     console.log(json);
-/*    console.log("OBJET JSON");
-    console.log(JSON.parse(json));*/
-    
     $.ajax({
       url: Routing.generate('path_ajax_save'),
       type: 'POST',
@@ -64,7 +58,6 @@ function out(){
       complete: function(xhr, textStatus) {
       },
       success: function(data, textStatus, xhr) {
-        alert("success");
         console.log(data);
       },
       error: function(xhr, textStatus, errorThrown) {
