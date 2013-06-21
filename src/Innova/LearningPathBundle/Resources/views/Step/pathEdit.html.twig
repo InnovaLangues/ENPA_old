@@ -41,55 +41,72 @@
         </div>
         <div class="span4">
             <h3>Ressources types</h3>
-            <h4>Qui</h4>
-            <a href="#" title="" class="btn"><i class="icon-plus"></i>Ajouter</li></a>
-            <div class="well otherss">
-                <ul class="tree_abstract">
-                    <li><i class="icon-user"></i>Professeur</li>
-                </ul>
+            <h4 class="accordionButton on ressourceTitle well otherss"><i class="icon-chevron-up pull-right"></i>Qui </h4>
+            <div class="accordionContent">
+                <div class="well otherss">
+                    <ul class="tree_abstract">
+                        <li><i class="icon-user"></i>Professeur</li>
+                    </ul>
+                    <a href="#" title="" class="btn pull-right"><i class="icon-plus"></i>Ajouter</a>
+                </div>     
             </div>
-            <h4>Pour qui</h4>
-            <a href="#" title="" class="btn"><i class="icon-plus"></i>Ajouter</li></a>
-            <div class="well otherss">
-                <ul class="tree_abstract">
-                    <li><i class="icon-user"></i>Classe</li>
-                    <li><i class="icon-user"></i>Eleve</li>
-                    <li><i class="icon-user"></i>Binome</li>
-                </ul>
+
+            <h4 class="accordionButton on ressourceTitle well otherss"><i class="icon-chevron-up pull-right"></i>Pour qui</h4>
+            <div class="accordionContent">
+                <div class="well otherss">
+                    <ul class="tree_abstract">
+                        <li><i class="icon-user"></i>Classe</li>
+                        <li><i class="icon-user"></i>Eleve</li>
+                        <li><i class="icon-user"></i>Binome</li>
+                    </ul>  
+                    <a href="#" title="" class="btn pull-right"><i class="icon-plus"></i>Ajouter</a>
+                </div> 
             </div>
-            <h4>Lieux</h4>
-            <a href="#" title="" class="btn"><i class="icon-plus"></i>Ajouter</li></a>
-            <div class="well otherss">
-                <ul class="tree_abstract">
-                    <li><i class="icon-home"></i>Labo</li>
-                    <li><i class="icon-home"></i>Classe</li>
-                    <li><i class="icon-home"></i>Dehors</li>
-                </ul>
+
+            <h4 class="accordionButton on ressourceTitle well otherss"><i class="icon-chevron-up pull-right"></i>Lieux</h4>
+            <div class="accordionContent">
+                <div class="well otherss">
+                    <ul class="tree_abstract">
+                        <li><i class="icon-home"></i>Labo</li>
+                        <li><i class="icon-home"></i>Classe</li>
+                        <li><i class="icon-home"></i>Dehors</li>
+                    </ul>
+                    <a href="#" title="" class="btn pull-right"><i class="icon-plus"></i>Ajouter</li></a>
+                </div>
             </div>
-            <h4>Outils</h4>
-            <a href="#" title="" class="btn"><i class="icon-plus"></i>Ajouter</li></a>
-            <div class="well otherss">
-                <ul class="tree_abstract">
-                    <li><i class="icon-wrench"></i>Video projecteur</li>
-                    <li><i class="icon-wrench"></i>Couteau</li>
-                </ul>
+
+            <h4 class="accordionButton on ressourceTitle well otherss"><i class="icon-chevron-up pull-right"></i>Outils</h4>
+            <div class="accordionContent">
+                <div class="well otherss">
+                    <ul class="tree_abstract">
+                        <li><i class="icon-wrench"></i>Video projecteur</li>
+                        <li><i class="icon-wrench"></i>Couteau</li>
+                    </ul>
+                    <a href="#" title="" class="btn pull-right"><i class="icon-plus"></i>Ajouter</li></a>
+                </div>
             </div>
-            <h4>Ressources fournies</h4>
-            <a href="#" title="" class="btn"><i class="icon-plus"></i>Ajouter</li></a>
-            <div class="well otherss">
-                <ul class="tree_abstract">
-                    <li><i class="icon-envelope"></i>Journal</li>
-                    <li><i class="icon-envelope"></i>Plan</li>
-                </ul>
+
+            <h4 class="accordionButton on ressourceTitle well otherss"><i class="icon-chevron-up pull-right"></i>Ressources fournies</h4>
+            <div class="accordionContent">
+                <div class="well otherss">
+                    <ul class="tree_abstract">
+                        <li><i class="icon-envelope"></i>Journal</li>
+                        <li><i class="icon-envelope"></i>Plan</li>
+                    </ul>
+                    <a href="#" title="" class="btn pull-right"><i class="icon-plus"></i>Ajouter</li></a>
+                </div>
             </div>
-            <h4>Ressources produites</h4>
-            <a href="#" title="" class="btn"><i class="icon-plus"></i>Ajouter</li></a>
-            <div class="well otherss">
-                <ul class="tree_abstract">
-                    <li><i class="icon-film"></i>Synthèse</li>
-                    <li><i class="icon-film"></i>Rapport</li>
-                </ul>
-            </div>
+
+            <h4 class="accordionButton on ressourceTitle well otherss"><i class="icon-chevron-up pull-right"></i>Ressources produites</h4>
+            <div class="accordionContent">
+                <div class="well otherss">
+                    <ul class="tree_abstract">
+                        <li><i class="icon-film"></i>Synthèse</li>
+                        <li><i class="icon-film"></i>Rapport</li>
+                    </ul>
+                    <a href="#" title="" class="btn pull-right"><i class="icon-plus"></i>Ajouter</li></a>
+                </div>
+             </div>
         </div>
         <div class="span4">
             <h3>Ressources réelles</h3>
@@ -118,4 +135,7 @@
     </div>
 </div>
 
+{% block javascripts %}
+    <script src="{{ asset('bundles/innovalearningpath/js/accordeon.js') }}"></script>
+{% endblock %}
 {% endblock %}
