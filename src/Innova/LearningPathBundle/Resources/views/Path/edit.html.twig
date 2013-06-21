@@ -2,14 +2,15 @@
 
 {% block body -%}
 
-<div class="row">
-    <div class="span11 offset1">
+<div class="container">
+    <div class="row">
+    <div class="span12">
         <h1>{{ 'Path.entity_edit'|trans }}</h1>
     </div>
 </div>
     
 <div class="row">
-    <div class="span8 offset4">
+    <div class="span12">
 
         <form action="{{ path('path_update', { 'id': entity.id }) }}" method="post" {{ form_enctype(edit_form) }}>
             <input type="hidden" name="_method" value="PUT" />
@@ -28,6 +29,9 @@
         </a>
     </div>
 </div>
+</div>
+
+
     
 
        
