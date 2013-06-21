@@ -226,6 +226,6 @@ class PathController extends Controller
             ->getQuery()
             ->getArrayResult();
 
-        return  new Response(json_encode($entities), 200, array('Content-Type', 'text/json'));
+        return new Response(json_encode($entities), 200, array('Content-Type', 'text/json'));
     }
 }

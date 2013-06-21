@@ -38,9 +38,14 @@ class Path
     /**
      * @var boolean
      *
-     * @ORM\Column(name="is_pattern", type="boolean", nullable=true)
+     * @ORM\Column(name="is_pattern", type="boolean")
      */
-    private $isPattern;
+    private $isPattern = false;
+
+    /**
+    * @ORM\OneToMany(targetEntity="Step", mappedBy="path", cascade={"remove","persist"})
+    */
+    private $steps;
 
 
     /**
@@ -143,5 +148,46 @@ class Path
     public function getIsPattern()
     {
         return $this->isPattern;
+    }
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->steps = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add steps
+     *
+     * @param \Innova\LearningPathBundle\Entity\Step $steps
+     * @return Path
+     */
+    public function addStep(\Innova\LearningPathBundle\Entity\Step $steps)
+    {
+        $this->steps[] = $steps;
+
+        return $this;
+    }
+
+    /**
+     * Remove steps
+     *
+     * @param \Innova\LearningPathBundle\Entity\Step $steps
+     */
+    public function removeStep(\Innova\LearningPathBundle\Entity\Step $steps)
+    {
+        $this->steps->removeElement($steps);
+    }
+
+    /**
+     * Get steps
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getSteps()
+    {
+        return $this->steps;
     }
 }

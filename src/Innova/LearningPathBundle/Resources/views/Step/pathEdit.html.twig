@@ -20,13 +20,22 @@
                     <h3>Parcours</h3>
                 </div>
                 <div id="header_test_bob" class="span1">
-                    <form action="index_submit" method="post" accept-charset="utf-8" id="form_test_bob">
-                        <input type="text" name="" value="" placeholder="Espagnol B2" class="typeahead">
+                        <form action="{{path("redirectpathedit")}}" method="post" accept-charset="utf-8" id="form_test_bob">
+                            <select name="path-id" id="">
+                                {% for path in paths %}
+                                    <option value="{{ path.id }}">{{ path.name }}</option>
+                                {% endfor %}
+                            </select>
+                        <input type="submit">
                     </form>
                 </div>
             </div>
             <div class="well">
-                {{ htmlTree|raw }}
+                <div id="left_tree">
+                    {% if htmlTree is defined %}
+                        {{ htmlTree|raw }}
+                    {% endif %}  
+                </div>
             </div>
             <button id="save" class="btn pull-right">Save</button>
         </div>
@@ -99,7 +108,6 @@
                 </div>
              </div>
         </div>
-
         <div class="span4">
             <h3>Ressources réelles</h3>
             <div class="well otherss">
