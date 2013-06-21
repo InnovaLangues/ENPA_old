@@ -6,7 +6,13 @@
         <div id="accordion2">
             <h3>Modele</h3>
             <div class="scroll">
-                {{ htmlTree|raw }}
+                {% if patternTrees is defined %}
+                    {% for patternTree in patternTrees %}
+                        {{ patternTree|raw }}
+                    {% endfor %}
+                {% endif %}
+
+
             </div>
             <h3>Strategie</h3>
             <div class="scroll">
