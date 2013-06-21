@@ -186,3 +186,10 @@ padding-bottom: 0px;
 	visibility: hidden;
 }
 
+.ressourceTitle{
+	padding: 10px;
+}
+
+.ressourceTitle:hover{
+	background: #E7E7E7;
+}
