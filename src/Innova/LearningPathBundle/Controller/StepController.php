@@ -9,21 +9,47 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Component\HttpFoundation\Response;
 use Innova\LearningPathBundle\Entity\Step;
+use Innova\LearningPathBundle\Entity\Path;
 use Symfony\Component\Serializer\Encoder\JsonDecode;
 
 class StepController extends Controller
 {
+    
     /**
-     * @Route("/step")
-     * @Template()
+     * @Route("/redirectpathedit", name="redirectpathedit")
+     * @Method({"POST"})
      */
-    public function indexAction()
-    {
-    	$htmlTree = $this->drawTree();
-        return array('htmlTree' => $htmlTree);
+    public function redirectPathEdit(Request $request) {
+        $id = $request->get('path-id');
+        return $this->redirect($this->generateUrl('pathedit', array('id' => $id)));
     }
 
+    /**
+     * @Route("/pathedit/path/{id}", name="pathedit")
+     * @Template()
+     */
+    public function pathEditAction(Path $path = null)
+    {
+        $params = array();
+        $manager = $this->getDoctrine()->getManager();
+        
+        $paths = $manager->getRepository("InnovaLearningPathBundle:Path")->findByIsPattern(false);
+        $params['paths'] = $paths;
 
+        if ($path){
+            $patterns = $manager->getRepository("InnovaLearningPathBundle:Path")->findByIsPattern(true);
+            $htmlTree = $this->drawTree($path);
+
+            foreach ($patterns as $pattern) {
+                $patternTrees[] = $this->drawTree($pattern);
+            }
+
+            $params['htmlTree'] = $htmlTree;
+            $params['patternTrees'] = $patternTrees;
+        }
+
+        return $params;
+    }
 
  	/**
     * @Route("/ajax_savetree", name="ajax_savetree")
@@ -79,16 +105,14 @@ class StepController extends Controller
     }
 
 
-
-
-    public function drawTree()
+    public function drawTree(Path $path)
     {
         $manager = $this->getDoctrine()->getManager();
         $repository = $manager->getRepository("InnovaLearningPathBundle:Step");
 
         //TODO WTF ?
-        $step = $repository->find('1');
-
+        //$root = $repository->findOneByPath($path)->getRoot();
+        $root = $repository->findOneByPath($path);
 
         $options = array(
             'decorate' => true,
@@ -103,7 +127,7 @@ class StepController extends Controller
         );
 
         $htmlTree = $repository->childrenHierarchy(
-            $step,
+            $root,
             false,
             $options,
             true

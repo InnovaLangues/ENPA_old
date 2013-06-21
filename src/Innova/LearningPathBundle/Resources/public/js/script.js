@@ -75,19 +75,4 @@ $(document).ready(function() {
     $("#switch_fs").click(function() {
         $(document).toggleFullScreen();
     });
-
-    $('.typeahead').typeahead({
-
-    source: function (query, process) {
-        return $.getJSON(
-            Routing.generate('path_ajax_find_by_name', { name: query }),
-            function (data) {
-                var newData = [];
-                   $.each(data, function(){
-                       newData.push(this.name);
-                    });
-                return process(newData);
-            });
-        }
-    });
 });

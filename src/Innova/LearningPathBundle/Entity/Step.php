@@ -74,6 +74,10 @@ class Step
      */
     private $children;
 
+    /**
+    * @ORM\ManyToOne(targetEntity="Path", inversedBy="steps")
+    */
+    private $path;
 
     /**
      * Get id
@@ -285,5 +289,28 @@ class Step
     public function getChildren()
     {
         return $this->children;
+    }
+
+    /**
+     * Set path
+     *
+     * @param \Innova\LearningPathBundle\Entity\Path $path
+     * @return Step
+     */
+    public function setPath(\Innova\LearningPathBundle\Entity\Path $path = null)
+    {
+        $this->path = $path;
+
+        return $this;
+    }
+
+    /**
+     * Get path
+     *
+     * @return \Innova\LearningPathBundle\Entity\Path 
+     */
+    public function getPath()
+    {
+        return $this->path;
     }
 }

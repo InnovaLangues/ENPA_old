@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
         {% block stylesheets %}
             <link href="{{ asset('bundles/innovalearningpath/css/style.css') }}" rel="stylesheet">
+            <link href="{{ asset('bundles/innovalearningpath/css/select2.css') }}" rel="stylesheet">
         {% endblock %}
     </head>
     <body>
@@ -52,10 +53,11 @@
         <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
         <script src="{{ asset('js/fos_js_routes.js') }}"></script>
         <script src="{{ path('fos_js_routing_js', {"callback": "fos.Router.setData"}) }}"></script>
+        <script src="{{ asset('bundles/innovalearningpath/js/jquery.fullscreen.js') }}"></script>
+         <script src="{{ asset('bundles/innovalearningpath/js/select2.js') }}"></script>
         <script type="text/javascript">
             var base_path = Routing.getBaseUrl().replace(/\w+\.php$/gi,'');
         </script>
-        <script src="{{ asset('bundles/innovalearningpath/js/jquery.fullscreen.js') }}"></script>
         <script src="{{ asset('bundles/innovalearningpath/js/tree.js') }}"></script>
         <script src="{{ asset('bundles/innovalearningpath/js/ul2json.js') }}"></script>
         <script src="{{ asset('bundles/innovalearningpath/js/script.js') }}"></script>
