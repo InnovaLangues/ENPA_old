@@ -34,20 +34,24 @@ class StepController extends Controller
     {
         $params = array();
         $manager = $this->getDoctrine()->getManager();
-        
+
+        // Add non-Pattern Path for the select.
         $paths = $manager->getRepository("InnovaLearningPathBundle:Path")->findByIsPattern(false);
         $params['paths'] = $paths;
 
         
+        // Add Pattern Path for the right menu.
         $patterns = $manager->getRepository("InnovaLearningPathBundle:Path")->findByIsPattern(true);
-        
         foreach ($patterns as $pattern) {
             $patternTrees[] = $pattern->getSteps()->first();
         }
-
         $params['patternTrees'] = $patternTrees;
-        $params['root'] = $path->getSteps()->first();
-        
+
+        if($path){
+            // Add path selected
+            $params['root'] = $path->getSteps()->first();
+        }
+
         return $params;
     }
 
