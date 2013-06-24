@@ -24,7 +24,9 @@ class StepController extends Controller
         return $this->redirect($this->generateUrl('pathedit', array('id' => $id)));
     }
 
+
     /**
+     * @Route("/pathedit", name="patheditselect")
      * @Route("/pathedit/path/{id}", name="pathedit")
      * @Template()
      */
@@ -110,8 +112,6 @@ class StepController extends Controller
         $manager = $this->getDoctrine()->getManager();
         $repository = $manager->getRepository("InnovaLearningPathBundle:Step");
 
-        //TODO WTF ?
-        //$root = $repository->findOneByPath($path)->getRoot();
         $root = $repository->findOneByPath($path);
 
         $options = array(
@@ -121,7 +121,8 @@ class StepController extends Controller
             'childClose' => '</li>',
             'childOpen' => function($child) {
                 if(count($child)){
-                    return '<li class="editable-item" id="' . $child["id"] . '"><i class="icon-trash delete-item"></i> <i class="icon-briefcase"></i>';
+
+                    return '<li path_id="'.$child["root"].'" class="editable-item" id="' . $child["id"] . '"><i class="icon-trash delete-item"></i> <i class="icon-briefcase"></i>';
                 }
              }
         );
