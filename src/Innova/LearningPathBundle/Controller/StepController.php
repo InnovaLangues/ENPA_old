@@ -116,7 +116,7 @@ class StepController extends Controller
 
         $options = array(
             'decorate' => true,
-            'rootOpen' => '<ul id="cible" class="tree sortable droppable ui-droppable ui-sortable">',
+            'rootOpen' => '<ul id="cible" class="tree sortable ui-sortable">',
             'rootClose' => '</ul>',
             'childClose' => '</li>',
             'childOpen' => function($child) {
