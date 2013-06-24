@@ -13,7 +13,7 @@ class PathType extends AbstractType
         $builder
             ->add('name')
             ->add('description')
-            ->add('is_pattern')
+            ->add('isPattern')
         ;
     }
 
