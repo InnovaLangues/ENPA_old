@@ -193,3 +193,7 @@ padding-bottom: 0px;
 .ressourceTitle:hover{
 	background: #E7E7E7;
 }
+
+.typeahead{
+	margin-top: 0px;
+}
