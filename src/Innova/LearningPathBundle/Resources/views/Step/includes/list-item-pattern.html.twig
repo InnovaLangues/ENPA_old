@@ -1,0 +1,9 @@
+{% for step in steps %}
+    <li class="new-item ui-draggable"> {{ step.name }}
+        {% if step.children %}
+            <ul class="">
+            	{% include "InnovaLearningPathBundle:Step:includes/list-item-pattern.html.twig" with {'steps': step.children} only %}
+            </ul>
+        {% endif %}
+    </li>
+{% endfor %}
