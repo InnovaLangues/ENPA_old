@@ -48,25 +48,40 @@ $(document).ready(function () {
 	});
 	
 	$(".droppable").droppable({
-		drop: function( event, ui ) {
-			clone = '<ul class="source"><li node_id="" class="file"><ul class="sortable"><li node_id="" class="file"></li><li node_id="" class="file"></li></ul></li></ul>';
-			ui.draggable.siblings().removeClass('source');		
-			ui.draggable.addClass("sortable");
-			ui.draggable.attr("id","").find("li").attr("id","");
-			$("#source_content").html(clone);
-			sort();
-		}
+		drop: function (e, ui) {
+
+        if ($(ui.sortable)[0].id != "") {
+            x = ui.helper.clone();
+	        ui.helper.remove();
+	        x.sortable({
+	            helper: 'original',
+	            containment: '#droppable'
+	        });
+	        x.appendTo('#droppable');
+    	}
+
+    }
 	});
 	
 	sort();
 
-/*	$('#trash').droppable({
-		hoverClass: "ui-state-active",
-        drop: function(event, ui) {
+	$(".sortable").sortable({
+	    stop: function(event, ui) {
+	        if (ui.item.hasClass("new-item")) {
+	            ui.item.removeClass("new-item");
+	            ui.item.removeClass("new-item");
+	            ui.item.addClass("editable-item");
+	            var value = ui.item.text();
+	            ui.item.html('<i class="icon-trash delete-item"></i> <i class="icon-briefcase"></i> ' + value);
+	        }
+	    }
+	});
+	$(".new-item").draggable({
+	    connectToSortable: ".sortable",
+	    helper: "clone"
+	});
+	$("ul, li").disableSelection();
 
-            $(ui.draggable).remove();
-        }
-    });*/
 
 	$(".well .delete-item").click(function(){
 		$(this).parent().remove();

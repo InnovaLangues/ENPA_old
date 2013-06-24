@@ -38,21 +38,16 @@ class StepController extends Controller
         $paths = $manager->getRepository("InnovaLearningPathBundle:Path")->findByIsPattern(false);
         $params['paths'] = $paths;
 
-        if ($path){
-            $patterns = $manager->getRepository("InnovaLearningPathBundle:Path")->findByIsPattern(true);
-            
-            foreach ($patterns as $pattern) {
-                //$patternTrees[] = $this->drawTree($pattern, true);
-                $patternTrees[] = $pattern;
-            }
-            /*
-            $htmlTree = $this->drawTree($path, false);
-
-            $params['htmlTree'] = $htmlTree;
-            $params['patternTrees'] = $patternTrees;
-            */
-           $params['path'] = $path->getSteps()->first();
+        
+        $patterns = $manager->getRepository("InnovaLearningPathBundle:Path")->findByIsPattern(true);
+        
+        foreach ($patterns as $pattern) {
+            $patternTrees[] = $pattern->getSteps()->first();
         }
+
+        $params['patternTrees'] = $patternTrees;
+        $params['root'] = $path->getSteps()->first();
+        
         return $params;
     }
 
@@ -110,26 +105,23 @@ class StepController extends Controller
     }
 
 
-    public function drawTree(Path $path, $isPattern)
+    public function drawTree(Path $path)
     {
         $manager = $this->getDoctrine()->getManager();
         $repository = $manager->getRepository("InnovaLearningPathBundle:Step");
 
+        //TODO WTF ?
+        //$root = $repository->findOneByPath($path)->getRoot();
         $root = $repository->findOneByPath($path);
-
-        $isPatternClass = "";
-        if($isPattern){
-            $isPatternClass = ' new-item';
-        }
 
         $options = array(
             'decorate' => true,
-            'rootOpen' => '<ul class="tree sortable droppable ui-droppable ui-sortable">',
+            'rootOpen' => '<ul id="cible" class="tree sortable droppable ui-droppable ui-sortable">',
             'rootClose' => '</ul>',
             'childClose' => '</li>',
-            'childOpen' => function($child, $isPatternClass) {
+            'childOpen' => function($child) {
                 if(count($child)){
-                    return '<li path_root="'.$child["root"].'" class="editable-item'.$isPatternClass.'" id="' . $child["id"] . '"><i class="icon-trash delete-item"></i> <i class="icon-briefcase"></i>';
+                    return '<li class="editable-item" id="' . $child["id"] . '"><i class="icon-trash delete-item"></i> <i class="icon-briefcase"></i>';
                 }
              }
         );
