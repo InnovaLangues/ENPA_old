@@ -1,14 +1,16 @@
 {% extends '::base.html.twig' %}
 
 {% block body -%}
-<div class="row">
-    <div class="span11 offset1">
+
+    <div class="container">
+           <div class="row">
+    <div class="span12">
         <h1>{{ 'Path.entity_plural'|trans }}</h1>
     </div>
 </div>
 
 <div class="row">
-    <div class="offset4 span8">    
+    <div class="span12">    
         <table class="records_list table table-striped table-bordered">
             <thead>
                 <tr>
@@ -31,13 +33,15 @@
 </div>
 
 <div class="row">
-    <div class="offset11  span1">
+    <div class="span12">
         
-            <a href="{{ path('path_new') }}" role="button" class="btn">
+            <a href="{{ path('path_new') }}" role="button" class="btn pull-right">
                 {{ 'Generic.create'|trans }}
             </a>
 
     </div>
 </div>
+    </div>
+
 
     {% endblock %}

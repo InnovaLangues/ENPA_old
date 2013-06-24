@@ -75,4 +75,6 @@ $(document).ready(function() {
     $("#switch_fs").click(function() {
         $(document).toggleFullScreen();
     });
+
+    $("#path-id").select2(); 
 });
