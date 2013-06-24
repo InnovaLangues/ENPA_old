@@ -1,11 +1,11 @@
 ////////////////////////////////////////////////////
 //////////// FUNCTION ////////////////////////////
-/*function sort(){
+function sort(){
 	$('.sortable').sortable({
 		connectWith: $('.sortable'),
 		helper: "clone"
 	}).disableSelection();
-}*/
+}
 
 function parseTree(ul){
     var tags = [];
@@ -47,7 +47,7 @@ $(document).ready(function () {
 		});
 	});
 	
-	/*$(".droppable").droppable({
+	$(".droppable").droppable({
 		drop: function (e, ui) {
 
         if ($(ui.sortable)[0].id != "") {
@@ -61,9 +61,9 @@ $(document).ready(function () {
     	}
 
     }
-	});*/
+	});
 	
-	//sort();
+	sort();
 
 	$(".sortable").sortable({
 	    stop: function(event, ui) {
@@ -82,13 +82,6 @@ $(document).ready(function () {
 	});
 	$("ul, li").disableSelection();
 
-/*	$('#trash').droppable({
-		hoverClass: "ui-state-active",
-        drop: function(event, ui) {
-
-            $(ui.draggable).remove();
-        }
-    });*/
 
 	$(".well .delete-item").click(function(){
 		$(this).parent().remove();

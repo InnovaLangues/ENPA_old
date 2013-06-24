@@ -24,7 +24,9 @@ class StepController extends Controller
         return $this->redirect($this->generateUrl('pathedit', array('id' => $id)));
     }
 
+
     /**
+     * @Route("/pathedit", name="patheditselect")
      * @Route("/pathedit/path/{id}", name="pathedit")
      * @Template()
      */
@@ -36,18 +38,16 @@ class StepController extends Controller
         $paths = $manager->getRepository("InnovaLearningPathBundle:Path")->findByIsPattern(false);
         $params['paths'] = $paths;
 
-        if ($path){
-            $patterns = $manager->getRepository("InnovaLearningPathBundle:Path")->findByIsPattern(true);
-            $htmlTree = $this->drawTree($path);
-
-            foreach ($patterns as $pattern) {
-                $patternTrees[] = $this->drawTree($pattern);
-            }
-
-            $params['htmlTree'] = $htmlTree;
-            $params['patternTrees'] = $patternTrees;
+        
+        $patterns = $manager->getRepository("InnovaLearningPathBundle:Path")->findByIsPattern(true);
+        
+        foreach ($patterns as $pattern) {
+            $patternTrees[] = $pattern->getSteps()->first();
         }
 
+        $params['patternTrees'] = $patternTrees;
+        $params['root'] = $path->getSteps()->first();
+        
         return $params;
     }
 
@@ -116,7 +116,7 @@ class StepController extends Controller
 
         $options = array(
             'decorate' => true,
-            'rootOpen' => '<ul id="cible" class="tree sortable ui-sortable">',
+            'rootOpen' => '<ul id="cible" class="tree sortable droppable ui-droppable ui-sortable">',
             'rootClose' => '</ul>',
             'childClose' => '</li>',
             'childOpen' => function($child) {
