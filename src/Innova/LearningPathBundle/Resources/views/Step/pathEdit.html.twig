@@ -23,12 +23,12 @@
 
 
                         <form action="{{path("redirectpathedit")}}" method="post" accept-charset="utf-8" id="form_test_bob">
-                            <select name="path-id" id="">
+                            <select name="path-id" id="path-id">
                                 {% for path in paths %}
                                     <option value="{{ path.id }}">{{ path.name }}</option>
                                 {% endfor %}
                             </select>
-                        <input type="submit">
+                        <input type="submit" class="btn">
 
                     </form>
                 </div>
@@ -140,5 +140,6 @@
 
 {% block javascripts %}
     <script src="{{ asset('bundles/innovalearningpath/js/accordeon.js') }}"></script>
+    <script src="{{ asset('bundles/innovalearningpath/js/select2.js') }}"></script>
 {% endblock %}
 {% endblock %}
