@@ -20,8 +20,6 @@
                     <h3>Parcours</h3>
                 </div>
                 <div id="header_test_bob" class="span1">
-
-
                         <form action="{{path("redirectpathedit")}}" method="post" accept-charset="utf-8" id="form_test_bob">
                             <select name="path-id" id="path-id">
                                 {% for path in paths %}
@@ -35,9 +33,11 @@
             </div>
             <div class="well">
                 <div id="left_tree">
-                    {% if htmlTree is defined %}
-                        {{ htmlTree|raw }}
-                    {% endif %}  
+                    <h4>{{ path.name }}</h4>
+                    <ul class="main-menu">
+                        {% include "InnovaLearningPathBundle:Step:includes/list-item.html.twig" with {'steps': path.children } only %}
+                    </ul>
+
                 </div>
             </div>
             <button id="save" class="btn pull-right">Save</button>

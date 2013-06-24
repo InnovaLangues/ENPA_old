@@ -1,0 +1,9 @@
+{% for step in steps %}
+    <li> {{ step.name }}
+        {% if step.children %}
+            <ul>
+                {% include "InnovaLearningPathBundle:Step:includes/list-item.html.twig" with {'steps': step.children} only %}
+            </ul>
+        {% endif %}
+    </li>
+{% endfor %}
