@@ -1,0 +1,9 @@
+{% for step in steps %}
+    <li class="editable-item"> <i class="icon-trash delete-item"></i> <i class="icon-briefcase"></i> {{ step.name }}
+        {% if step.children %}
+            <ul class="sortable tree ui-sortable">
+                {% include "InnovaLearningPathBundle:Step:includes/list-item.html.twig" with {'steps': step.children} only %}
+            </ul>
+        {% endif %}
+    </li>
+{% endfor %}

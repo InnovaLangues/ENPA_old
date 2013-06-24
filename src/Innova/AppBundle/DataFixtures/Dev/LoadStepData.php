@@ -172,6 +172,13 @@ class LoadStepData extends AbstractFixture implements OrderedFixtureInterface
         $manager->persist($step22);
         $step22->setPath($this->getReference('path2'));
 
+
+        $step23 = new Step();
+        $step23->setName('Test tree3');
+
+        $manager->persist($step23);
+        $step23->setPath($this->getReference('path3'));
+
         $manager->flush();
     }
 }
