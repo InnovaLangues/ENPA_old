@@ -8,12 +8,12 @@
             <div class="scroll">
            
 
-                 {% for patternTree in patternTrees %}
+                {% for patternTree in patternTrees %}
                     <h4>{{ patternTree.name }}</h4>
-                        <ul class="sortable tree ui-sortable">
-                            {% include "InnovaLearningPathBundle:Step:includes/list-item.html.twig" with {'steps': patternTree.children } only %}
-                         </ul>
-                  {% endfor %}
+                    <ul class="">
+                        {% include "InnovaLearningPathBundle:Step:includes/list-item-pattern.html.twig" with {'steps': patternTree.children } only %}
+                    </ul>
+                {% endfor %}
 
             </div>
             <h3>Strategie</h3>
