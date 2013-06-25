@@ -20,10 +20,15 @@ class StepController extends Controller
      * @Method({"POST"})
      */
     public function redirectPathEdit(Request $request) {
-        $id = $request->get('path-id');
-        return $this->redirect($this->generateUrl('pathedit', array('id' => $id)));
+        return $this->redirect(
+            $this->generateUrl(
+                'pathedit', 
+                array(
+                    'id' => $request->get('path-id')
+                )
+            )
+        );
     }
-
 
     /**
      * @Route("/pathedit", name="patheditselect")
@@ -33,23 +38,33 @@ class StepController extends Controller
     public function pathEditAction(Path $path = null)
     {
         $params = array();
-        $manager = $this->getDoctrine()->getManager();
+        $patternTrees = array();
 
-        // Add non-Pattern Path for the select.
-        $paths = $manager->getRepository("InnovaLearningPathBundle:Path")->findByIsPattern(false);
-        $params['paths'] = $paths;
+        $repository = $this
+            ->getDoctrine()
+            ->getManager()
+            ->getRepository("InnovaLearningPathBundle:Path");
+
+        // Add non-Pattern Paths for the select.
+        $params['paths'] = $repository->findByIsPattern(false);
 
         
-        // Add Pattern Path for the right menu.
-        $patterns = $manager->getRepository("InnovaLearningPathBundle:Path")->findByIsPattern(true);
+        // Add Pattern Paths for the right menu.
+        $patterns = $repository->findByIsPattern(true);
+
         foreach ($patterns as $pattern) {
-            $patternTrees[] = $pattern->getSteps()->first();
+            $patternTrees[] = $pattern
+                ->getSteps()
+                ->first();
         }
+
         $params['patternTrees'] = $patternTrees;
 
-        if($path){
+        if ($path) {
             // Add path selected
-            $params['root'] = $path->getSteps()->first();
+            $params['root'] = $path
+                ->getSteps()
+                ->first();
         }
 
         return $params;
@@ -61,21 +76,23 @@ class StepController extends Controller
     */
     public function ajaxSaveTreeAction(Request $request)
     {
-        $manager = $this->getDoctrine()->getManager();
-        $repository = $manager->getRepository("InnovaLearningPathBundle:Step");
+        $manager = $this
+            ->getDoctrine()
+            ->getManager();
 
         if ($request->getMethod() == 'POST') {
             $json = $request->get('json');
             $steps = json_decode($json);
-            echo($steps);
-            $this->treeConstruct($steps, $manager, null);
+            //echo($steps);
+            $this->treeConstruct(
+                $steps, 
+                $manager, 
+                null
+            );
+            
             $manager->flush();
         }
-
-        //return array('htmlTree' => $htmlTree);
-        //echo $htmlTree;
     }
-
 
     /**
      * [TreeConstruct description]
@@ -87,59 +104,33 @@ class StepController extends Controller
         $root = $steps->root;
         var_dump($steps);
         die();
-        foreach ($steps->getChildren() as $step){
 
-            if ($step["id"] != ""){
-                $newStep = $manager->getRepository("InnovaLearningPathBundle:Step")->find($step["id"]);
+        foreach ($steps->getChildren() as $step) {
+            if ($step["id"] !== "") {
+                $newStep = $manager
+                    ->getRepository("InnovaLearningPathBundle:Step")
+                    ->find($step["id"]);
             }
             else{
                 $newStep = new Step();
             }
 
-            $newStep->setName($step['name']);
-            $newStep->setParent($stepParent);
+            $newStep
+                ->setName($step['name']);
+                ->setParent($stepParent);
 
             $manager->persist($newStep);
 
             $stepParent = $newStep->getParent();
 
-            treeConstruct($step, $manager, $stepParent);
+            treeConstruct(
+                $step, 
+                $manager, 
+                $stepParent
+            );
         }
 
     }
-
-
-    public function drawTree(Path $path)
-    {
-        $manager = $this->getDoctrine()->getManager();
-        $repository = $manager->getRepository("InnovaLearningPathBundle:Step");
-
-        //TODO WTF ?
-        //$root = $repository->findOneByPath($path)->getRoot();
-        $root = $repository->findOneByPath($path);
-
-        $options = array(
-            'decorate' => true,
-            'rootOpen' => '<ul id="cible" class="tree sortable droppable ui-droppable ui-sortable">',
-            'rootClose' => '</ul>',
-            'childClose' => '</li>',
-            'childOpen' => function($child) {
-                if(count($child)){
-                    return '<li class="editable-item" id="' . $child["id"] . '"><i class="icon-trash delete-item"></i> <i class="icon-briefcase"></i>';
-                }
-             }
-        );
-
-        $htmlTree = $repository->childrenHierarchy(
-            $root,
-            false,
-            $options,
-            true
-        );
-
-        return $htmlTree;
-    }
-
 
     /**
      * Creates a new Path entity.
@@ -149,38 +140,63 @@ class StepController extends Controller
      */
     public function ajaxSaveAction(Request $request)
     {   
-        $manager = $this->getDoctrine()->getManager();
+        $manager = $this
+            ->getDoctrine()
+            ->getManager();
+
         $repository = $manager->getRepository("InnovaLearningPathBundle:Step");
  
-        if ($request->getMethod() == 'POST'){
+        if ($request->getMethod() == 'POST') {
             $json = $request->get('tab');
             $json = json_decode(stripslashes($json)); 
 
-            $this->parseJsonUl($json->step, NULL, $manager, $repository);
-
+            $this->parseJsonUl(
+                $json->step, 
+                NULL, 
+                $manager, 
+                $repository
+            );
         }
 
         //TODO enregister dans la base
         $manager->flush();
+
         return new Response('OK', 200);
     }
 
-    private function parseJsonUl($step, $parent, $manager, $repository){
-        if ($step->id > 0){
-            $new_step = $repository->find($step->id);
-        }
-        else{
+    /**
+     * [parseJsonUl description]
+     * @param  [type] $step       [description]
+     * @param  [type] $parent     [description]
+     * @param  [type] $manager    [description]
+     * @param  [type] $repository [description]
+     * @return [type]             [description]
+     */
+    private function parseJsonUl($step, $parent, $manager, $repository) {
+        if ($step->id > 0) {
+            $new_step = $repository->find(
+                $step->id
+            );
+        } else {
             $new_step = new Step();
         }
-        echo $step->id."<br/>";
 
-        $new_step->setName($step->name);
-        $new_step->setParent($parent);
+        //echo $step->id."<br/>";
+
+        $new_step
+            ->setName($step->name)
+            ->setParent($parent);
+
         $manager->persist($new_step);
 
-        if (isset($step->children)){
+        if (isset($step->children)) {
             foreach ($step->children as $child){
-                $this->parseJsonUl($child->step, $new_step, $manager, $repository);
+                $this->parseJsonUl(
+                    $child->step, 
+                    $new_step, 
+                    $manager, 
+                    $repository
+                );
             }
         }
     }
