@@ -31,9 +31,9 @@ $(document).ready(function () {
 			nodes_to_delete.push($(this).attr("node_id"));
 		}
 		});
-
 		$(this).parent().remove();
-		/*$.ajax({
+		
+		$.ajax({
 			type: 'POST',
 			url: 'remove_node.php',
 			data: {"node_ids": nodes_to_delete} ,
@@ -43,7 +43,7 @@ $(document).ready(function () {
 				save_tree();
 				alert("noeud supprimé");
 			}
-		});*/
+		});
 	});
 
 
