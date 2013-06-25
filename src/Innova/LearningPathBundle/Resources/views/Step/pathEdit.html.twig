@@ -14,24 +14,26 @@
         <option value="Vue Apprenant">Vue Apprenant</option>
     </select>
     <div class="row">
-        <div class="span4">
+        <div class="span12 parcoursTree">
             <div class="row">
-                <div class="span1" id="title_test_bob">
-                    <h3>Parcours</h3>
+                <div class="span12" id="title_test_bob">
+                    <h3>Parcours :</h3>
                 </div>
-                <div id="header_test_bob" class="span1">
+            </div>
+            <div class="row">
+                <div id="header_test_bob" class="span12">
                         <form action="{{path("redirectpathedit")}}" method="post" accept-charset="utf-8" id="form_test_bob">
                             <select name="path-id" id="path-id">
                                 {% for path in paths %}
                                     <option value="{{ path.id }}">{{ path.name }}</option>
                                 {% endfor %}
                             </select>
-                        <input type="submit" class="btn">
+                        <input type="submit" class="btn clickParcoursTree">
 
                     </form>
                 </div>
             </div>
-            <div class="well">
+            <div class="well ">
                 <div id="left_tree">
                     <h4>{{ root.name }}</h4>
                     <ul class="sortable tree ui-sortable">
@@ -39,18 +41,20 @@
                     </ul>
 
                 </div>
+                
             </div>
             <button id="save" class="btn pull-right">Save</button>
         </div>
-        <div class="span4">
-            <h3>Ressources types</h3>
+        <div class="span6 ressourcesTypes">
+            <h3>Ressources types :</h3>
+            <h4 class="nameRessourcesTypes">Test1</h4>
             <h4 class="accordionButton on ressourceTitle well otherss"><i class="icon-chevron-up pull-right"></i>Qui </h4>
             <div class="accordionContent">
                 <div class="well otherss">
                     <ul class="tree_abstract">
-                        <li><i class="icon-user"></i>Professeur</li>
+                        <li class="ressourcesTypes-item"><i class="icon-user"></i>Professeur</li>
                     </ul>
-                    <a href="#" title="" class="btn pull-right"><i class="icon-plus"></i>Ajouter</a>
+                    <!-- <a href="#" title="" class="btn pull-right"><i class="icon-plus"></i>Ajouter</a> -->
                 </div>     
             </div>
 
@@ -58,11 +62,11 @@
             <div class="accordionContent">
                 <div class="well otherss">
                     <ul class="tree_abstract">
-                        <li><i class="icon-user"></i>Classe</li>
-                        <li><i class="icon-user"></i>Eleve</li>
-                        <li><i class="icon-user"></i>Binome</li>
+                        <li class="ressourcesTypes-item"><i class="icon-user"></i>Classe</li>
+                        <li class="ressourcesTypes-item"><i class="icon-user"></i>Eleve</li>
+                        <li class="ressourcesTypes-item"><i class="icon-user"></i>Binome</li>
                     </ul>  
-                    <a href="#" title="" class="btn pull-right"><i class="icon-plus"></i>Ajouter</a>
+
                 </div> 
             </div>
 
@@ -70,11 +74,11 @@
             <div class="accordionContent">
                 <div class="well otherss">
                     <ul class="tree_abstract">
-                        <li><i class="icon-home"></i>Labo</li>
-                        <li><i class="icon-home"></i>Classe</li>
-                        <li><i class="icon-home"></i>Dehors</li>
+                        <li class="ressourcesTypes-item"><i class="icon-home"></i>Labo</li>
+                        <li class="ressourcesTypes-item"><i class="icon-home"></i>Classe</li>
+                        <li class="ressourcesTypes-item"><i class="icon-home"></i>Dehors</li>
                     </ul>
-                    <a href="#" title="" class="btn pull-right"><i class="icon-plus"></i>Ajouter</li></a>
+
                 </div>
             </div>
 
@@ -82,10 +86,10 @@
             <div class="accordionContent">
                 <div class="well otherss">
                     <ul class="tree_abstract">
-                        <li><i class="icon-wrench"></i>Video projecteur</li>
-                        <li><i class="icon-wrench"></i>Couteau</li>
+                        <li class="ressourcesTypes-item"><i class="icon-wrench"></i>Video projecteur</li>
+                        <li class="ressourcesTypes-item"><i class="icon-wrench"></i>Couteau</li>
                     </ul>
-                    <a href="#" title="" class="btn pull-right"><i class="icon-plus"></i>Ajouter</li></a>
+
                 </div>
             </div>
 
@@ -93,10 +97,10 @@
             <div class="accordionContent">
                 <div class="well otherss">
                     <ul class="tree_abstract">
-                        <li><i class="icon-envelope"></i>Journal</li>
-                        <li><i class="icon-envelope"></i>Plan</li>
+                        <li class="ressourcesTypes-item"><i class="icon-envelope"></i>Journal</li>
+                        <li class="ressourcesTypes-item"><i class="icon-envelope"></i>Plan</li>
                     </ul>
-                    <a href="#" title="" class="btn pull-right"><i class="icon-plus"></i>Ajouter</li></a>
+
                 </div>
             </div>
 
@@ -104,15 +108,16 @@
             <div class="accordionContent">
                 <div class="well otherss">
                     <ul class="tree_abstract">
-                        <li><i class="icon-film"></i>Synthèse</li>
-                        <li><i class="icon-film"></i>Rapport</li>
+                        <li class="ressourcesTypes-item"><i class="icon-film"></i>Synthèse</li>
+                        <li class="ressourcesTypes-item"><i class="icon-film"></i>Rapport</li>
                     </ul>
-                    <a href="#" title="" class="btn pull-right"><i class="icon-plus"></i>Ajouter</li></a>
+
                 </div>
              </div>
         </div>
-        <div class="span4">
-            <h3>Ressources réelles</h3>
+        <div class="span4 ressourcesReelles">
+            <h3>Ressources réelles :</h3>
+            <h4 class="nameRessourcesReelles">Test2</h4>
             <div class="well otherss">
                 <ul class="concrete">
                     <li><i class="icon-film"></i> Fichier vidéo</li>

@@ -197,3 +197,15 @@ padding-bottom: 0px;
 .typeahead{
 	margin-top: 0px;
 }
+
+.parcoursTree{
+	overflow: hidden;
+}
+
+.ressourcesTypes{
+	display: none;
+}
+
+.ressourcesReelles{
+	display: none;
+}
