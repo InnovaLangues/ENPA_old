@@ -12,6 +12,11 @@ web/bundles/*
 app/config/parameters.ini
 app/config/parameters.yml
 
-*.php~
+# Build
+build/api/
+build/logs/
+build/code-browser/
 
+*.php~
 *.orig
+composer.phar
