@@ -115,7 +115,7 @@ class StepController extends Controller
             }
 
             $newStep
-                ->setName($step['name']);
+                ->setName($step['name'])
                 ->setParent($stepParent);
 
             $manager->persist($newStep);
