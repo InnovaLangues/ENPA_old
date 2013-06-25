@@ -196,7 +196,9 @@ padding-bottom: 0px;
 	margin-top: 0px;
 }
 
-
+.cache{
+	display: none;
+}
 
 
 .parcoursTree{
