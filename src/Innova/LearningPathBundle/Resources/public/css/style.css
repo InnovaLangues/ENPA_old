@@ -8,8 +8,6 @@ text-align: center;
 }
 
 body{
-margin: 5px;
-margin-top: 40px;
 }
 
 #claroline_volet_gauche{
@@ -196,4 +194,8 @@ padding-bottom: 0px;
 
 .typeahead{
 	margin-top: 0px;
+}
+
+.cache{
+	display: none;
 }
