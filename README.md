@@ -25,6 +25,7 @@ composer install
 
 
 - Fixtures command :
+
 ```bash
 php app/console innova:dev-fixtures:load
 ```
