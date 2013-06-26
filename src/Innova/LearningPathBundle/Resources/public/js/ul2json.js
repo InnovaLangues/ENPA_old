@@ -3,7 +3,7 @@ var json = "";
 $(document).ready(function() {
     $('#save').click(function(event) {
         json = "";
-        html2json("#left_tree #cible");
+        html2json("#left_tree");
     });
 });
 
@@ -11,17 +11,15 @@ function html2json(tree){
     json += '{';
     recursive($(tree).children("li:first"));
     json += '}';
-    out();
+    sendJson();
 }
 
 function recursive(li){
     json += '"step":{';
     // on récupère l'id et le name
-    var id = li.attr("id");
+    var id = li.attr("node_id");
     json += '"id": "'+id+'",';
-    console.log(li);
-    var name = li.clone().children().remove().end().text();
-    console.log(name);
+    var name = li.children(".descr").text();
     json += '"name": "'+name+'"';
     // on test si le li contient un sous-arbre.
     // -> cas sous-arbre existant
@@ -49,21 +47,17 @@ function addslashes(str){
 }
 
 
-function out(){
-    console.log(json);
+function sendJson(){
+    $("#save_callback").html("<img src='"+ base_path +"bundles/innovalearningpath/img/ajax-loader.gif' />");
     $.ajax({
       url: Routing.generate('path_ajax_save'),
       type: 'POST',
-      data: {tab: json},
-      complete: function(xhr, textStatus) {
-      },
+      data: {json: json},
       success: function(data, textStatus, xhr) {
-        console.log(data);
+        $("#save_callback").html("<span class='alert alert-success'>Parcours sauvegardé</span>");
       },
       error: function(xhr, textStatus, errorThrown) {
-        alert("error");
+        $("#save_callback").html("<span class='alert alert-error'>Erreur d'enregistrement.</span>");
       }
     });
-
-
 }

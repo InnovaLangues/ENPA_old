@@ -34,15 +34,16 @@
             <div class="well">
                 <div id="left_tree">
                     {% if root is defined %}
-                        <h4>{{ root.name }}</h4>
-                        <ul class="sortable tree ui-sortable">
-                            {% include "InnovaLearningPathBundle:Step:includes/list-item.html.twig" with {'steps': root.children } only %}
-                        </ul>
+                        <li node_id = "{{ root.id }}"><span class='descr'>{{ root.name }} </span>
+                            <ul class="sortable tree ui-sortable">
+                                {% include "InnovaLearningPathBundle:Step:includes/list-item.html.twig" with {'steps': root.children } only %}
+                            </ul>
+                        </li>
                     {% endif %}
 
                 </div>
             </div>
-            <button id="save" class="btn pull-right">Save</button>
+            <span id="save_callback"></span><button id="save" class="btn pull-right">Save</button>
         </div>
         <div class="span4">
             <h3>Ressources types</h3>

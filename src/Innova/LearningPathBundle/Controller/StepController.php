@@ -69,68 +69,6 @@ class StepController extends Controller
         return $params;
     }
 
-     /**
-    * @Route("/ajax_savetree", name="ajax_savetree")
-    * @Method({"POST"})
-    */
-    public function ajaxSaveTreeAction(Request $request)
-    {
-        $manager = $this
-            ->getDoctrine()
-            ->getManager();
-
-        if ($request->getMethod() == 'POST') {
-            $json = $request->get('json');
-            $steps = json_decode($json);
-            //echo($steps);
-            $this->treeConstruct(
-                $steps,
-                $manager,
-                null
-            );
-
-            $manager->flush();
-        }
-    }
-
-    /**
-     * [TreeConstruct description]
-     * @param array  $steps
-     * @param [type] $manager
-     * @param Step   $stepParent
-     */
-    private function treeConstruct($steps, $manager, Step $stepParent = null)
-    {
-        $root = $steps->root;
-        var_dump($steps);
-        die();
-
-        foreach ($steps->getChildren() as $step) {
-            if ($step["id"] !== "") {
-                $newStep = $manager
-                    ->getRepository("InnovaLearningPathBundle:Step")
-                    ->find($step["id"]);
-            } else {
-                $newStep = new Step();
-            }
-
-            $newStep
-                ->setName($step['name'])
-                ->setParent($stepParent);
-
-            $manager->persist($newStep);
-
-            $stepParent = $newStep->getParent();
-
-            treeConstruct(
-                $step,
-                $manager,
-                $stepParent
-            );
-        }
-
-    }
-
     /**
      * Creates a new Path entity.
      *
@@ -178,7 +116,7 @@ class StepController extends Controller
         $repository = $manager->getRepository("InnovaLearningPathBundle:Step");
 
         if ($request->getMethod() == 'POST') {
-            $json = $request->get('tab');
+            $json = $request->get('json');
             $json = json_decode(stripslashes($json));
 
             $this->parseJsonUl(
@@ -191,7 +129,6 @@ class StepController extends Controller
 
         //TODO enregister dans la base
         $manager->flush();
-
         return new Response('OK', 200);
     }
 
@@ -206,26 +143,27 @@ class StepController extends Controller
     private function parseJsonUl($step, $parent, $manager, $repository)
     {
         if ($step->id > 0) {
-            $new_step = $repository->find(
-                $step->id
-            );
+            $newStep = $repository->find($step->id);
         } else {
-            $new_step = new Step();
+            $newStep = new Step();
         }
 
-        //echo $step->id."<br/>";
-
-        $new_step
+        $newStep
             ->setName($step->name)
             ->setParent($parent);
 
-        $manager->persist($new_step);
+        $manager->persist($newStep);
+        $manager->flush();
+
+        if($parent != NULL){
+            $repository->persistAsLastChildOf($newStep, $parent);
+        }
 
         if (isset($step->children)) {
             foreach ($step->children as $child) {
                 $this->parseJsonUl(
                     $child->step,
-                    $new_step,
+                    $newStep,
                     $manager,
                     $repository
                 );
