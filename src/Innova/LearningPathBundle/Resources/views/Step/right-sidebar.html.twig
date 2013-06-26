@@ -7,13 +7,14 @@
             <h3>Modele</h3>
             <div class="scroll">
            
-
+            {% if patternTrees is defined %}
                 {% for patternTree in patternTrees %}
                     <h4>{{ patternTree.name }}</h4>
-                    <ul class="">
-                        {% include "InnovaLearningPathBundle:Step:includes/list-item-pattern.html.twig" with {'steps': patternTree.children } only %}
-                    </ul>
+                        <ul class="">
+                            {% include "InnovaLearningPathBundle:Step:includes/list-item-pattern.html.twig" with {'steps': patternTree.children } only %}
+                         </ul>
                 {% endfor %}
+            {% endif %}
 
             </div>
             <h3>Strategie</h3>

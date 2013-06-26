@@ -71,4 +71,4 @@ stof_doctrine_extensions:
             timestampable: true
 
 fos_js_routing:
-    routes_to_expose: [ajax_savetree, path_ajax_find_by_name, path_ajax_save]
+    routes_to_expose: [ajax_savetree, path_ajax_find_by_name, path_ajax_save, step_ajax_delete]

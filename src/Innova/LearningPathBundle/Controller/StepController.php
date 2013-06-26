@@ -115,7 +115,7 @@ class StepController extends Controller
             }
 
             $newStep
-                ->setName($step['name']);
+                ->setName($step['name'])
                 ->setParent($stepParent);
 
             $manager->persist($newStep);
@@ -129,6 +129,38 @@ class StepController extends Controller
             );
         }
 
+    }
+
+    /**
+     * Creates a new Path entity.
+     *
+     * @Route("/ajax/step/delete", name="step_ajax_delete")
+     * @Method("POST")
+     */
+    public function ajaxStepDeleteAction(Request $request)
+    {
+
+        $manager = $this
+            ->getDoctrine()
+            ->getManager();
+
+        $repository = $manager->getRepository("InnovaLearningPathBundle:Step");
+
+        if ($request->getMethod() === 'POST') {
+            $nodeIds = $request->get('node_ids');
+            foreach ($nodeIds as $stepId) {
+                $step = $manager
+                    ->getRepository("InnovaLearningPathBundle:Step")
+                    ->findOneById($stepId);
+
+                $repository->removeFromTree($step);
+            }
+
+            $manager->clear();
+            $manager->flush();
+        }
+
+        return new Response('OK', 200);
     }
 
     /**

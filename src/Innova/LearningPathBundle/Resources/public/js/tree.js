@@ -31,19 +31,18 @@ $(document).ready(function () {
 			nodes_to_delete.push($(this).attr("node_id"));
 		}
 		});
-
 		$(this).parent().remove();
-		/*$.ajax({
+		
+		$.ajax({
 			type: 'POST',
-			url: 'remove_node.php',
+			url: Routing.generate('step_ajax_delete'),
 			data: {"node_ids": nodes_to_delete} ,
 			error: function() { 
 			},
 			success: function() {
-				save_tree();
-				alert("noeud supprimé");
+				console.log("plop");
 			}
-		});*/
+		});
 	});
 
 
