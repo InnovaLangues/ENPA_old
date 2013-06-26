@@ -80,6 +80,11 @@ class Step
     private $path;
 
     /**
+    * @ORM\ManyToOne(targetEntity="StepType", inversedBy="steps")
+    */
+    private $stepType;
+
+    /**
      * Get id
      *
      * @return integer
@@ -312,5 +317,28 @@ class Step
     public function getPath()
     {
         return $this->path;
+    }
+
+    /**
+     * Set stepType
+     *
+     * @param \Innova\LearningPathBundle\Entity\StepType $stepType
+     * @return Step
+     */
+    public function setStepType(\Innova\LearningPathBundle\Entity\StepType $stepType = null)
+    {
+        $this->stepType = $stepType;
+
+        return $this;
+    }
+
+    /**
+     * Get stepType
+     *
+     * @return \Innova\LearningPathBundle\Entity\StepType 
+     */
+    public function getStepType()
+    {
+        return $this->stepType;
     }
 }
