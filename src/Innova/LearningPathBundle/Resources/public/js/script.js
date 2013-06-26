@@ -77,4 +77,26 @@ $(document).ready(function() {
     });
 
     $("#path-id").select2(); 
+
+    $(".clickParcoursTree").click(function(){
+        $(".parcoursTree").css("display","block");
+    });
+
+    $(".parcours-item").click(function(){
+        $(".parcoursTree").addClass("span6");
+        $(".parcoursTree").removeClass("span12");
+        $(".ressourcesTypes").css("display","block");
+        $(".parcours-item").removeClass("active");
+        $(this).addClass("active");
+
+    });
+
+    $(".ressourcesTypes-item").click(function(){
+        $(".parcoursTree").addClass("span4");
+        $(".parcoursTree").removeClass("span6");
+        $(".ressourcesTypes").addClass("span4");
+        $(".ressourcesTypes").removeClass("span6");
+        $(".ressourcesReelles").css("display","block");
+    });
+    
 });
