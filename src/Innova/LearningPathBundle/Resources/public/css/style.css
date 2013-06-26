@@ -212,3 +212,16 @@ padding-bottom: 0px;
 
 	display: none;
 }
+
+.active{
+	font-weight: bold;
+}
+
+.parcours-item{
+	color:black;
+}
+
+.parcours-item:hover{
+	text-decoration: none;
+	color: black;
+}
