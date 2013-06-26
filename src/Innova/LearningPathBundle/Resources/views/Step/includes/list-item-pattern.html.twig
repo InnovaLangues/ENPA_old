@@ -1,5 +1,5 @@
 {% for step in steps %}
-    <li class="new-item ui-draggable" node_id="{{ step.id }}"><i class="icon-trash delete-item cache"></i> <i class="icon-briefcase cache"></i> {{ step.name }} 
+    <li class="new-item ui-draggable" node_id="{{ step.id }}"><i class="icon-trash delete-item cache"></i> <a href="#{{step.name}}" class="parcours-item">{{ step.name }}</a>
         {% if step.children %}
             <ul class="">
             	{% include "InnovaLearningPathBundle:Step:includes/list-item-pattern.html.twig" with {'steps': step.children} only %}

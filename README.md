@@ -24,10 +24,11 @@ composer install
 - Set symfony cache permissions : http://symfony.com/doc/2.2/book/installation.html
 
 
-img License :
--------------
-activitybundle/
-- trash.png http://www.iconfinder.com/icondetails/80988/64/trash_icon
+- Fixtures command :
+
+```bash
+php app/console innova:dev-fixtures:load
+```
 
 Additional credits :
 --------------------

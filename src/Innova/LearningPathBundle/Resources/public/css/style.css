@@ -196,6 +196,35 @@ padding-bottom: 0px;
 	margin-top: 0px;
 }
 
+
 .cache{
 	display: none;
+}
+
+.parcoursTree{
+	overflow: hidden;
+}
+
+.ressourcesTypes{
+	display: none;
+}
+
+.ressourcesReelles{
+
+	display: none;
+
+}
+
+.active{
+	font-weight: bold;
+}
+
+.parcours-item{
+	color:black;
+}
+
+.parcours-item:hover{
+	text-decoration: none;
+	color: black;
+
 }
