@@ -80,9 +80,9 @@ class Step
     private $path;
 
     /**
-    * @ORM\ManyToOne(targetEntity="Operator", inversedBy="steps")
+    * @ORM\ManyToOne(targetEntity="StepType", inversedBy="steps")
     */
-    private $operator;
+    private $stepType;
 
     /**
      * Get id
@@ -320,25 +320,25 @@ class Step
     }
 
     /**
-     * Set operator
+     * Set stepType
      *
-     * @param \Innova\LearningPathBundle\Entity\Operator $operator
+     * @param \Innova\LearningPathBundle\Entity\StepType $stepType
      * @return Step
      */
-    public function setOperator(\Innova\LearningPathBundle\Entity\Operator $operator = null)
+    public function setStepType(\Innova\LearningPathBundle\Entity\StepType $stepType = null)
     {
-        $this->operator = $operator;
+        $this->stepType = $stepType;
 
         return $this;
     }
 
     /**
-     * Get operator
+     * Get stepType
      *
-     * @return \Innova\LearningPathBundle\Entity\Operator 
+     * @return \Innova\LearningPathBundle\Entity\StepType 
      */
-    public function getOperator()
+    public function getStepType()
     {
-        return $this->operator;
+        return $this->stepType;
     }
 }
