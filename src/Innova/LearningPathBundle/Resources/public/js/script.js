@@ -88,6 +88,7 @@ $(document).ready(function() {
         $(".ressourcesTypes").css("display","block");
         $(".parcours-item").removeClass("active");
         $(this).addClass("active");
+
     });
 
     $(".ressourcesTypes-item").click(function(){
