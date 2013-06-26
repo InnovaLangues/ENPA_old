@@ -21,6 +21,8 @@ class PathController extends Controller
     /**
      * Lists all Path entities.
      *
+     * @return array
+     *
      * @Route("/", name="path")
      * @Method("GET")
      * @Template()
@@ -38,6 +40,10 @@ class PathController extends Controller
 
     /**
      * Creates a new Path entity.
+     *
+     * @param Request $request
+     *
+     * @return array
      *
      * @Route("/", name="path_create")
      * @Method("POST")
@@ -65,6 +71,8 @@ class PathController extends Controller
 
     /**
      * Displays a form to create a new Path entity.
+     *
+     * @return array
      *
      * @Route("/new", name="path_new")
      * @Method("GET")

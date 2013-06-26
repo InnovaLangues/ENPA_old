@@ -6,6 +6,10 @@ use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 use Innova\LearningPathBundle\Entity\StepType;
 
+/**
+ * Class LoadStepTypeData
+ * @package Innova\LearningPathBundle\DataFixtures\ORM
+ */
 class LoadStepTypeData implements FixtureInterface
 {
     /**

@@ -11,10 +11,19 @@ use Symfony\Component\HttpFoundation\Response;
 use Innova\LearningPathBundle\Entity\Step;
 use Innova\LearningPathBundle\Entity\Path;
 
+/**
+ * Class StepController
+ *
+ * @package Innova\LearningPathBundle\Controller
+ */
 class StepController extends Controller
 {
 
     /**
+     * @param Request $request
+     *
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse
+     *
      * @Route("/redirectpathedit", name="redirectpathedit")
      * @Method({"POST"})
      */

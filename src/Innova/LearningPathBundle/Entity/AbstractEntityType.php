@@ -64,6 +64,7 @@ class AbstractEntityType
      * Set name
      *
      * @param string $name
+     *
      * @return AbstractEntityType
      */
     public function setName($name)
@@ -87,6 +88,7 @@ class AbstractEntityType
      * Set description
      *
      * @param string $description
+     *
      * @return AbstractEntityType
      */
     public function setDescription($description)
@@ -110,6 +112,7 @@ class AbstractEntityType
      * Set class
      *
      * @param string $class
+     *
      * @return AbstractEntityType
      */
     public function setClass($class)
@@ -133,6 +136,7 @@ class AbstractEntityType
      * Set subClass
      *
      * @param string $subClass
+     *
      * @return AbstractEntityType
      */
     public function setSubClass($subClass)

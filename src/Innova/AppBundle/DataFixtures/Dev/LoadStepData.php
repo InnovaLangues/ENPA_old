@@ -9,6 +9,11 @@ use Doctrine\Common\Persistence\ObjectManager;
 use Doctrine\ORM\Mapping as ORM;
 use Innova\LearningPathBundle\Entity\Step;
 
+/**
+ * Class LoadStepData
+ *
+ * @package Innova\AppBundle\DataFixtures\Dev
+ */
 class LoadStepData extends AbstractFixture implements OrderedFixtureInterface
 {
     /**
@@ -19,7 +24,9 @@ class LoadStepData extends AbstractFixture implements OrderedFixtureInterface
         return 2; // the order in which fixtures will be loaded
     }
 
-
+    /**
+     * @param ObjectManager $manager
+     */
     public function load(ObjectManager $manager)
     {
         // FIRST TREE.

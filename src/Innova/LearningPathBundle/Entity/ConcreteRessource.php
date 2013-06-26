@@ -50,6 +50,7 @@ class ConcreteRessource
      * Set name
      *
      * @param string $name
+     *
      * @return ConcreteRessource
      */
     public function setName($name)
@@ -73,6 +74,7 @@ class ConcreteRessource
      * Set description
      *
      * @param string $description
+     *
      * @return ConcreteRessource
      */
     public function setDescription($description)

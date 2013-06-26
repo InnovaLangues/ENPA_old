@@ -50,6 +50,7 @@ class AbstractEntity
      * Set name
      *
      * @param string $name
+     *
      * @return AbstractEntity
      */
     public function setName($name)
@@ -73,6 +74,7 @@ class AbstractEntity
      * Set description
      *
      * @param string $description
+     *
      * @return AbstractEntity
      */
     public function setDescription($description)

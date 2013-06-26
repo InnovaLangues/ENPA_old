@@ -6,22 +6,24 @@ namespace Innova\AppBundle\Command;
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Console\Input\InputArgument;
-use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Input\InputInterface;http://www.siteduzero.com/informatique/tutoriels/developpez-votre-site-web-avec-le-framework-symfony2/les-relations-bidirectionnelles
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
-use Doctrine\Common\DataFixtures\ReferenceRepository;
 use Symfony\Component\HttpKernel\HttpKernel;
 use Symfony\Component\DependencyInjection\ContainerInterface as Container;
 
-
+/**
+ * Class LoadDevCommand
+ *
+ * @package Innova\AppBundle\Command
+ */
 class LoadDevCommand extends ContainerAwareCommand
 {
     protected function configure()
     {
         $this
             ->setName('innova:dev-fixtures:load')
-            ->setDescription('populate database with devloppement fixtures')
-        ;
+            ->setDescription('populate database with devloppement fixtures');
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)
@@ -35,8 +37,7 @@ class LoadDevCommand extends ContainerAwareCommand
         );
 
         $input = new ArrayInput($arguments);
-        $returnCode = $command->run($input, $output);
-
+        $command->run($input, $output);
 
         $command = $this->getApplication()->find('doctrine:schema:update');
         $arguments = array(
@@ -46,16 +47,7 @@ class LoadDevCommand extends ContainerAwareCommand
         );
 
         $input = new ArrayInput($arguments);
-        $returnCode = $command->run($input, $output);
-
-        // $command = $this->getApplication()->find('doctrine:fixtures:load');
-        // $arguments = array(
-        //     'command' => 'doctrine:fixtures:load',
-        //     '-n'  => true,
-        // );
-
-        // $input = new ArrayInput($arguments);
-        // $returnCode = $command->run($input, $output);
+        $command->run($input, $output);
 
         $output->writeln("Loading fixtures...");
         $command = $this->getApplication()->find('doctrine:fixtures:load');
@@ -66,7 +58,7 @@ class LoadDevCommand extends ContainerAwareCommand
         );
 
         $input = new ArrayInput($arguments);
-        $returnCode = $command->run($input, $output);
+        $command->run($input, $output);
 
         $output->writeln("Loading dev fixtures...");
         $command = $this->getApplication()->find('doctrine:fixtures:load');
@@ -77,8 +69,7 @@ class LoadDevCommand extends ContainerAwareCommand
             '-n' => true
         );
 
-
         $input = new ArrayInput($arguments);
-        $returnCode = $command->run($input, $output);
+        $command->run($input, $output);
     }
 }
