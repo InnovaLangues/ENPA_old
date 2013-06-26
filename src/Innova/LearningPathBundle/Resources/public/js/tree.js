@@ -40,7 +40,6 @@ $(document).ready(function () {
 			error: function() { 
 			},
 			success: function() {
-				console.log("plop");
 			}
 		});
 	});
@@ -55,7 +54,7 @@ $(document).ready(function () {
 		update: function(event, ui) {
 				ui.item.removeClass("ui-draggable").find("*").removeClass("ui-draggable");
 				ui.item.removeClass("new-item").find("*").removeClass("new-item");
-				ui.item.attr("node_id","").find("li").attr("node_id","");
+				//ui.item.attr("node_id","").find("li").attr("node_id","");
 				ui.item.addClass("editable-item").find("ul").addClass("editable-item");
 				ui.item.addClass("sortable").find("ul").sortable({connectWith: ".sortable"});
 				ui.item.find("ul").addClass("tree").sortable({connectWith: ".sortable"});
