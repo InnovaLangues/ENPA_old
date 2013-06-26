@@ -9,7 +9,7 @@ $(document).ready(function() {
 
 function html2json(tree){
     json += '{';
-    recursive($(tree).children("li:first"));
+    recursive($(tree).children("ul").children("li:first"));
     json += '}';
     sendJson();
 }
