@@ -35,6 +35,16 @@ class AbstractRessource
      */
     private $description;
 
+    /**
+    * @ORM\ManyToMany(targetEntity="ConcreteRessource", mappedBy="abstractRessources", cascade={"remove","persist"})
+    */
+    private $concreteRessources;
+
+    /**
+    * @ORM\ManyToMany(targetEntity="AbstractWorkspace", inversedBy="abstractRessources")
+    */
+    private $abstractWorkspaces;
+
 
     /**
      * Get id
@@ -92,5 +102,80 @@ class AbstractRessource
     public function getDescription()
     {
         return $this->description;
+    }
+
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->concreteRessources = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add concreteRessources
+     *
+     * @param \Innova\LearningPathBundle\Entity\ConcreteRessource $concreteRessources
+     * @return AbstractRessource
+     */
+    public function addConcreteRessource(\Innova\LearningPathBundle\Entity\ConcreteRessource $concreteRessources)
+    {
+        $this->concreteRessources[] = $concreteRessources;
+
+        return $this;
+    }
+
+    /**
+     * Remove concreteRessources
+     *
+     * @param \Innova\LearningPathBundle\Entity\ConcreteRessource $concreteRessources
+     */
+    public function removeConcreteRessource(\Innova\LearningPathBundle\Entity\ConcreteRessource $concreteRessources)
+    {
+        $this->concreteRessources->removeElement($concreteRessources);
+    }
+
+    /**
+     * Get concreteRessources
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getConcreteRessources()
+    {
+        return $this->concreteRessources;
+    }
+
+    /**
+     * Add abstractWorkspaces
+     *
+     * @param \Innova\LearningPathBundle\Entity\AbstractWorkspace $abstractWorkspaces
+     * @return AbstractRessource
+     */
+    public function addAbstractWorkspace(\Innova\LearningPathBundle\Entity\AbstractWorkspace $abstractWorkspaces)
+    {
+        $this->abstractWorkspaces[] = $abstractWorkspaces;
+
+        return $this;
+    }
+
+    /**
+     * Remove abstractWorkspaces
+     *
+     * @param \Innova\LearningPathBundle\Entity\AbstractWorkspace $abstractWorkspaces
+     */
+    public function removeAbstractWorkspace(\Innova\LearningPathBundle\Entity\AbstractWorkspace $abstractWorkspaces)
+    {
+        $this->abstractWorkspaces->removeElement($abstractWorkspaces);
+    }
+
+    /**
+     * Get abstractWorkspaces
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getAbstractWorkspaces()
+    {
+        return $this->abstractWorkspaces;
     }
 }
