@@ -35,6 +35,11 @@ class ConcreteRessource
      */
     private $description;
 
+    /**
+    * @ORM\ManyToMany(targetEntity="AbstractRessource", inversedBy="concreteRessources")
+    */
+    private $abstractRessources;
+
 
     /**
      * Get id
@@ -92,5 +97,45 @@ class ConcreteRessource
     public function getDescription()
     {
         return $this->description;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->abstractRessources = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add abstractRessources
+     *
+     * @param \Innova\LearningPathBundle\Entity\AbstractRessource $abstractRessources
+     * @return ConcreteRessource
+     */
+    public function addAbstractRessource(\Innova\LearningPathBundle\Entity\AbstractRessource $abstractRessources)
+    {
+        $this->abstractRessources[] = $abstractRessources;
+
+        return $this;
+    }
+
+    /**
+     * Remove abstractRessources
+     *
+     * @param \Innova\LearningPathBundle\Entity\AbstractRessource $abstractRessources
+     */
+    public function removeAbstractRessource(\Innova\LearningPathBundle\Entity\AbstractRessource $abstractRessources)
+    {
+        $this->abstractRessources->removeElement($abstractRessources);
+    }
+
+    /**
+     * Get abstractRessources
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getAbstractRessources()
+    {
+        return $this->abstractRessources;
     }
 }

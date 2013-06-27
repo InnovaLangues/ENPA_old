@@ -36,7 +36,7 @@ class StepType
     private $description;
 
     /**
-    * @ORM\OneToMany(targetEntity="Step", mappedBy="operator", cascade={"remove","persist"})
+    * @ORM\OneToMany(targetEntity="Step", mappedBy="stepType", cascade={"remove","persist"})
     */
     private $steps;
 
