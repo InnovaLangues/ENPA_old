@@ -220,9 +220,31 @@ display: block;
 
 }
 
+/* left tree */
+.tree-root{
+	font-size:1.5em;
+}
+
+.ui-state-highlight{
+	background-color:red;
+}
+
+#left_tree ul{
+	list-style-type:none;
+	font-size:1em;
+}
+
+#left_tree ul, #left_tree li{
+	min-height:6px;
+}
+
 /* step buttons */
 .editable-item .step-buttons{
-	visibility: hidden;
+	visibility: hidden; 
+}
+
+.step-buttons{
+	display:inline;
 }
 
 .new-item .step-buttons{
