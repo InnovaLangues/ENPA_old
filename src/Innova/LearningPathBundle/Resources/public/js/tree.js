@@ -19,19 +19,37 @@ function parseTree(ul){
 ////////////////////////////////////////////////////
 //////////// GESTION CLICK ETC. ////////////////////
 $(document).ready(function () {	
+	//$("ul, li").disableSelection();
+
+	/* VISIBILITY STEP BUTTONS */
+
+	$(document).delegate(".editable-item","mouseover",function(e){
+		$(this).children(".step-buttons").css("visibility","visible");
+		$(this).parents().children(".step-buttons").css("visibility","hidden");
+		e.stopPropagation();
+	});
+
+	$(document).delegate(".editable-item","mouseout",function(e){
+		$(this).children(".step-buttons").css("visibility","hidden");
+	});
+
+
+	/* CLICKS STEP BUTTONS */
+
+	// delete step
 	$(document).delegate(".delete-item","click",function(e){
 		var nodes_to_delete =  new Array();
 
-		var node_id = $(this).parent().attr("node_id");
+		var node_id = $(this).parent().parent().attr("node_id");
 		if (node_id != ""){
 			nodes_to_delete.push(node_id);
 		}
-		var listItems = $(this).parent().find("li").each(function(){
-		if($(this).attr("node_id") != ""){
-			nodes_to_delete.push($(this).attr("node_id"));
-		}
+		var listItems = $(this).parent().parent().find("li").each(function(){
+			if($(this).attr("node_id") != ""){
+				nodes_to_delete.push($(this).attr("node_id"));
+			}
 		});
-		$(this).parent().remove();
+		$(this).parent().parent().remove();
 		
 		$.ajax({
 			type: 'POST',
@@ -44,25 +62,37 @@ $(document).ready(function () {
 		});
 	});
 
+	// addchild to step
 	$(document).delegate(".add-child","click",function(e){
-		var newStep = '<li class="editable-item" node_id=""><i class="icon-trash delete-item"></i> <span class="descr"><a href="#" class="parcours-item">New-step</a></span><i class="icon-plus add-child"></i><ul class="sortable tree ui-sortable"></ul></li>';
-		$(this).parent().children("ul").stop().hide().append(newStep).fadeIn(1000);
+		var newStep = '<li class="editable-item" node_id=""><span class="descr"><a href="#" class="parcours-item">New-step</a></span> <span class="step-buttons"> <i class="icon-plus add-child"></i><i class="icon-pencil edit-step"></i><i class="icon-trash delete-item"></i></span><ul class="sortable tree ui-sortable"></ul></li>';
+		$(this).parent().siblings("ul").stop().hide().append(newStep).fadeIn(1000);
 	});
 
+	// edit step
+	$(document).delegate(".edit-step","click",function(e){
+		$(".step-buttons").hide();
+		$("#save").hide();
+		$(this).parent().siblings(".descr").children("a").hide();
+		var nodeName = $(this).parent().siblings(".descr").children("a").text();
+		$(this).parent().parent().prepend('<span id="edit-step" class="input-append"><input id="edit-step-input" type="text" value="'+ nodeName +'"></input><span id="edit-step-save" class="add-on">ok</span></span>');
+	});
 
- 	
+	$(document).delegate("#edit-step-save","click",function(e){
+		$(this).parent().siblings(".descr").children("a").text($("#edit-step-input").val());
+		$(this).parent().siblings(".descr").children("a").show();
+		$("#edit-step").remove();
+		$("#left_tree").find(".step-buttons").show();
+		$("#save").show();
+	});
 
-
-
-
+	/* DRAG AND DROP - SORT */
 	$(".sortable").sortable({
 		connectWith: ".sortable",
 		placeholder: 'ui-state-highlight',
 		update: function(event, ui) {
 				ui.item.removeClass("ui-draggable").find("*").removeClass("ui-draggable");
 				ui.item.removeClass("new-item").find("*").removeClass("new-item");
-				//ui.item.attr("node_id","").find("li").attr("node_id","");
-				ui.item.addClass("editable-item").find("ul").addClass("editable-item");
+				ui.item.addClass("editable-item").find("ul").addClass("sortable");
 				ui.item.addClass("sortable").find("ul").sortable({connectWith: ".sortable"});
 				ui.item.find("ul").addClass("tree").sortable({connectWith: ".sortable"});
 				ui.item.removeClass("cache").find("*").removeClass("cache");
@@ -73,28 +103,5 @@ $(document).ready(function () {
 	$(".new-item").draggable({
 	    connectToSortable: ".sortable",
 	    helper: "clone"
-	});
-	$("ul, li").disableSelection();
-
-
-	/*$(".editable-item").mouseover(function(e){
-		$(this).children(".delete-item").css("visibility","visible");
-		$(this).parents().children(".delete-item").css("visibility","hidden");
-		e.stopPropagation();
-	});*/
-
-	$(document).delegate(".editable-item","mouseover",function(e){
-		$(this).children("i").css("visibility","visible");
-		$(this).parents().children("i").css("visibility","hidden");
-		e.stopPropagation();
-	});
-
-	/*$(".editable-item").mouseout(function(){
-		$(this).children(".delete-item").css("visibility","hidden");
-	});*/
-
-	$(document).delegate(".editable-item","mouseout",function(e){
-		$(this).children("i").css("visibility","hidden");
-	});
-			
+	});	
 });
