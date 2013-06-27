@@ -225,9 +225,6 @@ display: block;
 	font-size:1.5em;
 }
 
-.ui-state-highlight{
-	background-color:red;
-}
 
 #left_tree ul{
 	list-style-type:none;
@@ -235,7 +232,8 @@ display: block;
 }
 
 #left_tree ul, #left_tree li{
-	min-height:6px;
+	//min-height:6px;
+	//padding-bottom:3px;
 }
 
 /* step buttons */
