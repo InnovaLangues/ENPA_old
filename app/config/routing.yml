@@ -3,11 +3,6 @@ innova_activity:
     type:     annotation
     prefix:   /
 
-innova_app:
-    resource: "@InnovaAppBundle/Controller/"
-    type:     annotation
-    prefix:   /
-
 innova_learningpath:
     resource: "@InnovaLearningPathBundle/Controller/"
     type:     annotation
