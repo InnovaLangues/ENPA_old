@@ -1,5 +1,5 @@
 {% for step in steps %}
-    <li class="editable-item" node_id="{{ step.id }}"> <i class="icon-trash delete-item"></i> <a href="#{{step.name}}" class="parcours-item"> {{ step.name }}</a>
+    <li class="editable-item" node_id="{{ step.id }}"> <i class="icon-trash delete-item"></i> <span class="descr"><a href="#{{step.name}}" class="parcours-item">{{ step.name }}</a></span>
         {% if step.children %}
             <ul class="sortable tree ui-sortable">
                 {% include "InnovaLearningPathBundle:Step:includes/list-item.html.twig" with {'steps': step.children} only %}
