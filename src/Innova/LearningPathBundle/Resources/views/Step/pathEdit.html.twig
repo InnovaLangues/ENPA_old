@@ -33,12 +33,12 @@
                     </form>
                 </div>
             </div>
-            <div class="well ">
+            <div class="well">
                 <div id="left_tree">
                     {% if root is defined %}
                     <ul>
                         <li class="editable-item" node_id="{{ root.id }}">
-                            <span class='descr'>{{ root.name }}</span> 
+                            <span class='descr tree-root'><a href="#{{root.name}}" class="parcours-item">{{ root.name }}</a></span> 
                             <span class="step-buttons">
                                 <i class="icon-plus add-child"></i>
                                 <i class="icon-pencil edit-step"></i>

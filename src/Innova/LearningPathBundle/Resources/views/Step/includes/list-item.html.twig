@@ -1,5 +1,11 @@
 {% for step in steps %}
-    <li class="editable-item" node_id="{{ step.id }}"><span class="descr"><a href="#{{step.name}}" class="parcours-item">{{ step.name }}</a></span> <span class="step-buttons"><i class="icon-plus add-child"></i><i class="icon-pencil edit-step"></i><i class="icon-trash delete-item"></i></span>
+    <li class="editable-item" node_id="{{ step.id }}">
+    	<span class="descr"><a href="#{{step.name}}" class="parcours-item">{{ step.name }}</a></span> 
+    	<span class="step-buttons">
+    		<i class="icon-plus add-child"></i>
+    		<i class="icon-pencil edit-step"></i>
+    		<i class="icon-trash delete-item"></i>
+    	</span>
         {% if step.children %}
             <ul class="sortable tree ui-sortable">
                 {% include "InnovaLearningPathBundle:Step:includes/list-item.html.twig" with {'steps': step.children} only %}
