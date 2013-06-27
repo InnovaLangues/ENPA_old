@@ -55,7 +55,8 @@ class StepType
      * Set name
      *
      * @param string $name
-     * @return Operator
+     *
+     * @return StepType
      */
     public function setName($name)
     {
@@ -78,7 +79,8 @@ class StepType
      * Set description
      *
      * @param string $description
-     * @return Operator
+     *
+     * @return StepType
      */
     public function setDescription($description)
     {
@@ -108,7 +110,8 @@ class StepType
      * Add steps
      *
      * @param \Innova\LearningPathBundle\Entity\Step $steps
-     * @return Operator
+     *
+     * @return StepType
      */
     public function addStep(\Innova\LearningPathBundle\Entity\Step $steps)
     {

@@ -50,6 +50,7 @@ class AbstractRessource
      * Set name
      *
      * @param string $name
+     *
      * @return AbstractRessource
      */
     public function setName($name)
@@ -73,6 +74,7 @@ class AbstractRessource
      * Set description
      *
      * @param string $description
+     *
      * @return AbstractRessource
      */
     public function setDescription($description)

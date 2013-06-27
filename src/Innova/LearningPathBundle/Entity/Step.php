@@ -85,6 +85,14 @@ class Step
     private $stepType;
 
     /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->children = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
      * Get id
      *
      * @return integer
@@ -98,6 +106,7 @@ class Step
      * Set name
      *
      * @param string $name
+     *
      * @return Step
      */
     public function setName($name)
@@ -106,6 +115,7 @@ class Step
 
         return $this;
     }
+
 
     /**
      * Get name
@@ -117,11 +127,11 @@ class Step
         return $this->name;
     }
 
-
     /**
      * Set iteration
      *
      * @param integer $iteration
+     *
      * @return Step
      */
     public function setIteration($iteration)
@@ -130,7 +140,6 @@ class Step
 
         return $this;
     }
-
     /**
      * Get iteration
      *
@@ -139,13 +148,6 @@ class Step
     public function getIteration()
     {
         return $this->iteration;
-    }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->children = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -198,6 +200,7 @@ class Step
      * Set rgt
      *
      * @param integer $rgt
+     *
      * @return Step
      */
     public function setRgt($rgt)
@@ -221,6 +224,7 @@ class Step
      * Set root
      *
      * @param integer $root
+     *
      * @return Step
      */
     public function setRoot($root)
@@ -244,6 +248,7 @@ class Step
      * Set parent
      *
      * @param \Innova\LearningPathBundle\Entity\Step $parent
+     *
      * @return Step
      */
     public function setParent(\Innova\LearningPathBundle\Entity\Step $parent = null)
@@ -267,6 +272,7 @@ class Step
      * Add children
      *
      * @param \Innova\LearningPathBundle\Entity\Step $children
+     *
      * @return Step
      */
     public function addChild(\Innova\LearningPathBundle\Entity\Step $children)
@@ -300,6 +306,7 @@ class Step
      * Set path
      *
      * @param \Innova\LearningPathBundle\Entity\Path $path
+     *
      * @return Step
      */
     public function setPath(\Innova\LearningPathBundle\Entity\Path $path = null)
@@ -323,6 +330,7 @@ class Step
      * Set stepType
      *
      * @param \Innova\LearningPathBundle\Entity\StepType $stepType
+     *
      * @return Step
      */
     public function setStepType(\Innova\LearningPathBundle\Entity\StepType $stepType = null)
