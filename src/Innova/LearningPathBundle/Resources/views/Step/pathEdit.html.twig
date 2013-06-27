@@ -37,7 +37,12 @@
                 <div id="left_tree">
                     {% if root is defined %}
                     <ul>
-                        <li node_id = "{{ root.id }}"><span class='descr'>{{ root.name }}</span>
+                        <li class="editable-item" node_id="{{ root.id }}">
+                            <span class='descr'>{{ root.name }}</span> 
+                            <span class="step-buttons">
+                                <i class="icon-plus add-child"></i>
+                                <i class="icon-pencil edit-step"></i>
+                            </span>
                             <ul class="sortable tree ui-sortable">
                                 {% include "InnovaLearningPathBundle:Step:includes/list-item.html.twig" with {'steps': root.children } only %}
                             </ul>

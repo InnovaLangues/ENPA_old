@@ -82,7 +82,7 @@ $(document).ready(function() {
         $(".parcoursTree").css("display","block");
     });
 
-    $(".parcours-item").click(function(){
+    $(document).delegate(".parcours-item","click",function(e){
         $(".parcoursTree").addClass("span6");
         $(".parcoursTree").removeClass("span12");
         $(".ressourcesTypes").css("display","block");
