@@ -9,6 +9,11 @@ use Doctrine\Common\Persistence\ObjectManager;
 use Doctrine\ORM\Mapping as ORM;
 use Innova\LearningPathBundle\Entity\Path;
 
+/**
+ * Class LoadPathData
+ *
+ * @package Innova\AppBundle\DataFixtures\Dev
+ */
 class LoadPathData extends AbstractFixture implements OrderedFixtureInterface
 {
      /**
@@ -19,7 +24,9 @@ class LoadPathData extends AbstractFixture implements OrderedFixtureInterface
         return 1; // the order in which fixtures will be loaded
     }
 
-
+    /**
+     * @param ObjectManager $manager
+     */
     public function load(ObjectManager $manager)
     {
         $path1 = new Path();
@@ -36,7 +43,7 @@ class LoadPathData extends AbstractFixture implements OrderedFixtureInterface
         $path3->setName('Italien A1');
 
         $manager->persist($path3);
-        
+
         $manager->flush();
 
         $this->addReference('path1', $path1);

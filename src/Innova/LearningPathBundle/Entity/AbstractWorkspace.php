@@ -49,6 +49,7 @@ class AbstractWorkspace
      * Set name
      *
      * @param string $name
+     *
      * @return AbstractWorkspace
      */
     public function setName($name)
@@ -72,6 +73,7 @@ class AbstractWorkspace
      * Set description
      *
      * @param string $description
+     *
      * @return AbstractWorkspace
      */
     public function setDescription($description)

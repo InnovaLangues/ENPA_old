@@ -43,6 +43,7 @@ class OrganizationMode
      * Set name
      *
      * @param string $name
+     *
      * @return OrganizationMode
      */
     public function setName($name)
