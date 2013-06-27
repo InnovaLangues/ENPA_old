@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////
 //////////// FUNCTION ////////////////////////////
-
+/*
 function parseTree(ul){
     var tags = [];
     ul.children("li").each(function(){
@@ -14,7 +14,7 @@ function parseTree(ul){
     });
     return tags;
 }
-
+*/
 
 ////////////////////////////////////////////////////
 //////////// GESTION CLICK ETC. ////////////////////
@@ -44,9 +44,16 @@ $(document).ready(function () {
 		});
 	});
 
+	$(document).delegate(".add-child","click",function(e){
+		var newStep = '<li class="editable-item" node_id=""><i class="icon-trash delete-item"></i> <span class="descr"><a href="#" class="parcours-item">New-step</a></span><i class="icon-plus add-child"></i><ul class="sortable tree ui-sortable"></ul></li>';
+		$(this).parent().children("ul").stop().hide().append(newStep).fadeIn(1000);
+	});
 
 
-	//si ul vide, hauteur minimum
+ 	
+
+
+
 
 	$(".sortable").sortable({
 		connectWith: ".sortable",
@@ -77,8 +84,8 @@ $(document).ready(function () {
 	});*/
 
 	$(document).delegate(".editable-item","mouseover",function(e){
-		$(this).children(".delete-item").css("visibility","visible");
-		$(this).parents().children(".delete-item").css("visibility","hidden");
+		$(this).children("i").css("visibility","visible");
+		$(this).parents().children("i").css("visibility","hidden");
 		e.stopPropagation();
 	});
 
@@ -87,7 +94,7 @@ $(document).ready(function () {
 	});*/
 
 	$(document).delegate(".editable-item","mouseout",function(e){
-		$(this).children(".delete-item").css("visibility","hidden");
+		$(this).children("i").css("visibility","hidden");
 	});
 			
 });
