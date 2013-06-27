@@ -9,6 +9,11 @@ use Doctrine\Common\Persistence\ObjectManager;
 use Doctrine\ORM\Mapping as ORM;
 use Innova\LearningPathBundle\Entity\Path;
 
+/**
+ * Class LoadPathData
+ *
+ * @package Innova\AppBundle\DataFixtures\Dev
+ */
 class LoadPathData extends AbstractFixture implements OrderedFixtureInterface
 {
      /**
@@ -20,6 +25,9 @@ class LoadPathData extends AbstractFixture implements OrderedFixtureInterface
     }
 
 
+    /**
+     * @param ObjectManager $manager
+     */
     public function load(ObjectManager $manager)
     {
         $path1 = new Path();

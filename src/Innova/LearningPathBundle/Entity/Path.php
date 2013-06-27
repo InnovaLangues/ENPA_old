@@ -85,6 +85,7 @@ class Path
      * Set description
      *
      * @param string $description
+     *
      * @return Path
      */
     public function setDescription($description)
@@ -108,6 +109,7 @@ class Path
      * Set isPattern
      *
      * @param boolean $isPattern
+     *
      * @return Path
      */
     public function setBoolean($isPattern)
@@ -131,6 +133,7 @@ class Path
      * Set isPattern
      *
      * @param boolean $isPattern
+     *
      * @return Path
      */
     public function setIsPattern($isPattern)
@@ -162,6 +165,7 @@ class Path
      * Add steps
      *
      * @param \Innova\LearningPathBundle\Entity\Step $steps
+     *
      * @return Path
      */
     public function addStep(\Innova\LearningPathBundle\Entity\Step $steps)

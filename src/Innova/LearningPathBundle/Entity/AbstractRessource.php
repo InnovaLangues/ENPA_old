@@ -5,12 +5,12 @@ namespace Innova\LearningPathBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * AbstractEntity
+ * AbstractRessource
  *
- * @ORM\Table(name="inl_abstract_entity")
+ * @ORM\Table()
  * @ORM\Entity
  */
-class AbstractEntity
+class AbstractRessource
 {
     /**
      * @var integer
@@ -31,7 +31,7 @@ class AbstractEntity
     /**
      * @var string
      *
-     * @ORM\Column(name="description", type="text")
+     * @ORM\Column(name="description", type="string", length=255)
      */
     private $description;
 
@@ -39,7 +39,7 @@ class AbstractEntity
     /**
      * Get id
      *
-     * @return integer
+     * @return integer 
      */
     public function getId()
     {
@@ -51,7 +51,7 @@ class AbstractEntity
      *
      * @param string $name
      *
-     * @return AbstractEntity
+     * @return AbstractRessource
      */
     public function setName($name)
     {
@@ -63,7 +63,7 @@ class AbstractEntity
     /**
      * Get name
      *
-     * @return string
+     * @return string 
      */
     public function getName()
     {
@@ -75,7 +75,7 @@ class AbstractEntity
      *
      * @param string $description
      *
-     * @return AbstractEntity
+     * @return AbstractRessource
      */
     public function setDescription($description)
     {
@@ -87,7 +87,7 @@ class AbstractEntity
     /**
      * Get description
      *
-     * @return string
+     * @return string 
      */
     public function getDescription()
     {
