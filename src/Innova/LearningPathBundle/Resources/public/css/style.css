@@ -180,9 +180,11 @@ padding-bottom: 0px;
 	margin-top: 24px;
 }
 
-.delete-item{
+.editable-item i{
 	visibility: hidden;
 }
+
+
 
 .ressourceTitle{
 	padding: 10px;
