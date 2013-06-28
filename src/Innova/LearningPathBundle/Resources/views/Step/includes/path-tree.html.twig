@@ -1,0 +1,14 @@
+{% if root is defined %}
+<ul>
+    <li class="editable-item" node_id="{{ root.id }}">
+        <span class='descr tree-root'><a href="#{{root.name}}" class="parcours-item">{{ root.name }}</a></span> 
+        <span class="step-buttons">
+            <i class="icon-plus add-child"></i>
+            <i class="icon-pencil edit-step"></i>
+        </span>
+        <ul class="sortable tree ui-sortable">
+            {% include "InnovaLearningPathBundle:Step:includes/list-item.html.twig" with {'steps': root.children } only %}
+        </ul>
+    </li>
+</ul>
+{% endif %}
