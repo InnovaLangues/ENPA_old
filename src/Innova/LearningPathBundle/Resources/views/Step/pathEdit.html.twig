@@ -29,32 +29,21 @@
                                 {% endfor %}
                             </select>
                         <input type="submit" class="btn clickParcoursTree">
-
                     </form>
                 </div>
             </div>
+
             <div class="well">
                 <div id="left_tree">
-                    {% if root is defined %}
-                    <ul>
-                        <li class="editable-item" node_id="{{ root.id }}">
-                            <span class='descr tree-root'><a href="#{{root.name}}" class="parcours-item">{{ root.name }}</a></span> 
-                            <span class="step-buttons">
-                                <i class="icon-plus add-child"></i>
-                                <i class="icon-pencil edit-step"></i>
-                            </span>
-                            <ul class="sortable tree ui-sortable">
-                                {% include "InnovaLearningPathBundle:Step:includes/list-item.html.twig" with {'steps': root.children } only %}
-                            </ul>
-                        </li>
-                    </ul>
-                    {% endif %}
-
+                    {% include "InnovaLearningPathBundle:Step:includes/path-tree.html.twig" %}
                 </div>
-                
             </div>
-            <span id="save_callback"></span><button id="save" class="btn pull-right">Save</button>
+
+            <span id="save_callback"></span>
+            <button id="save" class="btn pull-right">Save</button>
+            <button id="back" class="btn pull-right">Back</button>
         </div>
+
         <div class="span6 ressourcesTypes">
             <h3>Ressources types :</h3>
             <h4 class="nameRessourcesTypes">Test1</h4>

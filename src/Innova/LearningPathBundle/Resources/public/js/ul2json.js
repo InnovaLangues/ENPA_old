@@ -55,6 +55,7 @@ function sendJson(){
       data: {json: json},
       success: function(data, textStatus, xhr) {
         $("#save_callback").html("<span class='alert alert-success'>Parcours sauvegardé</span>");
+        $("#left_tree").html(data);
       },
       error: function(xhr, textStatus, errorThrown) {
         $("#save_callback").html("<span class='alert alert-error'>Erreur d'enregistrement.</span>");

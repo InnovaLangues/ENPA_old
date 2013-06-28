@@ -1,28 +1,31 @@
 ////////////////////////////////////////////////////
 //////////// FUNCTION ////////////////////////////
-/*
-function parseTree(ul){
-    var tags = [];
-    ul.children("li").each(function(){
-        var subtree = $(this).children("ul");
-        if(subtree.size() > 0){
-            tags.push([$(this).attr("id"), parseTree(subtree)]);
-        }
-        else{
-            tags.push($(this).attr("id"));
-        }
-    });
-    return tags;
+var lastTrees = new Array();
+
+
+function localSaveTree(){
+//	lastTrees.push($("#left_tree").clone());
+//	console.log(lastTrees);
 }
-*/
 
 ////////////////////////////////////////////////////
 //////////// GESTION CLICK ETC. ////////////////////
 $(document).ready(function () {	
+	localSaveTree();
+
 	//$("ul, li").disableSelection();
 
-	/* VISIBILITY STEP BUTTONS */
+	/* HISTORY / BACK BUTTON */
 
+	$('#back').click(function(event) {
+		if (lastTree.length > 1){
+	       var lastTree = lastTrees.pop();
+	      
+	       $("#left_tree").replaceWith(lastTree);
+	    }
+    });
+
+	/* VISIBILITY STEP BUTTONS */
 	$(document).delegate(".editable-item","mouseover",function(e){
 		$(this).children(".step-buttons").css("visibility","visible");
 		$(this).parents().children(".step-buttons").css("visibility","hidden");
@@ -38,6 +41,8 @@ $(document).ready(function () {
 
 	// delete step
 	$(document).delegate(".delete-item","click",function(e){
+		node = $(this);
+
 		var nodes_to_delete =  new Array();
 
 		var node_id = $(this).parent().parent().attr("node_id");
@@ -49,8 +54,9 @@ $(document).ready(function () {
 				nodes_to_delete.push($(this).attr("node_id"));
 			}
 		});
-		$(this).parent().parent().remove();
-		
+
+		node.parent().parent().remove();
+
 		$.ajax({
 			type: 'POST',
 			url: Routing.generate('step_ajax_delete'),
@@ -60,12 +66,14 @@ $(document).ready(function () {
 			success: function() {
 			}
 		});
+		localSaveTree();
 	});
 
 	// addchild to step
 	$(document).delegate(".add-child","click",function(e){
 		var newStep = '<li class="editable-item" node_id=""><span class="descr"><a href="#" class="parcours-item">New-step</a></span> <span class="step-buttons"> <i class="icon-plus add-child"></i><i class="icon-pencil edit-step"></i><i class="icon-trash delete-item"></i></span><ul class="sortable tree ui-sortable"></ul></li>';
 		$(this).parent().siblings("ul").stop().hide().append(newStep).fadeIn(1000);
+		localSaveTree();
 	});
 
 	// edit step
@@ -83,9 +91,9 @@ $(document).ready(function () {
 		$("#edit-step").remove();
 		$("#left_tree").find(".step-buttons").show();
 		$("#save").show();
+		localSaveTree();
 	});
 
-	/* DRAG AND DROP - SORT */
 	$(".sortable").sortable({
 		connectWith: ".sortable",
 		placeholder: 'ui-state-highlight',
@@ -97,6 +105,7 @@ $(document).ready(function () {
 				ui.item.find("ul").addClass("tree").sortable({connectWith: ".sortable"});
 				ui.item.removeClass("cache").find("*").removeClass("cache");
 				ui.item.addClass("editable-item").find("li").addClass("editable-item");
+				localSaveTree();
 		}
 	});
 
@@ -104,4 +113,5 @@ $(document).ready(function () {
 	    connectToSortable: ".sortable",
 	    helper: "clone"
 	});	
+
 });
