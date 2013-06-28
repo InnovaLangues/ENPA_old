@@ -231,11 +231,6 @@ display: block;
 	font-size:1em;
 }
 
-#left_tree ul, #left_tree li{
-	//min-height:6px;
-	//padding-bottom:3px;
-}
-
 /* step buttons */
 .editable-item .step-buttons{
 	visibility: hidden; 

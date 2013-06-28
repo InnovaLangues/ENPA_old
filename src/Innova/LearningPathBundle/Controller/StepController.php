@@ -69,10 +69,7 @@ class StepController extends Controller
         $params['patternTrees'] = $patternTrees;
 
         if ($path) {
-            // Add path selected
-            $params['root'] = $path
-                ->getSteps()
-                ->first();
+            $params['root'] = $this->getPathRoot($path);
         }
 
         return $params;
@@ -115,9 +112,11 @@ class StepController extends Controller
      *
      * @Route("/ajax/save", name="path_ajax_save")
      * @Method("POST")
+     * @Template("InnovaLearningPathBundle:Step:includes/path-tree.html.twig")
      */
     public function ajaxSaveAction(Request $request)
     {
+
         $manager = $this
             ->getDoctrine()
             ->getManager();
@@ -128,18 +127,22 @@ class StepController extends Controller
             $json = $request->get('json');
             $json = json_decode(stripslashes($json));
 
-            $this->parseJsonUl(
+            $root = $this->parseJsonUl(
                 $json->step,
-                NULL,
+                null,
                 $manager,
-                $repository
+                $repository, 
+                null
             );
         }
 
         //TODO enregister dans la base
         $manager->flush();
-        return new Response('OK', 200);
+        $params['root'] = $this->getPathRoot($root);
+
+        return $params;
     }
+
 
     /**
      * [parseJsonUl description]
@@ -149,10 +152,14 @@ class StepController extends Controller
      * @param  [type] $repository [description]
      * @return [type] [description]
      */
-    private function parseJsonUl($step, $parent, $manager, $repository)
+    private function parseJsonUl($step, $parent, $manager, $repository, $root)
     {
-        if ($step->id > 0) {
-            $newStep = $repository->find($step->id);
+        if ($repository->find($step->id)) {
+             $newStep = $repository->find($step->id);
+             if($newStep->getPath()){
+                $root = $newStep->getPath();
+            }
+
         } else {
             $newStep = new Step();
         }
@@ -174,9 +181,19 @@ class StepController extends Controller
                     $child->step,
                     $newStep,
                     $manager,
-                    $repository
+                    $repository, 
+                    $root
                 );
             }
         }
+       
+        return $root;
+    }
+
+    private function getPathRoot(Path $path)
+    {
+        return $path
+            ->getSteps()
+            ->first();
     }
 }
