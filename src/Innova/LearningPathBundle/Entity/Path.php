@@ -2,6 +2,7 @@
 
 namespace Innova\LearningPathBundle\Entity;
 
+use Gedmo\Mapping\Annotation as Gedmo;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -40,7 +41,29 @@ class Path
      *
      * @ORM\Column(name="is_pattern", type="boolean")
      */
-    private $isPattern = false;
+    private $pattern = false;
+
+    /**
+     * @Gedmo\Slug(fields={"name"})
+     * @ORM\Column(length=128, unique=true)
+     */
+    private $slug;
+
+    /**
+     * @var datetime $created
+     *
+     * @Gedmo\Timestampable(on="create")
+     * @ORM\Column(type="datetime")
+     */
+    private $created;
+
+    /**
+     * @var datetime $updated
+     *
+     * @Gedmo\Timestampable(on="update")
+     * @ORM\Column(type="datetime")
+     */
+    private $updated;
 
     /**
     * @ORM\OneToMany(targetEntity="Step", mappedBy="path", cascade={"remove","persist"})
@@ -106,51 +129,57 @@ class Path
     }
 
     /**
-     * Set isPattern
+     * Set pattern
      *
-     * @param boolean $isPattern
+     * @param boolean $pattern
      *
      * @return Path
      */
-    public function setBoolean($isPattern)
+    public function setPattern($pattern)
     {
-        $this->isPattern = $isPattern;
+        $this->pattern = $pattern;
 
         return $this;
     }
 
     /**
-     * Get isPattern
+     * Is pattern
      *
      * @return boolean
      */
-    public function getBoolean()
+    public function isPattern()
     {
-        return $this->isPattern;
+        return $this->pattern;
     }
 
     /**
-     * Set isPattern
+     * Get slug
      *
-     * @param boolean $isPattern
-     *
-     * @return Path
+     * @return string
      */
-    public function setIsPattern($isPattern)
+    public function getSlug()
     {
-        $this->isPattern = $isPattern;
-
-        return $this;
+        return $this->slug;
     }
 
     /**
-     * Get isPattern
+     * Get created
      *
-     * @return boolean
+     * @return string
      */
-    public function getIsPattern()
+    public function getCreated()
     {
-        return $this->isPattern;
+        return $this->created;
+    }
+
+    /**
+     * Get updated
+     *
+     * @return string
+     */
+    public function getUpdated()
+    {
+        return $this->updated;
     }
 
     /**
