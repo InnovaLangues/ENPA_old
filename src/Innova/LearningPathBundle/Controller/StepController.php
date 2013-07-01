@@ -55,10 +55,10 @@ class StepController extends Controller
             ->getRepository("InnovaLearningPathBundle:Path");
 
         // Add non-Pattern Paths for the select.
-        $params['paths'] = $repository->findByIsPattern(false);
+        $params['paths'] = $repository->findByPattern(false);
 
         // Add Pattern Paths for the right menu.
-        $patterns = $repository->findByIsPattern(true);
+        $patterns = $repository->findByPattern(true);
 
         foreach ($patterns as $pattern) {
             $patternTrees[] = $pattern
