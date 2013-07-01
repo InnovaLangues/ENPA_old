@@ -116,6 +116,7 @@ class StepController extends Controller
      */
     public function ajaxSaveAction(Request $request)
     {
+        $params = array();
 
         $manager = $this
             ->getDoctrine()
@@ -127,19 +128,19 @@ class StepController extends Controller
             $json = $request->get('json');
             $json = json_decode(stripslashes($json));
 
-            $root = $this->parseJsonUl(
+            $rootId = $this->parseJsonUl(
                 $json->step,
                 null,
                 $manager,
                 $repository, 
                 null
             );
+            
+            $manager->clear();
+            $path = $repository->findOneById($rootId)->getPath();
+            $params['root'] = $this->getPathRoot($path);
         }
-
-        //TODO enregister dans la base
-        $manager->flush();
-        $params['root'] = $this->getPathRoot($root);
-
+        
         return $params;
     }
 
@@ -152,14 +153,10 @@ class StepController extends Controller
      * @param  [type] $repository [description]
      * @return [type] [description]
      */
-    private function parseJsonUl($step, $parent, $manager, $repository, $root)
-    {
+    private function parseJsonUl($step, $parent, $manager, $repository, $rootId)
+    {   
         if ($repository->find($step->id)) {
              $newStep = $repository->find($step->id);
-             if($newStep->getPath()){
-                $root = $newStep->getPath();
-            }
-
         } else {
             $newStep = new Step();
         }
@@ -173,7 +170,12 @@ class StepController extends Controller
 
         if($parent != NULL){
             $repository->persistAsLastChildOf($newStep, $parent);
+        } else {
+            $rootId = $step->id;
         }
+
+        $manager->persist($newStep);
+        $manager->flush();
 
         if (isset($step->children)) {
             foreach ($step->children as $child) {
@@ -182,12 +184,12 @@ class StepController extends Controller
                     $newStep,
                     $manager,
                     $repository, 
-                    $root
+                    $rootId
                 );
             }
         }
        
-        return $root;
+        return $rootId;
     }
 
     private function getPathRoot(Path $path)
