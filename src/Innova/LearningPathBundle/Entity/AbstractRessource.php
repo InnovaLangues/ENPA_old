@@ -2,12 +2,13 @@
 
 namespace Innova\LearningPathBundle\Entity;
 
+use Gedmo\Mapping\Annotation as Gedmo;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * AbstractRessource
  *
- * @ORM\Table()
+ * @ORM\Table(name="inl_abstract_resource")
  * @ORM\Entity
  */
 class AbstractRessource
@@ -36,12 +37,35 @@ class AbstractRessource
     private $description;
 
     /**
+     * @Gedmo\Slug(fields={"name"})
+     * @ORM\Column(length=128, unique=true)
+     */
+    private $slug;
+
+    /**
+     * @var datetime $created
+     *
+     * @Gedmo\Timestampable(on="create")
+     * @ORM\Column(type="datetime")
+     */
+    private $created;
+
+    /**
+     * @var datetime $updated
+     *
+     * @Gedmo\Timestampable(on="update")
+     * @ORM\Column(type="datetime")
+     */
+    private $updated;
+
+    /**
     * @ORM\ManyToMany(targetEntity="ConcreteRessource", mappedBy="abstractRessources", cascade={"remove","persist"})
     */
     private $concreteRessources;
 
     /**
     * @ORM\ManyToMany(targetEntity="AbstractWorkspace", inversedBy="abstractRessources")
+    * @ORM\JoinTable(name="inl_abstractressource_abstractworkspace")
     */
     private $abstractWorkspaces;
 
@@ -177,5 +201,35 @@ class AbstractRessource
     public function getAbstractWorkspaces()
     {
         return $this->abstractWorkspaces;
+    }
+
+    /**
+     * Get slug
+     *
+     * @return string
+     */
+    public function getSlug()
+    {
+        return $this->slug;
+    }
+
+    /**
+     * Get created
+     *
+     * @return string
+     */
+    public function getCreated()
+    {
+        return $this->created;
+    }
+
+    /**
+     * Get updated
+     *
+     * @return string
+     */
+    public function getUpdated()
+    {
+        return $this->updated;
     }
 }

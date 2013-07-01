@@ -35,7 +35,7 @@ class LoadPathData extends AbstractFixture implements OrderedFixtureInterface
 
         $path2 = new Path();
         $path2->setName('Espagnol A1 (Pattern)');
-        $path2->setIsPattern(true);
+        $path2->setPattern(true);
 
         $manager->persist($path2);
 

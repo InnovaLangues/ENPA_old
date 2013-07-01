@@ -2,12 +2,13 @@
 
 namespace Innova\LearningPathBundle\Entity;
 
+use Gedmo\Mapping\Annotation as Gedmo;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * AbstractWorkspace
  *
- * @ORM\Table()
+ * @ORM\Table(name="inl_abstract_workspace")
  * @ORM\Entity
  */
 class AbstractWorkspace
@@ -34,6 +35,28 @@ class AbstractWorkspace
      * @ORM\Column(name="description", type="string", length=255)
      */
     private $description;
+
+    /**
+     * @Gedmo\Slug(fields={"name"})
+     * @ORM\Column(length=128, unique=true)
+     */
+    private $slug;
+
+    /**
+     * @var datetime $created
+     *
+     * @Gedmo\Timestampable(on="create")
+     * @ORM\Column(type="datetime")
+     */
+    private $created;
+
+    /**
+     * @var datetime $updated
+     *
+     * @Gedmo\Timestampable(on="update")
+     * @ORM\Column(type="datetime")
+     */
+    private $updated;
 
     /**
     * @ORM\ManyToMany(targetEntity="AbstractRessource", mappedBy="abstractWorkspaces", cascade={"remove","persist"})
@@ -164,5 +187,35 @@ class AbstractWorkspace
     public function getSteps()
     {
         return $this->steps;
+    }
+
+    /**
+     * Get slug
+     *
+     * @return string
+     */
+    public function getSlug()
+    {
+        return $this->slug;
+    }
+
+    /**
+     * Get created
+     *
+     * @return string
+     */
+    public function getCreated()
+    {
+        return $this->created;
+    }
+
+    /**
+     * Get updated
+     *
+     * @return string
+     */
+    public function getUpdated()
+    {
+        return $this->updated;
     }
 }
