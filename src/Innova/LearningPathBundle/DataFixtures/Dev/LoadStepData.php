@@ -142,7 +142,7 @@ class LoadStepData extends AbstractFixture implements OrderedFixtureInterface
         $manager->persist($step19);
 
         $step20 = new Step();
-        $step20->setName('Paroours XXX');
+        $step20->setName('Parcours XXX');
         $step20->setParent($step13);
 
         $manager->persist($step20);
