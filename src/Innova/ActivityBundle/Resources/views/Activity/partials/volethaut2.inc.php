@@ -13,7 +13,7 @@
 							<li class="invisibleLi" id="forumCours"><i class="rendreVisible icon-eye-close"></i><i class="rendreInvisible icon-eye-open"></i><i class="icon-wrench"></i> Forum (objet transversal cours)</li>
 							<li class="invisibleLi" id="parcoursPASS"><i class="rendreVisible icon-eye-close"></i><i class="rendreInvisible icon-eye-open"></i><i class="icon-folder-open accordionButton on"></i> Parcours PASS with Deirdre
 								<ul  class="accordionContent sortable2 connectedSortable" >
-									<li class="invisibleLi" id="forumUnite"></i><i class="rendreVisible icon-eye-close"></i><i class="rendreInvisible icon-eye-open"></i><i class="icon-wrench"></i> Forum (objet transversal unité)</li>
+									<li class="invisibleLi" id="forumUnite"><i class="rendreVisible icon-eye-close"></i><i class="rendreInvisible icon-eye-open"></i><i class="icon-wrench"></i> Forum (objet transversal unité)</li>
 									<li class="invisibleLi"><i class="rendreVisible icon-eye-close"></i><i class="rendreInvisible icon-eye-open"></i><i class="icon-folder-close accordionButton"></i> Présentation
 										<ul class="accordionContent sortable2 connectedSortable">
 											<li class="invisibleLi"><i class="rendreVisible icon-eye-close"></i><i class="rendreInvisible icon-eye-open"></i><i class="icon-file"></i> Que faire ici ?</li>
