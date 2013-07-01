@@ -32,7 +32,7 @@ class AbstractWorkspace
     /**
      * @var string
      *
-     * @ORM\Column(name="description", type="string", length=255)
+     * @ORM\Column(name="description", type="string", length=255, nullable=true)
      */
     private $description;
 
@@ -66,7 +66,7 @@ class AbstractWorkspace
     /**
     * @ORM\OneToOne(targetEntity="Step", cascade={"remove","persist"})
     */
-    private $steps;
+    private $step;
 
     /**
      * Get id
@@ -172,9 +172,9 @@ class AbstractWorkspace
      * @param \Innova\LearningPathBundle\Entity\Step $steps
      * @return AbstractWorkspace
      */
-    public function setSteps(\Innova\LearningPathBundle\Entity\Step $steps = null)
+    public function setStep(\Innova\LearningPathBundle\Entity\Step $step = null)
     {
-        $this->steps = $steps;
+        $this->step = $step;
 
         return $this;
     }
@@ -184,9 +184,9 @@ class AbstractWorkspace
      *
      * @return \Innova\LearningPathBundle\Entity\Step 
      */
-    public function getSteps()
+    public function getStep()
     {
-        return $this->steps;
+        return $this->step;
     }
 
     /**

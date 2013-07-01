@@ -6,7 +6,7 @@
             <i class="icon-plus add-child"></i>
             <i class="icon-pencil edit-step"></i>
         </span>
-        <ul class="sortable tree ui-sortable">
+        <ul class="sortable tree ui-sortable" id="step-list">
             {% include "InnovaLearningPathBundle:Step:includes/list-item.html.twig" with {'steps': root.children } only %}
         </ul>
     </li>
