@@ -1,4 +1,4 @@
-Environnement numérique personnel d'apprentissage (ENPA) INNOVALangues
+Environnement numérique personnel d'apprentissage (ENPA) INNOVA Langues
 =======================================================================
 
 Requirements : Global composer install or local composer.phar
