@@ -5,10 +5,11 @@
         <title>{% block title %}Welcome!{% endblock %}</title>
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
         <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
+        <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
         {% block stylesheets %}
-            <link href="{{ asset('bundles/innovalearningpath/css/style.css') }}" rel="stylesheet">
-            <link href="{{ asset('bundles/innovalearningpath/css/select2.css') }}" rel="stylesheet">
+            <link href="{{ asset('bundles/innovalearningpath/css/style.css') }}" rel="stylesheet" />
+            <link href="{{ asset('bundles/innovalearningpath/css/select2.css') }}" rel="stylesheet" />
+            <link href="{{ asset('bundles/innovalearningpath/css/bootstrap-notify.css') }}" rel="stylesheet" />
         {% endblock %}
     </head>
     <body>
@@ -48,7 +49,7 @@
         {% block body %}{% endblock %}
 
         <script src="http://code.jquery.com/jquery-1.10.0.min.js"></script>
-        <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+        <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
         <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
         <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
         <script src="{{ asset('js/fos_js_routes.js') }}"></script>
@@ -60,7 +61,7 @@
         </script>
         <script src="{{ asset('bundles/innovalearningpath/js/tree.js') }}"></script>
         <script src="{{ asset('bundles/innovalearningpath/js/script.js') }}"></script>
-
+        <script src="{{ asset('bundles/innovalearningpath/js/bootstrap-notify.js') }}"></script>
         {% block javascripts %}{% endblock %}
 
     </body>
