@@ -1,0 +1,20 @@
+#!/usr/bin/php
+<?php
+/**
+ * .git/hooks/post-commit
+ *
+ * This post-commit hook will generate PHPDocumentor2 documentation in src/doc
+ *
+ * Dependecy: PHPDocumentor2 installed
+ *
+ * @author  Donovan Tengblad http://www.donovan-tengblad.com
+ * @since   Oct 22 2012
+ *
+ */
+
+/**
+ *  Execute phpdoc
+ */
+exec('phpdoc');
+echo "PHPDocumentor2 documentation generated in app/doc/" . PHP_EOL;
+exit(0);
