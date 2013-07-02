@@ -1,0 +1,43 @@
+#!/bin/sh
+# to use, save this file as .git/hooks/pre-commit in your git repo
+# make sure to add execute permissions using: chmod +x .git/hooks/pre-commit
+command -v pngcrush >/dev/null 2>&1 || {
+    echo "\033[1mPlease install pngcrush to reduce images size before commit\033[0m"
+    echo "Install pngcrush with the following:"
+    echo "\t \033[1mbrew install pngcrush\033[0m"
+    echo "OR"
+    echo "\t Site: \033[1m\033[4mhttp://pmt.sourceforge.net/pngcrush/\033[0m"
+    echo "\t Download: \033[1m\033[4mhttp://sourceforge.net/projects/pmt/files/\033[0m"
+    echo "\t Installation Steps: \033[1m\033[4mhttp://www.mactricksandtips.com/2012/02/installing-and-using-pngcrush-on-your-mac.html\033[0m"
+    exit 1;
+}
+command -v jpegtran >/dev/null 2>&1 || {
+    echo "\033[1mPlease install jpegtran to reduce images size before commit\033[0m"
+    echo "Install jpegtran with the following:"
+    echo "\t \033[1mbrew install jpeg\033[0m"
+    echo "OR"
+    echo "\t Site: \033[1m\033[4mhttp://jpegclub.org/jpegtran/\033[0m"
+    echo "\t Download: \033[1m\033[4mhttp://www.ijg.org/files/\033[0m (get the latest tar.gz)"
+    echo "\t Installation Steps: \033[1m\033[4mhttp://www.phpied.com/installing-jpegtran-mac-unix-linux/\033[0m"
+    echo "\n"
+    echo "If the following error is produced when running the \033[1mjpegtran\033[0m commannd"
+    echo "\t\033[1mjpegtran: error while loading shared libraries: libjpeg.so.8: cannot open shared object file: No such file or directory\033[0m"
+    echo "Run the following commands:"
+    echo "\t\033[1msudo ranlib /usr/local/lib/libjpeg.a\033[0m"
+    echo "\t\033[1msudo ldconfig /usr/local/lib\033[0m"
+    exit 1;
+}
+
+for file in `git diff --cached --name-only | grep ".png\$"`
+do
+  echo "Crushing $file"
+  pngcrush -rem alla -brute -reduce $file ${file%.png}.new | grep "filesize"
+  mv -f ${file%.png}.new $file
+done
+
+for file in `git diff --cached --name-only | grep ".jpg\$"`
+do
+  echo "Crushing $file"
+  jpegtran -copy none -optimize -perfect -outfile $file ${file%.jpg}.new | grep "filesize"
+  mv -f ${file%.jpg}.new $file
+done
