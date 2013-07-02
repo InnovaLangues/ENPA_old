@@ -98,5 +98,19 @@ $(document).ready(function() {
         $(".ressourcesTypes").removeClass("span6");
         $(".ressourcesReelles").css("display","block");
     });
+
+    $('#step-list .step').click(function(event) {
+        $.ajax({
+            type: 'POST',
+            url: Routing.generate('abstract_workspace_ajax_render_abstract_ressource'),
+            data: {"stepId": $(this).attr('data-node-id')},
+            error: function() { 
+            },
+            success: function(data) {
+                $('#abstract-ressource-panel').html(data);
+
+            }
+        });
+    });
     
 });
