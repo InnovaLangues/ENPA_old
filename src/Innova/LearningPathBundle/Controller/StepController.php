@@ -91,7 +91,7 @@ class StepController extends Controller
         $repository = $manager->getRepository("InnovaLearningPathBundle:Step");
 
         if ($request->getMethod() === 'POST') {
-            $nodeIds = $request->get('node_ids');
+            $nodeIds = $request->get('data-node-ids');
             foreach ($nodeIds as $stepId) {
                 $step = $manager
                     ->getRepository("InnovaLearningPathBundle:Step")

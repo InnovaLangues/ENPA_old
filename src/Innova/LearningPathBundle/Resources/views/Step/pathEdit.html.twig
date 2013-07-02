@@ -30,18 +30,19 @@
                             </select>
                         <input type="submit" class="btn clickParcoursTree">
                     </form>
+
+
                 </div>
             </div>
-
             <div class="well">
+                    <button id="save" class="btn btn-primary pull-right">Save</button>
+                    <span id="save_callback" class="notifications top-left"></span>
+                   
+                    <!--<button id="back" class="btn pull-right">Back</button>-->
                 <div id="left_tree">
                     {% include "InnovaLearningPathBundle:Step:includes/path-tree.html.twig" %}
                 </div>
             </div>
-
-            <span id="save_callback"></span>
-            <button id="save" class="btn pull-right">Save</button>
-            <button id="back" class="btn pull-right">Back</button>
         </div>
 
         <div class="span6 ressourcesTypes">

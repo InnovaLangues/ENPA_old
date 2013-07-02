@@ -9,7 +9,7 @@
            
             {% if patternTrees is defined %}
                 {% for patternTree in patternTrees %}
-                    <li node_id = "">
+                    <li data-node-id = "">
                         <span class='descr'>{{ patternTree.name }}</span>
                         <ul class="">
                             {% include "InnovaLearningPathBundle:Step:includes/list-item-pattern.html.twig" with {'steps': patternTree.children } only %}

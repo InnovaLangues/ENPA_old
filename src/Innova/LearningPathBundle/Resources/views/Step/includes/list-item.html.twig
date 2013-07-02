@@ -1,6 +1,8 @@
 {% for step in steps %}
     <li class="editable-item step" data-node-id="{{ step.id }}">
-    	<span class="descr"><a href="#{{step.name}}" class="parcours-item">{{ step.name }}</a></span> 
+    	<span class="descr">
+            <a href="#{{step.name}}" class="parcours-item">{{ step.name }}</a>
+        </span> 
     	<span class="step-buttons">
     		<i class="icon-plus add-child"></i>
     		<i class="icon-pencil edit-step"></i>
