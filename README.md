@@ -8,7 +8,6 @@ How to install :
 
 - Clone the master branch :
 
-
 ```bash
 git clone git@github.com:InnovaLangues/ENA.git
 ```
@@ -30,4 +29,4 @@ composer install
 php app/console innova:dev-fixtures:load
 ```
 
-- Voili voila !
+- Voili voila !!
