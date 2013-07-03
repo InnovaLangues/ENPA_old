@@ -107,7 +107,7 @@ $(document).ready(function() {
             error: function() { 
             },
             success: function(data) {
-                $('.abstract-ressource-panel').html(data);
+                $('#abstractRessourcesDisplay').html(data);
 
             }
         });
