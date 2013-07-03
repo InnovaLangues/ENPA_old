@@ -30,4 +30,4 @@ composer install
 php app/console innova:dev-fixtures:load
 ```
 
-- Voili voila!
+- Voili voila !
