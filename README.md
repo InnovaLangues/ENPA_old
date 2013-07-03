@@ -24,7 +24,7 @@ composer install
 - Set symfony cache permissions : http://symfony.com/doc/2.2/book/installation.html
 
 
-- Fixtures command :
+- Create schema and insert dev fixtures command :
 
 ```bash
 php app/console innova:dev-fixtures:load
