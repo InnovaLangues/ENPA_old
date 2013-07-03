@@ -69,6 +69,11 @@ class AbstractRessource
     */
     private $abstractWorkspaces;
 
+    /**
+    * @ORM\ManyToOne(targetEntity="Innova\TaxonomyBundle\Entity\Term", inversedBy="abstractRessources")
+    */
+    private $term;
+
 
     /**
      * Get id
@@ -231,5 +236,67 @@ class AbstractRessource
     public function getUpdated()
     {
         return $this->updated;
+    }
+
+    /**
+     * Set slug
+     *
+     * @param string $slug
+     * @return AbstractRessource
+     */
+    public function setSlug($slug)
+    {
+        $this->slug = $slug;
+
+        return $this;
+    }
+
+    /**
+     * Set created
+     *
+     * @param \DateTime $created
+     * @return AbstractRessource
+     */
+    public function setCreated($created)
+    {
+        $this->created = $created;
+
+        return $this;
+    }
+
+    /**
+     * Set updated
+     *
+     * @param \DateTime $updated
+     * @return AbstractRessource
+     */
+    public function setUpdated($updated)
+    {
+        $this->updated = $updated;
+
+        return $this;
+    }
+
+    /**
+     * Set term
+     *
+     * @param \Innova\TaxonomyBundle\Entity\Term $term
+     * @return AbstractRessource
+     */
+    public function setTerm(\Innova\TaxonomyBundle\Entity\Term $term = null)
+    {
+        $this->term = $term;
+
+        return $this;
+    }
+
+    /**
+     * Get term
+     *
+     * @return \Innova\TaxonomyBundle\Entity\Term 
+     */
+    public function getTerm()
+    {
+        return $this->term;
     }
 }
