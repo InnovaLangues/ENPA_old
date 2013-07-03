@@ -64,6 +64,18 @@ class LoadDevCommand extends ContainerAwareCommand
         $command = $this->getApplication()->find('doctrine:fixtures:load');
         $arguments = array(
             'command' => 'doctrine:fixtures:load',
+            '--fixtures'  => $kernel->locateResource('@InnovaTaxonomyBundle/DataFixtures/Dev/'),
+            '--append' => true,
+            '-n' => true
+        );
+
+        $input = new ArrayInput($arguments);
+        $command->run($input, $output);
+
+        $output->writeln("Loading dev fixtures...");
+        $command = $this->getApplication()->find('doctrine:fixtures:load');
+        $arguments = array(
+            'command' => 'doctrine:fixtures:load',
             '--fixtures'  => $kernel->locateResource('@InnovaLearningPathBundle/DataFixtures/Dev/'),
             '--append' => true,
             '-n' => true
@@ -71,5 +83,16 @@ class LoadDevCommand extends ContainerAwareCommand
 
         $input = new ArrayInput($arguments);
         $command->run($input, $output);
+        $output->writeln('        __                      __
+     .-\'  `\'.._...-----..._..-\'`  \'-.
+    /                                \
+    |  ,   ,\'                \'.   ,  |
+     \  \'-/                    \-\'  /
+      \'._|          _           |_.\'
+         |    /\   / \    /\    |
+         |    \/   | |    \/    |
+          \        \"/         /
+           \'.    ==\'^\'==     .\'
+             `\'------------\'`');
     }
 }
