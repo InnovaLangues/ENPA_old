@@ -1,10 +1,10 @@
 Environnement numérique personnel d'apprentissage (ENPA) INNOVA Langues
-========================================================================
+=======================================================================
 
 Requirements : Global composer install or local composer.phar
 
-Install :
----------
+How to install :
+----------------
 
 - Clone the master branch :
 
