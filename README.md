@@ -21,7 +21,7 @@ git clone git@github.com:InnovaLangues/ENA.git
 composer install
 ```
 
-- Set symfony cache permissions : http://symfony.com/doc/2.2/book/installation.html
+- Set Symfony cache permissions : http://symfony.com/doc/2.2/book/installation.html
 
 
 - Create schema and insert dev fixtures command :
