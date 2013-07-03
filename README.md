@@ -3,11 +3,10 @@ Environnement numérique personnel d'apprentissage (ENPA) INNOVA Langues
 
 Requirements : Global composer install or local composer.phar
 
-Install :
----------
+How to install :
+----------------
 
 - Clone the master branch :
-
 
 ```bash
 git clone git@github.com:InnovaLangues/ENA.git
@@ -21,11 +20,13 @@ git clone git@github.com:InnovaLangues/ENA.git
 composer install
 ```
 
-- Set symfony cache permissions : http://symfony.com/doc/2.2/book/installation.html
+- Set Symfony cache permissions : http://symfony.com/doc/2.2/book/installation.html
 
 
-- Fixtures command :
+- Create schema and insert dev fixtures command :
 
 ```bash
 php app/console innova:dev-fixtures:load
 ```
+
+That is it!
