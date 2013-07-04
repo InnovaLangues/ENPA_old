@@ -1,4 +1,4 @@
-Environnement numérique personnel d'apprentissage (ENPA) INNOVA Langues
+Environnement numérique personnel d'apprentissage (ENPA) INNOVA-Langues
 =======================================================================
 
 Requirements : Global composer install or local composer.phar
@@ -28,5 +28,3 @@ composer install
 ```bash
 php app/console innova:dev-fixtures:load
 ```
-
-That is it!
