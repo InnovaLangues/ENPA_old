@@ -185,7 +185,7 @@ $(document).ready(function () {
 	////////////////////////////////////////////////////
 	$(document).delegate(".add-child","click",function(e){
 		localSaveTree();
-		var newStep = '<li class="editable-item" data-node-id=""><span class="descr"><a href="#" class="parcours-item">New-step</a></span> <span class="step-buttons"> <i class="icon-plus add-child"></i><i class="icon-pencil edit-step"></i><i class="icon-trash delete-item"></i></span><ul class="sortable tree ui-sortable"></ul></li>';
+		var newStep = '<li class="editable-item" data-node-id=""><span class="descr"><a href="#" class="parcours-item">New-step</a></span> <span class="step-buttons"> <i class="icon-plus add-child"></i><i class="icon-pencil edit-step"></i><i class="icon-trash delete-item"></i> <i class="icon-heart fav-item"></i></span><ul class="sortable tree ui-sortable"></ul></li>';
 		$(this).parent().siblings("ul").stop().hide().append(newStep).fadeIn(1000);
 	});
 
