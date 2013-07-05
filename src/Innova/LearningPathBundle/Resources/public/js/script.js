@@ -99,7 +99,8 @@ $(document).ready(function() {
         $(".ressourcesReelles").css("display","block");
     });
 
-    $('#step-list .step').click(function(event) {
+    $(document).delegate(".parcours-item","click",function(e){
+    //$('#step-list .step').click(function(event) {
         $.ajax({
             type: 'POST',
             url: Routing.generate('abstract_workspace_ajax_render_abstract_ressource'),
