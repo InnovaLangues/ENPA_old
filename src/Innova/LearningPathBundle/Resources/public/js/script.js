@@ -88,19 +88,6 @@ $(document).ready(function() {
         $(".ressourcesTypes").css("display","block");
         $(".parcours-item").removeClass("active");
         $(this).addClass("active");
-        
-         $.ajax({
-            type: 'POST',
-            url: Routing.generate('abstract_workspace_ajax_render_abstract_ressource'),
-            data: {"stepId": $(this).attr('data-node-id')},
-            error: function() { 
-            },
-            success: function(data) {
-                $('#abstractRessourcesDisplay').html(data);
-
-            }
-        });
-
     });
 
     $(".ressourcesTypes-item").click(function(){
@@ -111,7 +98,17 @@ $(document).ready(function() {
         $(".ressourcesReelles").css("display","block");
     });
 
-   // $(document).delegate("#step-list .step","click",function(e){
-       
-    //});
+    $(document).delegate("#step-list .step","click",function(e){
+        $.ajax({
+            type: 'POST',
+            url: Routing.generate('abstract_workspace_ajax_render_abstract_ressource'),
+            data: {"stepId": $(this).attr('data-node-id')},
+            error: function() { 
+            },
+            success: function(data) {
+                $('#abstractRessourcesDisplay').html(data);
+
+            }
+        });
+    });
 });
