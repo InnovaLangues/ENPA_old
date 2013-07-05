@@ -29,4 +29,4 @@ composer install
 php app/console innova:dev-fixtures:load
 ```
 
-une 5eme modif.
+une 6eme modif.
