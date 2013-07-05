@@ -27,6 +27,7 @@ class AppKernel extends Kernel
             new Innova\ActivityBundle\InnovaActivityBundle(),
             new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
             new Innova\TaxonomyBundle\InnovaTaxonomyBundle(),
+            new Innova\PostBundle\InnovaPostBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

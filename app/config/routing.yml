@@ -1,3 +1,8 @@
+innova_post:
+    resource: "@InnovaPostBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 innova_taxonomy:
     resource: "@InnovaTaxonomyBundle/Controller/"
     type:     annotation
