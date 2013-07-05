@@ -152,31 +152,33 @@ $(document).ready(function () {
 	//  Delete step
 	////////////////////////////////////////////////////
 	$(document).delegate(".delete-item","click",function(e){
-		node = $(this);
-		node.parent().parent().remove();
+		if (confirm("Voulez-vous vraiment supprimer ce step ?")) { 
+			node = $(this);
+			node.parent().parent().remove();
 
-		var nodes_to_delete =  new Array();
-		var nodeId = $(this).parent().parent().attr("data-node-id");
+			var nodes_to_delete =  new Array();
+			var nodeId = $(this).parent().parent().attr("data-node-id");
 
-		if (nodeId != ""){
-			nodes_to_delete.push(nodeId);
-		}
-		var listItems = $(this).parent().parent().find("li").each(function(){
-			if($(this).attr("data-node-id") != ""){
-				nodes_to_delete.push($(this).attr("data-node-id"));
+			if (nodeId != ""){
+				nodes_to_delete.push(nodeId);
 			}
-		});
-
-		if (nodes_to_delete.length > 1){
-			$.ajax({
-				type: 'POST',
-				url: Routing.generate('step_ajax_delete'),
-				data: {"data-node-ids": nodes_to_delete} ,
-				error: function() { 
-				},
-				success: function() {
+			var listItems = $(this).parent().parent().find("li").each(function(){
+				if($(this).attr("data-node-id") != ""){
+					nodes_to_delete.push($(this).attr("data-node-id"));
 				}
 			});
+
+			if (nodes_to_delete.length > 1){
+				$.ajax({
+					type: 'POST',
+					url: Routing.generate('step_ajax_delete'),
+					data: {"data-node-ids": nodes_to_delete} ,
+					error: function() { 
+					},
+					success: function() {
+					}
+				});
+			}
 		}
 	});
 
