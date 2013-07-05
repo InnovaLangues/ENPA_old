@@ -28,5 +28,3 @@ composer install
 ```bash
 php app/console innova:dev-fixtures:load
 ```
-
-une 10eme modif.
