@@ -112,9 +112,4 @@ $(document).ready(function() {
             }
         });
     });
-
-    $(".fav-item").click(function() {
-        alert("Ajouté aux favoris.");
-    });
-    
 });
