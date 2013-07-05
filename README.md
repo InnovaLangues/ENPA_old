@@ -9,7 +9,7 @@ How to install :
 - Clone the master branch :
 
 ```bash
-git clone git@github.com:InnovaLangues/ENA.git
+git clone git@github.com:InnovaLangues/ENPA.git
 ```
 
 - Create app/config/paramaters.yml based on the example parameters.yml.dist
