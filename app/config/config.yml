@@ -72,4 +72,4 @@ stof_doctrine_extensions:
             sluggable: true
 
 fos_js_routing:
-    routes_to_expose: [ajax_savetree, path_ajax_find_by_name, path_ajax_save, step_ajax_delete, abstract_workspace_ajax_render_abstract_ressource]
+    routes_to_expose: [ajax_savetree, path_ajax_find_by_name, path_ajax_save, step_ajax_delete, abstract_workspace_ajax_render_abstract_ressource, abstract_workspace_ajax_render_concrete_ressource]

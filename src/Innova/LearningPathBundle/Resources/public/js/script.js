@@ -89,8 +89,7 @@ $(document).ready(function() {
         $(".parcours-item").removeClass("active");
         $(this).addClass("active");
     });
-
-    $(".ressourcesTypes-item").click(function(){
+    $(document).delegate(".ressourcesTypes-item","click",function(e){
         $(".parcoursTree").addClass("span4");
         $(".parcoursTree").removeClass("span6");
         $(".ressourcesTypes").addClass("span4");
@@ -107,6 +106,20 @@ $(document).ready(function() {
             },
             success: function(data) {
                 $('#abstractRessourcesDisplay').html(data);
+
+            }
+        });
+    });
+
+    $(document).delegate(".abstractRessource-item li","click",function(e){
+        $.ajax({
+            type: 'POST',
+            url: Routing.generate('abstract_workspace_ajax_render_concrete_ressource'),
+            data: {"abstractRessourceId": $(this).attr('data-node-id')},
+            error: function() { 
+            },
+            success: function(data) {
+                $('#concreteRessourcesDisplay').html(data);
 
             }
         });

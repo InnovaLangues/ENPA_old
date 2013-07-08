@@ -40,4 +40,27 @@ class AbstractWorkspaceController extends Controller
             return array('abstractRessources' => $abstractRessources);
         }
     }
+
+    /**
+     * Creates a new Path entity.
+     *
+     * @Route("/ajax/render-concrete-ressource", name="abstract_workspace_ajax_render_concrete_ressource")
+     * @Method("POST")
+     * @Template("InnovaLearningPathBundle:AbstractWorkspace:includes/concrete-ressource.html.twig")
+     */
+    public function ajaxRenderConcreteRessourceAction(Request $request)
+    {
+        $manager = $this
+            ->getDoctrine()
+            ->getManager();
+
+        if ($request->getMethod() == 'POST') {
+            $abstractRessource = $manager->getRepository("InnovaLearningPathBundle:AbstractRessource")->findOneById($request->get('abstractRessourceId'));
+
+            $concreteRessources = $abstractRessource->getConcreteRessources();
+            
+
+            return array('concreteRessources' => $concreteRessources);
+        }
+    }
 }
