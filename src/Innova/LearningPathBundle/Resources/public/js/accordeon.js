@@ -12,7 +12,8 @@ NOTE: Because of a bug in jQuery with IE8 we had to add an IE stylesheet hack to
 $(document).ready(function() {
 	 
 	//ACCORDION BUTTON ACTION (ON CLICK DO THE FOLLOWING)
-	$('.accordionButton').click(function() {
+	$(document).delegate(".accordionButton","click",function(e){
+	
 
 		//REMOVE THE ON CLASS FROM ALL BUTTONS
 		$('.accordionButton').removeClass('on');
