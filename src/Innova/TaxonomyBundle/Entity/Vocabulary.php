@@ -63,11 +63,10 @@ class Vocabulary
     */
     private $terms;
 
-
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -77,7 +76,7 @@ class Vocabulary
     /**
      * Set name
      *
-     * @param string $name
+     * @param  string     $name
      * @return Vocabulary
      */
     public function setName($name)
@@ -90,7 +89,7 @@ class Vocabulary
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
@@ -100,7 +99,7 @@ class Vocabulary
     /**
      * Set description
      *
-     * @param string $description
+     * @param  string     $description
      * @return Vocabulary
      */
     public function setDescription($description)
@@ -113,7 +112,7 @@ class Vocabulary
     /**
      * Get description
      *
-     * @return string 
+     * @return string
      */
     public function getDescription()
     {
@@ -161,7 +160,7 @@ class Vocabulary
     /**
      * Set slug
      *
-     * @param string $slug
+     * @param  string     $slug
      * @return Vocabulary
      */
     public function setSlug($slug)
@@ -174,7 +173,7 @@ class Vocabulary
     /**
      * Set created
      *
-     * @param \DateTime $created
+     * @param  \DateTime  $created
      * @return Vocabulary
      */
     public function setCreated($created)
@@ -187,7 +186,7 @@ class Vocabulary
     /**
      * Set updated
      *
-     * @param \DateTime $updated
+     * @param  \DateTime  $updated
      * @return Vocabulary
      */
     public function setUpdated($updated)
@@ -200,7 +199,7 @@ class Vocabulary
     /**
      * Add terms
      *
-     * @param \Innova\TaxonomyBundle\Entity\Term $terms
+     * @param  \Innova\TaxonomyBundle\Entity\Term $terms
      * @return Vocabulary
      */
     public function addTerm(\Innova\TaxonomyBundle\Entity\Term $terms)
@@ -223,7 +222,7 @@ class Vocabulary
     /**
      * Get terms
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getTerms()
     {

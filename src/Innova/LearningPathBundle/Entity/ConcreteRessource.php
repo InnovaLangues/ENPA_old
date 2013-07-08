@@ -58,18 +58,16 @@ class ConcreteRessource
      */
     private $updated;
 
-
     /**
     * @ORM\ManyToMany(targetEntity="AbstractRessource", inversedBy="concreteRessources")
     * @ORM\JoinTable(name="inl_concreteressource_abstractressources")
     */
     private $abstractRessources;
 
-
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -93,7 +91,7 @@ class ConcreteRessource
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
@@ -117,7 +115,7 @@ class ConcreteRessource
     /**
      * Get description
      *
-     * @return string 
+     * @return string
      */
     public function getDescription()
     {
@@ -134,7 +132,7 @@ class ConcreteRessource
     /**
      * Add abstractRessources
      *
-     * @param \Innova\LearningPathBundle\Entity\AbstractRessource $abstractRessources
+     * @param  \Innova\LearningPathBundle\Entity\AbstractRessource $abstractRessources
      * @return ConcreteRessource
      */
     public function addAbstractRessource(\Innova\LearningPathBundle\Entity\AbstractRessource $abstractRessources)
@@ -157,7 +155,7 @@ class ConcreteRessource
     /**
      * Get abstractRessources
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getAbstractRessources()
     {

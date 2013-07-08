@@ -1,15 +1,15 @@
 <div id="clicEtape2">
-	<div class="row-fluid">
-		<div class="span12 titreEspace"><img src="img/folder-open.png"/>Etape 2 – Things around you</div>
-	</div>
-	<div class="row-fluid">
-		<div class="span12 titreAct">
-			<div class="titreAChange span12">
-				
-			</div>
-				
-		</div>
-	</div>
+    <div class="row-fluid">
+        <div class="span12 titreEspace"><img src="img/folder-open.png"/>Etape 2 – Things around you</div>
+    </div>
+    <div class="row-fluid">
+        <div class="span12 titreAct">
+            <div class="titreAChange span12">
+
+            </div>
+
+        </div>
+    </div>
     <div class="row-fluid">
         <div class="span12  tabbable tabs-left contenu">
             <ul class="nav nav-tabs">
@@ -48,5 +48,5 @@
             (lien internet, voir mise à disposition de fichier pour affichage ou téléchargement).</p>
     </div>
 </div> -->
-	
+
 </div>

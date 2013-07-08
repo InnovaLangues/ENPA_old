@@ -10,36 +10,36 @@
 
 {% block body %}
     <div class="container">
-			
+
 			<div class="row">
 
 					<!-- Fenêtres modales -->
-					
+
 					{% include 'InnovaActivityBundle:Activity:partials/modals.inc.html.twig' %}
 
 					<!-- Corps -->
 					{% include 'InnovaActivityBundle:Activity:partials/corps.html.twig' %}
 
 
-					
+
 			</div>
 				<!-- Barre latérale gauche -->
 				{% include 'InnovaActivityBundle:Activity:partials/voletgauche.html.twig'  %}
 				<!-- Barre latérale Droite -->
 				{% include 'InnovaActivityBundle:Activity:partials/voletdroite.html.twig'  %}
-				
+
 		</div>
 {% endblock %}
 
 {% block javascripts %}
 
-		
-		
+
+
 		<script src="{{ asset('bundles/innovaactivity/js/jquery.contextmenu.js') }}"></script>
 		<script src="{{ asset('bundles/innovaactivity/js/accordeon.js') }}"></script>
 		<script src="{{ asset('bundles/innovaactivity/js/jquery.mousewheel.js') }}"></script>
 		<script src="{{ asset('bundles/innovaactivity/js/perfect-scrollbar.js') }}"></script>
-		
+
 		<script src="{{ asset('bundles/innovaactivity/js/fonctions.js') }}"></script>
 		<script src="{{ asset('bundles/innovaactivity/js/tools.js') }}"></script>
 		<script src="{{ asset('bundles/innovaactivity/js/init.js') }}"></script>

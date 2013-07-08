@@ -70,7 +70,6 @@ class Path
     */
     private $steps;
 
-
     /**
      * Get id
      *
@@ -84,7 +83,7 @@ class Path
     /**
      * Set name
      *
-     * @param string $name
+     * @param  string $name
      * @return Path
      */
     public function setName($name)
@@ -217,7 +216,7 @@ class Path
     /**
      * Get steps
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getSteps()
     {

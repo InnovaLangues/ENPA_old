@@ -8,6 +8,6 @@
         </div>
         <div class="modal-footer">
             <a href="#" class="btn" data-dismiss="modal" aria-hidden="true">Fermer</a>
-            
+
         </div>
     </div>
