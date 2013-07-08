@@ -138,7 +138,6 @@ class Step
         return $this;
     }
 
-
     /**
      * Get name
      *
@@ -205,7 +204,7 @@ class Step
     /**
      * Set lft
      *
-     * @param integer $lft
+     * @param  integer $lft
      * @return Step
      */
     public function setLft($lft)
@@ -228,7 +227,7 @@ class Step
     /**
      * Set lvl
      *
-     * @param integer $lvl
+     * @param  integer $lvl
      * @return Step
      */
     public function setLvl($lvl)
@@ -371,7 +370,7 @@ class Step
     /**
      * Get path
      *
-     * @return \Innova\LearningPathBundle\Entity\Path 
+     * @return \Innova\LearningPathBundle\Entity\Path
      */
     public function getPath()
     {
@@ -395,7 +394,7 @@ class Step
     /**
      * Get stepType
      *
-     * @return \Innova\LearningPathBundle\Entity\StepType 
+     * @return \Innova\LearningPathBundle\Entity\StepType
      */
     public function getStepType()
     {

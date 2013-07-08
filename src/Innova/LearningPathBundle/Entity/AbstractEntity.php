@@ -58,7 +58,6 @@ class AbstractEntity
      */
     private $updated;
 
-
     /**
      * Get id
      *

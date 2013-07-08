@@ -132,18 +132,17 @@ class StepController extends Controller
                 $json->step,
                 null,
                 $manager,
-                $repository, 
+                $repository,
                 null
             );
-            
+
             $manager->clear();
             $path = $repository->findOneById($rootId)->getPath();
             $params['root'] = $this->getPathRoot($path);
         }
-        
+
         return $params;
     }
-
 
     /**
      * [parseJsonUl description]
@@ -154,7 +153,7 @@ class StepController extends Controller
      * @return [type] [description]
      */
     private function parseJsonUl($step, $parent, $manager, $repository, $rootId)
-    {   
+    {
         if ($repository->find($step->id)) {
              $newStep = $repository->find($step->id);
         } else {
@@ -168,7 +167,7 @@ class StepController extends Controller
         $manager->persist($newStep);
         $manager->flush();
 
-        if($parent != NULL){
+        if ($parent != NULL) {
             $repository->persistAsLastChildOf($newStep, $parent);
         } else {
             $rootId = $step->id;
@@ -183,12 +182,12 @@ class StepController extends Controller
                     $child->step,
                     $newStep,
                     $manager,
-                    $repository, 
+                    $repository,
                     $rootId
                 );
             }
         }
-       
+
         return $rootId;
     }
 

@@ -35,11 +35,10 @@ class Post
      */
     private $body;
 
-
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -49,7 +48,7 @@ class Post
     /**
      * Set name
      *
-     * @param string $name
+     * @param  string $name
      * @return Post
      */
     public function setName($name)
@@ -62,7 +61,7 @@ class Post
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
@@ -72,7 +71,7 @@ class Post
     /**
      * Set body
      *
-     * @param string $body
+     * @param  string $body
      * @return Post
      */
     public function setBody($body)
@@ -85,7 +84,7 @@ class Post
     /**
      * Get body
      *
-     * @return string 
+     * @return string
      */
     public function getBody()
     {

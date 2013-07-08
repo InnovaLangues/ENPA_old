@@ -71,7 +71,7 @@ class AbstractWorkspace
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -95,7 +95,7 @@ class AbstractWorkspace
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
@@ -119,7 +119,7 @@ class AbstractWorkspace
     /**
      * Get description
      *
-     * @return string 
+     * @return string
      */
     public function getDescription()
     {
@@ -136,7 +136,7 @@ class AbstractWorkspace
     /**
      * Add abstractRessources
      *
-     * @param \Innova\LearningPathBundle\Entity\AbstractRessource $abstractRessources
+     * @param  \Innova\LearningPathBundle\Entity\AbstractRessource $abstractRessources
      * @return AbstractWorkspace
      */
     public function addAbstractRessource(\Innova\LearningPathBundle\Entity\AbstractRessource $abstractRessources)
@@ -159,7 +159,7 @@ class AbstractWorkspace
     /**
      * Get abstractRessources
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getAbstractRessources()
     {
@@ -169,7 +169,7 @@ class AbstractWorkspace
     /**
      * Set steps
      *
-     * @param \Innova\LearningPathBundle\Entity\Step $steps
+     * @param  \Innova\LearningPathBundle\Entity\Step $steps
      * @return AbstractWorkspace
      */
     public function setStep(\Innova\LearningPathBundle\Entity\Step $step = null)
@@ -182,7 +182,7 @@ class AbstractWorkspace
     /**
      * Get steps
      *
-     * @return \Innova\LearningPathBundle\Entity\Step 
+     * @return \Innova\LearningPathBundle\Entity\Step
      */
     public function getStep()
     {

@@ -7,7 +7,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Symfony\Component\HttpFoundation\Response;
 use Innova\LearningPathBundle\Entity\AbstractWorkspace;
 use Innova\LearningPathBundle\Entity\Path;
 use Innova\LearningPathBundle\Entity\Step;
@@ -32,7 +31,6 @@ class AbstractWorkspaceController extends Controller
             ->getDoctrine()
             ->getManager();
 
-        
         if ($request->getMethod() == 'POST') {
             $step = $manager->getRepository("InnovaLearningPathBundle:Step")->find($request->get('stepId'));
 

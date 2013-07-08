@@ -2,11 +2,9 @@
 
 namespace Innova\AppBundle\DataFixtures\Dev;
 
-use Symfony\Component\DependencyInjection\SimpleXMLElement;
 use Doctrine\Common\DataFixtures\AbstractFixture;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
-use Doctrine\ORM\Mapping as ORM;
 use Innova\LearningPathBundle\Entity\Path;
 
 /**
@@ -23,7 +21,6 @@ class LoadPathData extends AbstractFixture implements OrderedFixtureInterface
     {
         return 1; // the order in which fixtures will be loaded
     }
-
 
     /**
      * @param ObjectManager $manager
@@ -44,7 +41,7 @@ class LoadPathData extends AbstractFixture implements OrderedFixtureInterface
         $path3->setName('Italien A1');
 
         $manager->persist($path3);
-        
+
         $manager->flush();
 
         $this->addReference('path1', $path1);

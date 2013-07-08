@@ -2,11 +2,9 @@
 
 namespace Innova\AppBundle\DataFixtures\Dev;
 
-use Symfony\Component\DependencyInjection\SimpleXMLElement;
 use Doctrine\Common\DataFixtures\AbstractFixture;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
-use Doctrine\ORM\Mapping as ORM;
 use Innova\LearningPathBundle\Entity\Path;
 
 /**
