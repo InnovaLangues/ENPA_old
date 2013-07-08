@@ -3,15 +3,24 @@
         <div id="claroline_tete_volet_gauche"> <!-- header du volet -->
             <h5>Contexte et intentions</h5>
         </div>
-        <div id="accordion">
-            <h3>Entreprise</h3>
-            <div id="tabsA" class="scroll">
-                <ul>
-                    <li><a href="#tabs-1">Contexte</a></li>
-                    <li><a href="#tabs-2">Intention</a></li>
-                </ul>
-                <div id="tabs-1">
-                    <form class="form-search">
+
+        <div class="accordion" id="accordion1">
+            <div class="accordion-group">
+                <div class="accordion-heading">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapse1">
+                        Entreprise
+                    </a>
+                </div>
+                <div class="accordion-body collapse in" id="collapse1">
+                    <div class="accordion-inner">
+                        <ul class="nav nav-tabs" id="myTab">
+                            <li class="active"><a href="#contexte">Contexte</a></li>
+                            <li class=""><a href="#intention">Intention</a></li>
+                        </ul>
+                             
+                            <div class="tab-content">
+                            <div class="tab-pane active" id="contexte">
+                                <form class="form-search">
                         <div>
                           <input type="text" value="Nom">
                           <button class="btn btn-primary" type="submit"><i class="icon-ok"></i></button>
@@ -59,19 +68,32 @@
                           <button class="btn btn-primary" type="submit"><i class="icon-ok"></i></button>
                         </div>
                     </form>
-                </div>
-                <div id="tabs-2">
-                    <p>Contenu2</p>
+                            </div>
+                            <div class="tab-pane" id="intention">
+                                COntenu2
+                            </div>
+                            </div>
+                    </div>
                 </div>
             </div>
-            <h3>Formation</h3>
-            <div id="tabsB" class="scroll">
-                <ul>
-                    <li><a href="#tabs-3">Contexte</a></li>
-                    <li><a href="#tabs-4">Intention</a></li>
-                </ul>
-                <div id="tabs-3">
-                    <form class="form-search">
+
+            <div class="accordion-group">
+                <div class="accordion-heading">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapse2">
+                        Formation
+                    </a>
+                </div>
+                <div class="accordion-body collapse" id="collapse2">
+                    <div class="accordion-inner">
+                         <div class="accordion-inner">
+                        <ul class="nav nav-tabs" id="myTab">
+                            <li class="active"><a href="#contexte">Contexte</a></li>
+                            <li class=""><a href="#intention">Intention</a></li>
+                        </ul>
+                             
+                            <div class="tab-content">
+                            <div class="tab-pane active" id="contexte">
+                                <form class="form-search">
                         <div>
                           <input type="text" value="Public cible">
                           <button class="btn btn-primary" type="submit"><i class="icon-ok"></i></button>
@@ -95,6 +117,97 @@
                           <button class="btn btn-primary" type="submit"><i class="icon-ok"></i></button>
                         </div>
                     </form>
+                            </div>
+                            <div class="tab-pane" id="intention">
+                                COntenu2
+                            </div>
+                            </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-group">
+                <div class="accordion-heading">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapse3">
+                        Compétence
+                    </a>
+                </div>
+                <div class="accordion-body collapse" id="collapse3">
+                    <div class="accordion-inner">
+                         <div class="accordion-inner">
+                        <ul class="nav nav-tabs" id="myTab">
+                            <li class="active"><a href="#contexte">Contexte</a></li>
+                            <li class=""><a href="#intention">Intention</a></li>
+                        </ul>
+                             
+                            <div class="tab-content">
+                            <div class="tab-pane active" id="contexte">
+                                Contenu1
+                            </div>
+                            <div class="tab-pane" id="intention">
+                                COntenu2
+                            </div>
+                            </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-group">
+                <div class="accordion-heading">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapse4">
+                        Jeu
+                    </a>
+                </div>
+                <div class="accordion-body collapse" id="collapse4">
+                    <div class="accordion-inner">
+                         <div class="accordion-inner">
+                        <ul class="nav nav-tabs" id="myTab">
+                            <li class="active"><a href="#contexte">Contexte</a></li>
+                            <li class=""><a href="#intention">Intention</a></li>
+                        </ul>
+                             
+                            <div class="tab-content">
+                            <div class="tab-pane active" id="contexte">
+                                Contenu1
+                            </div>
+                            <div class="tab-pane" id="intention">
+                                COntenu2
+                            </div>
+                            </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+        <!-- <div id="accordion">
+            <h3>Entreprise</h3>
+            <div id="tabsA" class="scroll">
+                <ul>
+                    <li><a href="#tabs-1">Contexte</a></li>
+                    <li><a href="#tabs-2">Intention</a></li>
+                </ul>
+                <div id="tabs-1">
+                    
+                </div>
+                <div id="tabs-2">
+                    <p>Contenu2</p>
+                </div>
+            </div>
+            <h3>Formation</h3>
+            <div id="tabsB" class="scroll">
+                <ul>
+                    <li><a href="#tabs-3">Contexte</a></li>
+                    <li><a href="#tabs-4">Intention</a></li>
+                </ul>
+                <div id="tabs-3">
+                    
                 </div>
                 <div id="tabs-4">
                     <p>Contenu4</p>
@@ -126,7 +239,7 @@
                     <p>Contenu8</p>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
     <div id="click-left">
         <i class="icon-chevron-right icon-white" id="chevron_right_leftvolet"></i>
