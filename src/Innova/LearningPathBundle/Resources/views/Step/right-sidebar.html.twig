@@ -3,9 +3,17 @@
         <div id="claroline_tete_volet_droite">
             <h5>Bibliotheque et entrepots</h5>
         </div>
-        <div id="accordion2">
-            <h3>Modele</h3>
-            <div class="scroll">
+
+        <div class="accordion" id="accordion3">
+            <div class="accordion-group">
+                <div class="accordion-heading">
+                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion3" href="#collapse12">
+                Modèle
+                </a>
+                </div>
+                <div id="collapse12" class="accordion-body collapse in">
+                <div class="accordion-inner">
+                <div class="scroll">
 
             {% if patternTrees is defined %}
                 {% for patternTree in patternTrees %}
@@ -19,8 +27,18 @@
             {% endif %}
 
             </div>
-            <h3>Strategie</h3>
-            <div class="scroll">
+                </div>
+                </div>
+            </div>
+            <div class="accordion-group">
+                <div class="accordion-heading">
+                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion3" href="#collapse22">
+                Stratégie
+                </a>
+                </div>
+                <div id="collapse22" class="accordion-body collapse">
+                <div class="accordion-inner">
+                <div class="scroll">
                 <p>Decouverte entrainement test</p>
                 <p>Demarche experimentale Annie</p>
                 <p>Demarche experimentale Annie</p>
@@ -37,13 +55,28 @@
                 <p>Generic learning game patern</p>
                 <p>Jeu de role</p>
             </div>
-            <h3>Espace d'interaction</h3>
-            <div class="scroll">
+                </div>
+                </div>
+            </div>
+            <div class="accordion-group">
+                <div class="accordion-heading">
+                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion3" href="#collapse32">
+                Espace d'intéraction
+                </a>
+                </div>
+                <div id="collapse32" class="accordion-body collapse">
+                <div class="accordion-inner">
+                <div class="scroll">
                 <p>Consultation collective synchrone</p>
                 <p>Consultation individuelle asynchrone</p>
                 <p>Consultation individuelle synchrone</p>
             </div>
+                </div>
+                </div>
+            </div>
         </div>
+
+        
     </div>
     <div id="click-right">
         <i class="icon-chevron-right icon-white" id="chevron_right_rightvolet"></i>
