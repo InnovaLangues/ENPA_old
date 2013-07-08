@@ -49,7 +49,6 @@ class AbstractEntityType
      */
     private $subClass;
 
-
     /**
      * Get id
      *
@@ -94,14 +93,14 @@ class AbstractEntityType
     public function setDescription($description)
     {
         $this->description = $description;
-    
+
         return $this;
     }
 
     /**
      * Get description
      *
-     * @return string 
+     * @return string
      */
     public function getDescription()
     {
@@ -118,14 +117,14 @@ class AbstractEntityType
     public function setClass($class)
     {
         $this->class = $class;
-    
+
         return $this;
     }
 
     /**
      * Get class
      *
-     * @return string 
+     * @return string
      */
     public function getClass()
     {
@@ -142,14 +141,14 @@ class AbstractEntityType
     public function setSubClass($subClass)
     {
         $this->subClass = $subClass;
-    
+
         return $this;
     }
 
     /**
      * Get subClass
      *
-     * @return string 
+     * @return string
      */
     public function getSubClass()
     {

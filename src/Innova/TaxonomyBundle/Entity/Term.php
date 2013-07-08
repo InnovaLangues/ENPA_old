@@ -109,7 +109,7 @@ class Term
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -119,7 +119,7 @@ class Term
     /**
      * Set name
      *
-     * @param string $name
+     * @param  string $name
      * @return Term
      */
     public function setName($name)
@@ -132,7 +132,7 @@ class Term
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
@@ -142,7 +142,7 @@ class Term
     /**
      * Set description
      *
-     * @param string $description
+     * @param  string $description
      * @return Term
      */
     public function setDescription($description)
@@ -155,7 +155,7 @@ class Term
     /**
      * Get description
      *
-     * @return string 
+     * @return string
      */
     public function getDescription()
     {
@@ -195,7 +195,7 @@ class Term
     /**
      * Set lft
      *
-     * @param integer $lft
+     * @param  integer $lft
      * @return Term
      */
     public function setLft($lft)
@@ -218,7 +218,7 @@ class Term
     /**
      * Set lvl
      *
-     * @param integer $lvl
+     * @param  integer $lvl
      * @return Term
      */
     public function setLvl($lvl)
@@ -354,7 +354,7 @@ class Term
     /**
      * Set slug
      *
-     * @param string $slug
+     * @param  string $slug
      * @return Term
      */
     public function setSlug($slug)
@@ -367,7 +367,7 @@ class Term
     /**
      * Set created
      *
-     * @param \DateTime $created
+     * @param  \DateTime $created
      * @return Term
      */
     public function setCreated($created)
@@ -380,7 +380,7 @@ class Term
     /**
      * Set updated
      *
-     * @param \DateTime $updated
+     * @param  \DateTime $updated
      * @return Term
      */
     public function setUpdated($updated)
@@ -393,7 +393,7 @@ class Term
     /**
      * Set vocabulary
      *
-     * @param \Innova\TaxonomyBundle\Entity\Vocabulary $vocabulary
+     * @param  \Innova\TaxonomyBundle\Entity\Vocabulary $vocabulary
      * @return Term
      */
     public function setVocabulary(\Innova\TaxonomyBundle\Entity\Vocabulary $vocabulary = null)
@@ -406,7 +406,7 @@ class Term
     /**
      * Get vocabulary
      *
-     * @return \Innova\TaxonomyBundle\Entity\Vocabulary 
+     * @return \Innova\TaxonomyBundle\Entity\Vocabulary
      */
     public function getVocabulary()
     {
@@ -416,7 +416,7 @@ class Term
     /**
      * Add abstractRessources
      *
-     * @param \Innova\LearningPathBundle\Entity\AbstractRessource $abstractRessources
+     * @param  \Innova\LearningPathBundle\Entity\AbstractRessource $abstractRessources
      * @return Term
      */
     public function addAbstractRessource(\Innova\LearningPathBundle\Entity\AbstractRessource $abstractRessources)
@@ -439,7 +439,7 @@ class Term
     /**
      * Get abstractRessources
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getAbstractRessources()
     {

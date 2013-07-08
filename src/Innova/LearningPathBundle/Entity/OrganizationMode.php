@@ -28,7 +28,6 @@ class OrganizationMode
      */
     private $name;
 
-
     /**
      * Get id
      *

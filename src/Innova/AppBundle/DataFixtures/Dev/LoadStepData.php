@@ -2,11 +2,9 @@
 
 namespace Innova\AppBundle\DataFixtures\Dev;
 
-use Symfony\Component\DependencyInjection\SimpleXMLElement;
 use Doctrine\Common\DataFixtures\AbstractFixture;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
-use Doctrine\ORM\Mapping as ORM;
 use Innova\LearningPathBundle\Entity\Step;
 
 /**
@@ -35,7 +33,7 @@ class LoadStepData extends AbstractFixture implements OrderedFixtureInterface
         $step1->setPath($this->getReference('path1'));
 
         $manager->persist($step1);
-        
+
         $step2 = new Step();
         $step2->setName('blabla');
         $step2->setParent($step1);
@@ -96,12 +94,11 @@ class LoadStepData extends AbstractFixture implements OrderedFixtureInterface
 
         $manager->persist($step11);
 
-
         // SECOND TREE.
         $step12 = new Step();
         $step12->setName('Source');
         $step12->setPath($this->getReference('path2'));
-      
+
         $manager->persist($step12);
 
         $step13 = new Step();
@@ -133,7 +130,6 @@ class LoadStepData extends AbstractFixture implements OrderedFixtureInterface
         $step17->setParent($step14);
 
         $manager->persist($step17);
-
 
         $step19 = new Step();
         $step19->setName('Parcours INP vierge');

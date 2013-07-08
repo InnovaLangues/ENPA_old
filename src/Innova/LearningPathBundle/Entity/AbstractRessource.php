@@ -74,11 +74,10 @@ class AbstractRessource
     */
     private $term;
 
-
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -102,7 +101,7 @@ class AbstractRessource
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
@@ -126,13 +125,12 @@ class AbstractRessource
     /**
      * Get description
      *
-     * @return string 
+     * @return string
      */
     public function getDescription()
     {
         return $this->description;
     }
-
 
     /**
      * Constructor
@@ -145,7 +143,7 @@ class AbstractRessource
     /**
      * Add concreteRessources
      *
-     * @param \Innova\LearningPathBundle\Entity\ConcreteRessource $concreteRessources
+     * @param  \Innova\LearningPathBundle\Entity\ConcreteRessource $concreteRessources
      * @return AbstractRessource
      */
     public function addConcreteRessource(\Innova\LearningPathBundle\Entity\ConcreteRessource $concreteRessources)
@@ -168,7 +166,7 @@ class AbstractRessource
     /**
      * Get concreteRessources
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getConcreteRessources()
     {
@@ -178,7 +176,7 @@ class AbstractRessource
     /**
      * Add abstractWorkspaces
      *
-     * @param \Innova\LearningPathBundle\Entity\AbstractWorkspace $abstractWorkspaces
+     * @param  \Innova\LearningPathBundle\Entity\AbstractWorkspace $abstractWorkspaces
      * @return AbstractRessource
      */
     public function addAbstractWorkspace(\Innova\LearningPathBundle\Entity\AbstractWorkspace $abstractWorkspaces)
@@ -201,7 +199,7 @@ class AbstractRessource
     /**
      * Get abstractWorkspaces
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getAbstractWorkspaces()
     {
@@ -241,7 +239,7 @@ class AbstractRessource
     /**
      * Set slug
      *
-     * @param string $slug
+     * @param  string            $slug
      * @return AbstractRessource
      */
     public function setSlug($slug)
@@ -254,7 +252,7 @@ class AbstractRessource
     /**
      * Set created
      *
-     * @param \DateTime $created
+     * @param  \DateTime         $created
      * @return AbstractRessource
      */
     public function setCreated($created)
@@ -267,7 +265,7 @@ class AbstractRessource
     /**
      * Set updated
      *
-     * @param \DateTime $updated
+     * @param  \DateTime         $updated
      * @return AbstractRessource
      */
     public function setUpdated($updated)
@@ -280,7 +278,7 @@ class AbstractRessource
     /**
      * Set term
      *
-     * @param \Innova\TaxonomyBundle\Entity\Term $term
+     * @param  \Innova\TaxonomyBundle\Entity\Term $term
      * @return AbstractRessource
      */
     public function setTerm(\Innova\TaxonomyBundle\Entity\Term $term = null)
@@ -293,7 +291,7 @@ class AbstractRessource
     /**
      * Get term
      *
-     * @return \Innova\TaxonomyBundle\Entity\Term 
+     * @return \Innova\TaxonomyBundle\Entity\Term
      */
     public function getTerm()
     {
