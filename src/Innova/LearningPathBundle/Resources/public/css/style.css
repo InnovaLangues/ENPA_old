@@ -257,3 +257,13 @@ display: block;
 .accordion-group{
 	max-height: 300px;
 }
+
+ul{
+	min-height: 5px;
+}
+
+.ui-state-highlight{
+	min-height: 20px;
+	background: #E7E7E7;
+	border:none;
+} 
