@@ -64,6 +64,42 @@ class LoadTermData extends AbstractFixture implements OrderedFixtureInterface
 
         $manager->persist($term6);
 
+        $term7 = new Term();
+        $term7->setName('A1');
+        $term7->setVocabulary($this->getReference('CECRL'));
+
+        $manager->persist($term7);
+
+        $term8 = new Term();
+        $term8->setName('A2');
+        $term8->setVocabulary($this->getReference('CECRL'));
+
+        $manager->persist($term8);
+
+        $term9 = new Term();
+        $term9->setName('B1');
+        $term9->setVocabulary($this->getReference('CECRL'));
+
+        $manager->persist($term9);
+
+        $term10 = new Term();
+        $term10->setName('B2');
+        $term10->setVocabulary($this->getReference('CECRL'));
+
+        $manager->persist($term10);
+
+        $term11 = new Term();
+        $term11->setName('C1');
+        $term11->setVocabulary($this->getReference('CECRL'));
+
+        $manager->persist($term11);
+
+        $term12 = new Term();
+        $term12->setName('C2');
+        $term12->setVocabulary($this->getReference('CECRL'));
+
+        $manager->persist($term12);
+
         $manager->flush();
 
         $this->addReference('qui', $term1);
@@ -72,5 +108,11 @@ class LoadTermData extends AbstractFixture implements OrderedFixtureInterface
         $this->addReference('outils', $term4);
         $this->addReference('ressourcesFournies', $term5);
         $this->addReference('ressourcesProduites', $term6);
+        $this->addReference('A1', $term7);
+        $this->addReference('A2', $term8);
+        $this->addReference('B1', $term9);
+        $this->addReference('B2', $term10);
+        $this->addReference('C1', $term11);
+        $this->addReference('C2', $term12);
     }
 }
