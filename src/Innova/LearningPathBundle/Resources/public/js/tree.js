@@ -8,6 +8,7 @@ var json = "";
 function sortableRefresh(){
 	$(".sortable").sortable({
 		connectWith: ".sortable",
+		placeholder: "ui-state-highlight",
 		opacity: 0.3,
 		update: function(event, ui){
 			ui.item.removeClass("ui-draggable").find("*").removeClass("ui-draggable");
