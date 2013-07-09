@@ -33,8 +33,14 @@ class LoadVocabularyData extends AbstractFixture implements OrderedFixtureInterf
 
         $manager->persist($vocabulary1);
 
+        $vocabulary2 = new Vocabulary();
+        $vocabulary2->setName('CECRL');
+
+        $manager->persist($vocabulary2);
+
         $manager->flush();
 
         $this->addReference('Categorie', $vocabulary1);
+        $this->addReference('CECRL', $vocabulary2);
     }
 }
