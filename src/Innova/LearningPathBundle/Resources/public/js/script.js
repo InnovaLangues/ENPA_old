@@ -124,4 +124,9 @@ $(document).ready(function() {
             }
         });
     });
+
+    
+    $(document).delegate(".abstractRessource-item li","click",function(e){
+        $(".nameRessourcesReelles").html($(this+" a").data());
+    });
 });
