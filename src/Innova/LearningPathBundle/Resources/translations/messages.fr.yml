@@ -6,7 +6,6 @@ Path:
     entity_create: Ajout d'un parcours
     entity_edit: Éditer un parcours
     entity_delete: Supprimer un parcours
-    entity_back_to_the_list: Retour à la liste
 
     field:
       name: Nom
@@ -21,6 +20,24 @@ Path:
 
         error:
             not_found: Le parcours n'a pas été trouvé
+
+#Abstract Entity Type
+AbstractEntityType:
+    entity_singular: Activité
+    entity_plural: Activités
+    entity_index: Lister les activités
+    entity_create: Ajout d'une activité
+    entity_edit: Éditer une activité
+    entity_delete: Supprimer une activité
+
+#Concrete Resource
+ConcreteResource:
+    entity_singular: Ressource
+    entity_plural: Ressources
+    entity_index: Lister les ressources
+    entity_create: Ajout d'une ressource
+    entity_edit: Éditer une ressource
+    entity_delete: Supprimer une ressource
 
 #Generic
 Generic:
@@ -45,3 +62,4 @@ Generic:
     previous: Précédent
     bool_true: Oui
     bool_false: Non
+    back_to_list: Retour à la liste
